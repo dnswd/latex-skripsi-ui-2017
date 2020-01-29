@@ -1,0 +1,11 @@
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.lof
+**/*.log
+**/*.lol
+**/*.lot
+**/*.out
+**/*.toc
+**/*.synctex.gz
+thesis.pdf

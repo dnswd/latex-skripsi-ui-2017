@@ -1,0 +1,29 @@
+stages:
+  - Test
+  - Build
+
+Lint:
+  stage: Test
+  image: blang/latex:latest
+  script:
+    - chktex thesis.tex
+  allow_failure: true
+
+Generate PDF:
+  stage: Build
+  image: blang/latex:latest
+  script: # repeat 2 then 8 times to make sure everything is completely generated
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - bibtex "thesis"
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+  artifacts:
+    paths:
+      - thesis.pdf
