@@ -1,17 +1,190 @@
 %-----------------------------------------------------------------------------%
 \chapter{\babTiga}
 %-----------------------------------------------------------------------------%
-Apa itu Bab 3?
+Bab ini menjelaskan tentang hal-hal \f{advanced} dalam \latex. Hal ini mencakup bagaimana cara menulis persamaan matematis di \latex, menambahkan daftar isi, catatan, PDF, menambahkan kode, bahkan menambahkan perintah baru.
+
+\todo{Sejatinya bab ini digunakan untuk membahas inti dari penelitian Anda. Sesuaikan saja dengan kebutuhkan Anda: misalkan bab empat Anda adalah penjelasan terkait desain sistem.}
 
 
 %-----------------------------------------------------------------------------%
-\section{Contoh}
+\section{Membuat Persamaan Matematis}
 %-----------------------------------------------------------------------------%
-\begin{enumerate}
-	\item Tahap 1. \\ \lstinputlisting[language=Java, caption=Contoh kode, label=code:sample]{codes/3-sample.java}
-	Jelaskan \lst~\ref{code:sample} di sini.
+Di \latex, kita dapat membuat persamaan matematis baik yang terdiri dari satu persamaan maupun lebih dari satu persamaan. Anda bisa mencoba mengikuti dan memahami contoh kode yang ada di \f{template} ini untuk kebutuhan tugas akhir Anda. Menggunakan \latex juga perlu latihan dan lihai memahami dokumentasi.
 
-	\item Tahap 2.
-\end{enumerate}
+%-----------------------------------------------------------------------------%
+\subsection{Satu Persamaan}
+%-----------------------------------------------------------------------------%
 
-Tulis kesimpulan di sini.
+\noindent \begin{align}\label{eq:garis}
+	\cfrac{y - y_{1}}{y_{2} - y_{1}} = 
+	\cfrac{x - x_{1}}{x_{2} - x_{1}}
+\end{align}
+
+\equ~\ref{eq:garis} diatas adalah persamaan garis. 
+\equ~\ref{eq:garis} dan \ref{eq:bola} sama-sama dibuat dengan perintah \code{\bslash{}align}. 
+Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan. 
+
+\noindent \begin{align}\label{eq:bola}
+	\underbrace{|\overline{ab}|}_{\text{pada bola $|\overline{ab}| = r$}} 
+	= \sqrt[2]{(x_{b} - x_{a})^{2} + (y_{b} - y_{a})^{2} + 
+		\vert\vert(z_{b} - z_{a})^{2}}
+\end{align}
+
+%-----------------------------------------------------------------------------%
+\subsection{Lebih dari Satu Persamaan}
+\label{sec:multiEqu}
+%-----------------------------------------------------------------------------%
+\noindent \begin{align}\label{eq:matriks}	
+	|\overline{a} * \overline{b}| &= |\overline{a}| |\overline{b}| \sin\theta 
+	\\[0.2cm]
+	\overline{a} * \overline{b} &=  
+	\begin{array}{| c c c |}
+		\hat{i} & x_{1} & x_{2} \\
+		\hat{j} & y_{1} & y_{2} \\
+		\hat{k} & z_{1} & z_{2} \\
+	\end{array} \nonumber \\[0.2cm]
+	&= \hat{i} \,
+	\begin{array}{ | c c | }
+		y_{1} & y_{2} \\
+		z_{1} & z_{2} \\
+	\end{array} 
+	+ \hat{j} \,
+	\begin{array}{ | c c | }
+		z_{1} & z_{2} \\
+		x_{1} & x_{2} \\
+	\end{array} 
+	+ \hat{k} \,	
+	\begin{array}{ | c c | }
+		x_{1} & x_{2} \\
+		y_{1} & y_{2} \\
+	\end{array}
+	\nonumber
+\end{align}
+
+Pada \equ~\ref{eq:matriks} dapat dilihat beberapa baris menjadi satu bagian 
+dari \equ~\ref{eq:matriks}. 
+Sedangkan dibawah ini dapat dilihat bahwa dengan cara yang sama, \equ~
+\ref{eq:gabungan1}, \ref{eq:gabungan2}, dan \ref{eq:gabungan3} memiliki nomor 
+persamaannya masing-masing. 
+
+\noindent \begin{align}\label{eq:gabungan1}	
+	\int_{a}^{b} f(x)\, dx + \int_{b}^{c} f(x) \, dx = \int_{a}^{c} f(x) \, dx
+	\\\label{eq:gabungan2}
+	\lim_{x \to \infty} \frac{f(x)}{g(x)} = 0 \hspace{1cm} 
+	\text{jika pangkat $f(x)$ $<$ pangkat $g(x)$} \\\label{eq:gabungan3}
+	a^{m^{a \, ^{n}\log b }} = b^{\frac{m}{n}}
+\end{align}
+
+
+
+%-----------------------------------------------------------------------------%
+\section{Mengubah Tampilan Teks}
+%-----------------------------------------------------------------------------%
+Beberapa perintah yang dapat digunakan untuk mengubah tampilan adalah: 
+\begin{itemize}
+	\item \bslash{}f \\
+	Merupakan alias untuk perintah \bslash textit, contoh 
+	\f{contoh hasil tulisan}.
+	\item \bslash{}bi \\
+	\bi{Contoh hasil tulisan}.
+	\item \bslash{}bo \\
+	\bo{Contoh hasil tulisan}.
+	\item \bslash{}m \\
+	\m{Contoh hasil tulisan}.
+	\item \bslash{}mc \\
+	\mc{Contoh hasil tulisan}.
+	\item \bslash{}code \\ 
+	\code{Contoh hasil tulisan}.
+\end{itemize}
+
+
+%-----------------------------------------------------------------------------%
+\section{Menambahkan Kode Program}
+%-----------------------------------------------------------------------------%
+Pada \latex, kode program seringkali disebut \f{listing}. Kita bisa memasukkan kode program (\f{listing}) ke dalam tugas akhir kita seperti kode Java berikut:
+\lstinputlisting[language=Java, caption=Kode sampel Java, label=code:java]{codes/3-sample.java}
+
+\f{Syntax highlighting} kini sudah bisa dilakukan secara otomatis oleh \f{library} yang ada di \latex.
+Sudah tidak perlu lagi membuat skrip manual untuk menambahkan \f{syntax highlighting} sendiri.
+Cukup definisikan bahasa pemrograman yang digunakan, pada parameter \code{language=} di perintah \code{\bslash{}lstinputlisting}.
+
+Berikut ini adalah daftar bahasa pemrograman yang didukung \f{library} \code{listings}: ABAP, ACSL, Ada, Algol, Ant, Assembler, Awk, bash, Basic, C\#, C++, C, Caml, Clean, Cobol, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran, GCL, Gnuplot, Haskell, HTML, IDL, inform, Java, JVMIS, ksh, Lisp, Logo, Lua, make, Mathematica, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C, OCL, Octave, Oz, Pascal, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S, SAS, Scilab, sh, SHELXL, Simula, SQL, tcl, TeX, VBScript, Verilog, VHDL, VRML, XML, XSLT.\cite{latex:source_code_listings}
+
+Satu contoh lagi, sebuah kode bahasa pemrograman Python:
+\lstinputlisting[language=Python, caption=Kode sampel Python, label=code:python]{codes/3-sample.py}
+
+Anda juga bisa menambahkan \f{caption} untuk memberikan ringkasan tentang kode tersebut.
+Namun, jangan lupa untuk menjelaskan kode melalui paragraf, terutama pada bagian-bagian yang perlu penjelasan lebih.
+Penting bagi pembaca untuk memahami mengapa kode tersebut disertakan dalam laporan tugas akhir Anda.
+
+%-----------------------------------------------------------------------------%
+\section{Mengubah Tampilan Teks}
+%-----------------------------------------------------------------------------%
+\begin{itemize}
+	\item \code{\bslash{}f} \\
+	Merupakan alias untuk perintah \code{\bslash{}textit}, contoh 
+	\f{contoh hasil tulisan}.
+	\item \code{\bslash{}bi} \\
+	\bi{Contoh hasil tulisan}.
+	\item \code{\bslash{}bo} \\
+	\bo{Contoh hasil tulisan}.
+	\item \code{\bslash{}m} \\
+	\m{Contoh hasil tulisan}.
+	\item \code{\bslash{}mc} \\
+	\mc{Contoh hasil tulisan}.
+	\item \code{\bslash{}code} \\
+	\code{Contoh hasil tulisan}.
+\end{itemize}
+
+
+%-----------------------------------------------------------------------------%
+\section{Memberikan Catatan}
+%-----------------------------------------------------------------------------%
+Ada dua perintah untuk memberikan catatan penulisan dalam dokumen yang Anda kerjakan, yaitu: 
+\begin{itemize}
+	\item \code{\bslash{}todo} \\
+	Contoh: \\ \todo{Contoh bentuk todo.}
+	\item \code{\bslash{}todoCite} \\ 
+	Contoh: \todoCite
+\end{itemize}
+
+
+%-----------------------------------------------------------------------------%
+\section{Menambah Isi Daftar Isi}
+%-----------------------------------------------------------------------------%
+Terkadang ada kebutuhan untuk memasukan kata-kata tertentu kedalam Daftar Isi.
+Perintah \code{\bslash{}addChapter} dapat digunakan untuk judul bab dalam Daftar isi.
+Contohnya dapat dilihat pada berkas thesis.tex.
+
+
+%-----------------------------------------------------------------------------%
+\section{Memasukan PDF}
+%-----------------------------------------------------------------------------%
+Untuk memasukan PDF dapat menggunakan perintah \code{\bslash{}inpdf} yang menerima satu buah argumen.
+Argumen ini berisi nama berkas yang akan digabungkan dalam laporan.
+PDF yang dimasukan degnan cara ini akan memiliki header dan footer seperti pada halaman lainnya. 
+
+\inpdf{pdfs/include}
+
+Cara lain untuk memasukan PDF adalah dengan menggunakan perintah \code{\bslash{}putpdf} dengan satu argumen yang berisi nama berkas pdf.
+Berbeda dengan perintah sebelumnya, PDF yang dimasukan dengan cara ini tidak akan memiliki footer atau header seperti pada halaman lainnya. 
+
+\putpdf{pdfs/include}
+
+
+%-----------------------------------------------------------------------------%
+\section{Membuat Perintah Baru}
+%-----------------------------------------------------------------------------%
+Ada dua perintah yang dapat digunakan untuk membuat perintah baru, yaitu: 
+\begin{itemize}
+	\item \code{\bslash{}Var} \\
+	Digunakan untuk membuat perintah baru, namun setiap kata yang diberikan akan diproses dahulu menjadi huruf kapital. 
+	Contoh jika perintahnya adalah \code{\bslash{}Var\{adalah\}} makan ketika perintah \code{\bslash{}Var} dipanggil, yang akan muncul adalah ADALAH. 
+	\item \code{\bslash{}var} \\
+	Digunakan untuk membuat perintah atau baru. 
+\end{itemize}
+Membuat perintah baru sebaiknya dilakukan pada berkas \code{uithesis.sty}.
+Berkas \code{uithesis.sty} adalah berkas khusus pengatur \f{styling} untuk tugas akhir ini.
+Berkas itu berisikan semua konfigurasi yang dibutuhkan untuk membuat dokumen \latex~ini menjadi sesuai dengan Peraturan Rektor, termasuk perintah-perintah baru.
+
+Jika perubahan ini dirasa penting untuk disertakan dalam template, silakan lakukan \f{fork} \url{repositori Git template ini}.
