@@ -1,6 +1,6 @@
-# Judul Skriosi Anda
+# Judul Tugas Akhir Anda
 
-Nama Anda - Nomor Anda - Jurusan Anda Universitas Indonesia (Tingkatan, Tahun)
+Nama Anda - Nomor (NPM) Anda - Jurusan Anda Universitas Indonesia (Tingkatan, Tahun)
 
 ----------
 
@@ -30,7 +30,8 @@ Template ini dibuat oleh Andreas Febrian (Fasilkom UI 2003)
 dan disebarluaskan oleh Erik Dominikus (Fasilkom UI 2007).
 
 Template ini dimodifikasi oleh Azhar Kurnia (Fasilkom UI 2016)
-dan Ichlasul Affan (Fasilkom UI 2016) agar mengikuti standar terbaru Tugas Akhir di Universitas Indonesia (tahun 2017).
+dan Ichlasul Affan (Fasilkom UI 2016) agar mengikuti standar terbaru
+Tugas Akhir di Universitas Indonesia (tahun 2017).
 
 Orang yang membaca karya Anda tidak peduli cara Anda buat karya itu;
 mereka hanya mau tahu karya itu bagus.
