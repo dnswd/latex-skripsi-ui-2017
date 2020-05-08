@@ -14,7 +14,7 @@ Ucapan terima kasih.
 Jika ada *milestone* pekerjaan, bisa dijelaskan di sini.
 
 ## Kumpulan Referensi yang Digunakan
-Berikut ini kumpulan *softcopy* referensi yang saya gunakan untuk skripsi ini, yang diperbolehkan untuk disebarluaskan secara bebas: Sertakan link Anda.
+Berikut ini kumpulan *softcopy* referensi yang saya gunakan untuk tugas akhir (laporan/skripsi/proposal/tesis/disertasi) ini, yang diperbolehkan untuk disebarluaskan secara bebas: Sertakan link Anda.
 
 Daftar referensi yang tersedia (akan diperbaharui hingga akhir pengerjaan):
 1.  Judul (Tahun)
@@ -37,3 +37,9 @@ Orang yang membaca karya Anda tidak peduli cara Anda buat karya itu;
 mereka hanya mau tahu karya itu bagus.
 
 Selamat menggunakan template ini.
+
+## CONTRIBUTING
+Tentunya, kami sangat berharap kontribusi teman-teman jika ada perubahan yang diperlukan atau ada pembaharuan aturan dari pihak Rektorat Universitas Indonesia terkait format tugas akhir.
+Setiap orang dapat dengan bebas melakukan fork repositori ini. Setiap orang juga bebas mengajukan perubahan dengan mengubah template ini pada repositori hasil fork masing-masing, kemudian melakukan merge request ke repositori ini (https://gitlab.com/ichlaffterlalu/latex-skripsi-ui-2017).
+Lakukan merge request menuju branch `master`, dan pastikan perubahan yang dilakukan tidak mengandung apapun dari konten tugas akhir Anda untuk menghindari isu yang tidak diperlukan.
+Jika tidak ada respon dari kami pada merge request tersebut, silakan e-mail `ichlasul.affan [at] ui.ac.id` dan beritahukan link merge request Anda.
