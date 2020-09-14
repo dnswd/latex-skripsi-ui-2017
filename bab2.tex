@@ -1,15 +1,18 @@
 %-----------------------------------------------------------------------------%
 \chapter{\babDua}
+\label{bab:2}
 %-----------------------------------------------------------------------------%
 Untuk memulai penelitian, dibutuhkan kerangka berpikir yang sesuai untuk permasalahan yang ingin dipecahkan. Untuk membentuk kerangka berpikir yang sesuai, perlu dikaitkan dengan hasil studi literatur yang telah dilakukan. Oleh karena itu, pada bab ini, akan dijelaskan hasil studi literatur yang telah dilakukan yang telah dikaitan dengan kerangka kerja untuk penelitian ini.
 
 
 %-----------------------------------------------------------------------------%
 \section{Apa itu \latex?}
+\label{sec:latex}
 %-----------------------------------------------------------------------------%
 
 %-----------------------------------------------------------------------------%
 \subsection{\latex~Secara Singkat}
+\label{sec:latexBrief}
 %-----------------------------------------------------------------------------%
 Berdasarkan \cite{latex:intro}: \\ 
 \begin{tabular}{| p{13cm} |}
@@ -40,6 +43,7 @@ Jika ingin belajar hal-hal dasar mengenai \latex, silahkan kunjungi:
 
 %-----------------------------------------------------------------------------%
 \subsection{\latex~Kompiler dan IDE}
+\label{sec:latexCompiler}
 %-----------------------------------------------------------------------------%
 Agar dapat menggunakan \latex~(pada konteks hanya sebagai pengguna), Anda tidak perlu banyak tahu mengenai hal-hal didalamnya. 
 Seperti halnya pembuatan dokumen secara visual (contohnya Open Office (OO) Writer), Anda dapat menggunakan \latex~dengan cara yang sama. 
@@ -58,10 +62,12 @@ Hasilnya adalah sebuah dokumen yang sama seperti dokumen yang Anda baca saat ini
 
 %-----------------------------------------------------------------------------%
 \section{Panduan Pengunaan Dasar \latex}
+\label{sec:latexUsage}
 %-----------------------------------------------------------------------------%
 
 %-----------------------------------------------------------------------------%
 \subsection{Bold, Italic, dan Underline}
+\label{sec:latexBIU}
 %-----------------------------------------------------------------------------%
 Hal pertama yang mungkin ditanyakan adalah bagaimana membuat huruf tercetak tebal, miring, atau memiliki garis bawah. 
 Pada Texmaker, Anda bisa melakukan hal ini seperti halnya saat mengubah dokumen dengan OO Writer. 
@@ -89,6 +95,7 @@ Perintah \code{\bslash{}f} dan \code{\bslash{}bo} hanya dapat digunakan jika pac
 
 %-----------------------------------------------------------------------------%
 \subsection{Memasukan Gambar}
+\label{sec:latexImage}
 %-----------------------------------------------------------------------------%
 Setiap gambar dapat diberikan caption dan diberikan label. Label dapat digunakan untuk menunjuk gambar tertentu. 
 Jika posisi gambar berubah, maka nomor gambar juga akan diubah secara 
@@ -109,6 +116,7 @@ Harap diingat bahwa caption untuk gambar selalu terletak dibawah gambar.
 
 %-----------------------------------------------------------------------------%
 \section{Membuat Tabel}
+\label{sec:latexTable}
 %-----------------------------------------------------------------------------%
 Seperti pada gambar, tabel juga dapat diberi label dan caption. 
 Caption pada tabel terletak pada bagian atas tabel. 
@@ -125,10 +133,50 @@ Contoh tabel sederhana dapat dilihat pada \tab~\ref{tab:tab1}.
 		baris 1 & 1 & 2 \\
 		baris 2 & 3 & 4 \\
 		baris 3 & 5 & 6 \\
-		jumlah  & 9 & 12 \\
+		baris 4 & 7 & 8 \\
+		baris 5 & 9 & 10 \\
+		\hline
+		jumlah  & 25 & 30 \\
 		\hline
 	\end{tabular}
 \end{table}
+
+Adapun untuk membuat tabel panjang yang bisa melebihi dari satu halaman, gunakan perintah \code{\bslash{}begin\{longtable\}} sebagai pengganti \code{\bslash{}begin\{table\}}. Di dalam \code{longtable} tidak perlu lagi ada \code{\bslash{}begin\{tabular\}}. Kemudian, tambahkan tanda \code{\bslash{}\bslash{}} setelah baris \code{\bslash{}label\{....\}}, agar tidak menimbulkan error saat menampilkan \f{caption} di bagian atas tabel. Kemudian, untuk membatasi header yang ingin diulang pada halaman-halaman berikutnya, gunakan perintah \code{\bslash{}endhead}. Contohnya adalah sebagai berikut:
+
+\begin{longtable}{| l | c r |}
+\caption{Contoh Tabel Panjang}
+\label{tab:tab2} \\
+\hline
+& kol 1 & kol 2 \\ 
+\hline
+\endhead % batas header yang akan diulang di baris berikutnya
+baris 1  & 1 & 2 \\
+baris 2  & 3 & 4 \\
+baris 3  & 5 & 6 \\
+baris 4  & 7 & 8 \\
+baris 5  & 9 & 10 \\
+baris 6  & 11 & 12 \\
+baris 7  & 13 & 14 \\
+baris 8  & 15 & 16 \\
+baris 9  & 17 & 18 \\
+baris 10 & 19 & 20 \\
+baris 11 & 21 & 22 \\
+baris 12 & 23 & 24 \\
+baris 13 & 25 & 26 \\
+baris 14 & 27 & 28 \\
+baris 15 & 29 & 30 \\
+baris 16 & 31 & 32 \\
+baris 17 & 33 & 34 \\
+baris 18 & 35 & 36 \\
+baris 19 & 37 & 38 \\
+baris 20 & 39 & 40 \\
+baris 21 & 41 & 42 \\
+baris 22 & 43 & 44 \\
+baris 23 & 45 & 46 \\
+baris 24 & 47 & 48 \\
+baris 25 & 49 & 50 \\
+\hline
+\end{longtable}
 
 Ada jenis tabel lain yang dapat dibuat dengan \latex~berikut beberapa diantaranya. 
 Contoh-contoh ini bersumber dari \url{http://en.wikibooks.org/wiki/LaTeX/Tables}
@@ -191,6 +239,7 @@ Contoh-contoh ini bersumber dari \url{http://en.wikibooks.org/wiki/LaTeX/Tables}
 
 %-----------------------------------------------------------------------------%
 \section{Keterkaitan Teori Dengan Penelitian}
+\label{sec:keterkaitan}
 %-----------------------------------------------------------------------------%
 \todo{Ada baiknya setelah menjelaskan teori-teori, Anda menjelaskan apa kaitan teori tersebut dengan penelitian Anda. Hal ini tentunya membantu pembaca dalam memahami bahwa teori yang Anda paparkan memang penting untuk memahami penelitian Anda nantinya.}
 

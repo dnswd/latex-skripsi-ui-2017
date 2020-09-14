@@ -1,30 +1,33 @@
 %-----------------------------------------------------------------------------%
 \chapter{\babTiga}
+\label{bab:3}
 %-----------------------------------------------------------------------------%
 Bab ini menjelaskan tentang hal-hal \f{advanced} dalam \latex. Hal ini mencakup bagaimana cara menulis persamaan matematis di \latex, menambahkan daftar isi, catatan, PDF, menambahkan kode, bahkan menambahkan perintah baru.
 
-\todo{Sejatinya bab ini digunakan untuk membahas inti dari penelitian Anda. Sesuaikan saja dengan kebutuhkan Anda: misalkan bab empat Anda adalah penjelasan terkait desain sistem.}
+\todo{Sejatinya bab ini digunakan untuk membahas inti dari penelitian Anda. Sesuaikan saja dengan kebutuhkan Anda: misalkan bab tiga Anda adalah penjelasan terkait desain sistem.}
 
 
 %-----------------------------------------------------------------------------%
 \section{Membuat Persamaan Matematis}
+\label{sec:mathEqu}
 %-----------------------------------------------------------------------------%
-Di \latex, kita dapat membuat persamaan matematis baik yang terdiri dari satu persamaan maupun lebih dari satu persamaan. Anda bisa mencoba mengikuti dan memahami contoh kode yang ada di \f{template} ini untuk kebutuhan tugas akhir Anda. Menggunakan \latex juga perlu latihan dan lihai memahami dokumentasi.
+Di \latex, kita dapat membuat persamaan matematis baik yang terdiri dari satu persamaan maupun lebih dari satu persamaan. Anda bisa mencoba mengikuti dan memahami contoh kode yang ada di \f{template} ini untuk kebutuhan tugas akhir Anda. Menggunakan \latex~juga perlu latihan dan lihai memahami dokumentasi.
 
 %-----------------------------------------------------------------------------%
 \subsection{Satu Persamaan}
+\label{sec:oneEqu}
 %-----------------------------------------------------------------------------%
 
-\noindent \begin{align}\label{eq:garis}
+\noindent \begin{align}\label{equ:garis}
 	\cfrac{y - y_{1}}{y_{2} - y_{1}} = 
 	\cfrac{x - x_{1}}{x_{2} - x_{1}}
 \end{align}
 
-\equ~\ref{eq:garis} diatas adalah persamaan garis. 
-\equ~\ref{eq:garis} dan \ref{eq:bola} sama-sama dibuat dengan perintah \code{\bslash{}align}. 
+\equ~\ref{equ:garis} diatas adalah persamaan garis. 
+\equ~\ref{equ:garis} dan \ref{equ:bola} sama-sama dibuat dengan perintah \code{\bslash{}align}. 
 Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan. 
 
-\noindent \begin{align}\label{eq:bola}
+\noindent \begin{align}\label{equ:bola}
 	\underbrace{|\overline{ab}|}_{\text{pada bola $|\overline{ab}| = r$}} 
 	= \sqrt[2]{(x_{b} - x_{a})^{2} + (y_{b} - y_{a})^{2} + 
 		\vert\vert(z_{b} - z_{a})^{2}}
@@ -34,7 +37,7 @@ Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan.
 \subsection{Lebih dari Satu Persamaan}
 \label{sec:multiEqu}
 %-----------------------------------------------------------------------------%
-\noindent \begin{align}\label{eq:matriks}	
+\noindent \begin{align}\label{equ:matriks}	
 	|\overline{a} * \overline{b}| &= |\overline{a}| |\overline{b}| \sin\theta 
 	\\[0.2cm]
 	\overline{a} * \overline{b} &=  
@@ -61,17 +64,17 @@ Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan.
 	\nonumber
 \end{align}
 
-Pada \equ~\ref{eq:matriks} dapat dilihat beberapa baris menjadi satu bagian 
-dari \equ~\ref{eq:matriks}. 
+Pada \equ~\ref{equ:matriks} dapat dilihat beberapa baris menjadi satu bagian 
+dari \equ~\ref{equ:matriks}. 
 Sedangkan dibawah ini dapat dilihat bahwa dengan cara yang sama, \equ~
-\ref{eq:gabungan1}, \ref{eq:gabungan2}, dan \ref{eq:gabungan3} memiliki nomor 
+\ref{equ:gabungan1}, \ref{equ:gabungan2}, dan \ref{equ:gabungan3} memiliki nomor 
 persamaannya masing-masing. 
 
-\noindent \begin{align}\label{eq:gabungan1}	
+\noindent \begin{align}\label{equ:gabungan1}	
 	\int_{a}^{b} f(x)\, dx + \int_{b}^{c} f(x) \, dx = \int_{a}^{c} f(x) \, dx
-	\\\label{eq:gabungan2}
+	\\\label{equ:gabungan2}
 	\lim_{x \to \infty} \frac{f(x)}{g(x)} = 0 \hspace{1cm} 
-	\text{jika pangkat $f(x)$ $<$ pangkat $g(x)$} \\\label{eq:gabungan3}
+	\text{jika pangkat $f(x)$ $<$ pangkat $g(x)$} \\\label{equ:gabungan3}
 	a^{m^{a \, ^{n}\log b }} = b^{\frac{m}{n}}
 \end{align}
 
@@ -79,6 +82,7 @@ persamaannya masing-masing.
 
 %-----------------------------------------------------------------------------%
 \section{Mengubah Tampilan Teks}
+\label{sec:textFormatting}
 %-----------------------------------------------------------------------------%
 Beberapa perintah yang dapat digunakan untuk mengubah tampilan adalah: 
 \begin{itemize}
@@ -100,15 +104,17 @@ Beberapa perintah yang dapat digunakan untuk mengubah tampilan adalah:
 
 %-----------------------------------------------------------------------------%
 \section{Menambahkan Kode Program}
+\label{sec:codeListing}
+% Hal baru di template 2017
 %-----------------------------------------------------------------------------%
-Pada \latex, kode program seringkali disebut \f{listing}. Kita bisa memasukkan kode program (\f{listing}) ke dalam tugas akhir kita seperti kode Java berikut:
+Pada \latex, kode program seringkali disebut \f{listing}. Kita bisa memasukkan kode program (\f{listing}) ke dalam tugas akhir kita seperti kode Java seperti berikut:
 \lstinputlisting[language=Java, caption=Kode sampel Java, label=code:java]{codes/3-sample.java}
 
 \f{Syntax highlighting} kini sudah bisa dilakukan secara otomatis oleh \f{library} yang ada di \latex.
 Sudah tidak perlu lagi membuat skrip manual untuk menambahkan \f{syntax highlighting} sendiri.
 Cukup definisikan bahasa pemrograman yang digunakan, pada parameter \code{language=} di perintah \code{\bslash{}lstinputlisting}.
 
-Berikut ini adalah daftar bahasa pemrograman yang didukung \f{library} \code{listings}: ABAP, ACSL, Ada, Algol, Ant, Assembler, Awk, bash, Basic, C\#, C++, C, Caml, Clean, Cobol, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran, GCL, Gnuplot, Haskell, HTML, IDL, inform, Java, JVMIS, ksh, Lisp, Logo, Lua, make, Mathematica, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C, OCL, Octave, Oz, Pascal, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S, SAS, Scilab, sh, SHELXL, Simula, SQL, tcl, TeX, VBScript, Verilog, VHDL, VRML, XML, XSLT.\cite{latex:source_code_listings}
+Berikut ini adalah daftar bahasa pemrograman yang didukung \f{library} \code{listings}: ABAP, ACSL, Ada, Algol, Ant, Assembler, Awk, bash, Basic, C\#, C++, C, Caml, Clean, Cobol, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran, GCL, Gnuplot, Haskell, HTML, IDL, inform, Java, JVMIS, ksh, Lisp, Logo, Lua, make, Mathematica, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C, OCL, Octave, Oz, Pascal, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S, SAS, Scilab, sh, SHELXL, Simula, SQL, tcl, TeX, VBScript, Verilog, VHDL, VRML, XML, XSLT. \citep{latex:source_code_listings}
 
 Satu contoh lagi, sebuah kode bahasa pemrograman Python:
 \lstinputlisting[language=Python, caption=Kode sampel Python, label=code:python]{codes/3-sample.py}
@@ -117,28 +123,46 @@ Anda juga bisa menambahkan \f{caption} untuk memberikan ringkasan tentang kode t
 Namun, jangan lupa untuk menjelaskan kode melalui paragraf, terutama pada bagian-bagian yang perlu penjelasan lebih.
 Penting bagi pembaca untuk memahami mengapa kode tersebut disertakan dalam laporan tugas akhir Anda.
 
+
 %-----------------------------------------------------------------------------%
-\section{Mengubah Tampilan Teks}
+\section{Melakukan \f{Cross-Reference} ke Suatu Bagian dalam Laporan}
+\label{sec:crossReference}
 %-----------------------------------------------------------------------------%
+Dengan menggunakan \latex, Anda tidak perlu lagi melakukan referensi ke suatu bagian atau objek dalam laporan secara manual. Anda cukup melakukan referensi ke bagian/gambar/kode/persamaan yang Anda inginkan dengan menggunakan perintah \code{\bslash{}ref}. Anda tidak perlu lagi mengubah referensi secara manual setiap kali ada perubahan letak pada bagian tersebut, karena \latex~akan melakukannya secara otomatis. Untuk melakukan \f{cross-reference}, pertama kali tandai bagian yang ingin Anda referensikan dengan menggunakan suatu label, melalui perintah \code{\bslash{}label\{...:.....\}}. Label tidak boleh mengandung spasi. Berikut ini adalah konvensi penamaan label dan cara melakukan referensi yang digunakan dalam \f{template} ini:
 \begin{itemize}
-	\item \code{\bslash{}f} \\
-	Merupakan alias untuk perintah \code{\bslash{}textit}, contoh 
-	\f{contoh hasil tulisan}.
-	\item \code{\bslash{}bi} \\
-	\bi{Contoh hasil tulisan}.
-	\item \code{\bslash{}bo} \\
-	\bo{Contoh hasil tulisan}.
-	\item \code{\bslash{}m} \\
-	\m{Contoh hasil tulisan}.
-	\item \code{\bslash{}mc} \\
-	\mc{Contoh hasil tulisan}.
-	\item \code{\bslash{}code} \\
-	\code{Contoh hasil tulisan}.
+	\item \code{\bslash{}label\{bab:[nomorBab]\}} untuk sebuah bab. \\
+	Contoh: \code{\bslash{}label\{bab:3\}} \\
+	Cara referensi: \code{\bslash{}bab\~\bslash{}ref\{bab:3\}} \\
+	Hasil referensi: \bab~\ref{bab:3}.
+	\item \code{\bslash{}label\{sec:[....]\}} untuk sebuah subbab. \\
+	Contoh: \code{\bslash{}label\{sec:crossReference\}} \\
+	Cara referensi: \code{\bslash{}sect\~\bslash{}ref\{sec:crossReference\}} \\
+	Hasil referensi: \sect~\ref{sec:crossReference}.
+	\item \code{\bslash{}label\{appendix:[....]\}} untuk sebuah bab/subbab lampiran. \\
+	Contoh: \code{\bslash{}label\{appendix:changelog\}} \\
+	Cara referensi: \code{\bslash{}apdx\~\bslash{}ref\{appendix:changelog\}} \\	Hasil referensi: \apdx~\ref{appendix:changelog}.
+	\item \code{\bslash{}label\{equ:[....]\}} untuk sebuah persamaan matematis. \\
+	Contoh: \code{\bslash{}label\{equ:matriks\}} \\
+	Cara referensi: \code{\bslash{}equ\~\bslash{}ref\{equ:matriks\}} \\
+	Hasil referensi: \equ~\ref{equ:matriks}.
+	\item \code{\bslash{}label\{fig:[....]\}} untuk sebuah gambar. \\
+	Contoh: \code{\bslash{}label\{fig:lisensi\}} \\
+	Cara referensi: \code{\bslash{}pic\~\bslash{}ref\{fig:lisensi\}} \\
+	Hasil referensi: \pic~\ref{fig:lisensi}.
+	\item \code{\bslash{}label\{tab:[....]\}} untuk sebuah tabel. \\
+	Contoh: \code{\bslash{}label\{tab:\tab1\}} \\
+	Cara referensi: \code{\bslash{}tab\~\bslash{}ref\{tab:tab1\}} \\
+	Hasil referensi: \tab~\ref{tab:tab1}.
+	\item Untuk sebuah kode sumber, label diletakkan sebagai argumen \code{\bslash{}lstinputlisting} seperti: \code{\bslash{}lstinputlisting[..., label=code:...]}. \\
+	Contoh: \code{\bslash{}lstinputlisting[language=Python, caption=Kode sampel Python, label=code:python]} \\
+	Cara referensi: \code{\bslash{}lst\~\bslash{}ref\{code:python\}} \\
+	Hasil referensi: \lst~\ref{code:python}.
 \end{itemize}
 
 
 %-----------------------------------------------------------------------------%
 \section{Memberikan Catatan}
+\label{sec:note}
 %-----------------------------------------------------------------------------%
 Ada dua perintah untuk memberikan catatan penulisan dalam dokumen yang Anda kerjakan, yaitu: 
 \begin{itemize}
@@ -150,7 +174,95 @@ Ada dua perintah untuk memberikan catatan penulisan dalam dokumen yang Anda kerj
 
 
 %-----------------------------------------------------------------------------%
+\section{Menggunakan BibTeX}
+\label{sec:bibtex}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+BibTeX adalah \f{library} dalam \latex~yang dapat membantu Anda untuk menuliskan sitasi. Dengan menggunakan BibTeX, Anda tidak perlu memikirkan format penulisan referensi atau sitasi. \f{Formatting} akan dilakukan secara otomatis sesuai dengan format sitasi yang digunakan. Secara \f{default}, \f{template} ini menggunakan format sitasi APA. Namun, format tersebut dapat diubah sesuai dengan peraturan yang dimiliki oleh fakultas, dosen pembimbing, atau dosen penguji Anda.
+
+
+%-----------------------------------------------------------------------------%
+\subsection{Menambahkan Referensi}
+\label{sec:bibtexAddRef}
+%-----------------------------------------------------------------------------%
+Anda bisa menambahkan bahan bacaan yang ingin Anda jadikan referensi ke dalam berkas \code{references.bib}. Contoh isi kode \f{references.bib} saat ini dapat dilihat di \lst~\ref{code:references}.
+\lstinputlisting[language=TeX, caption=Daftar referensi di \code{references.bib}, label=code:references]{references.bib}
+
+Format suatu objek referensi pada BibTex adalah sebagai berikut: \\
+\code{@[tipe-referensi]\{[kode-untuk-sitasi]}\\
+\code{title    = \{Judul Buku\},}\\
+\code{....}\\
+\code{\}}\\
+Kode untuk sitasi dapat berisi karakter non-spasi yang bisa digunakan untuk melakukan sitasi di dalam konten laporan. Terdapat empat belas tipe referensi yang bisa digunakan pada BibTeX:
+\begin{itemize}
+	\item \code{article}: Digunakan untuk merujuk ke sebuah artikel dalam suatu majalah, buku, atau koleksi artikel lainnya.
+	\item \code{book}: Digunakan untuk merujuk ke sebuah buku.
+	\item \code{booklet}: Digunakan untuk merujuk ke sebuah buku saku.
+	\item \code{inbook}: Digunakan untuk merujuk ke sebuah bab atau subbab dalam suatu buku.
+	\item \code{incollection}: Digunakan untuk merujuk ke sebuah bab atau subbab dalam suatu koleksi atau seri buku.
+	\item \code{mastersthesis}: Digunakan untuk merujuk ke sebuah tesis karya mahasiswa magister (S2).
+	\item \code{manual}: Digunakan untuk merujuk ke suatu buku manual.
+	\item \code{phdthesis}: Digunakan untuk merujuk ke sebuah tesis karya mahasiswa doktoral (S3).
+	\item \code{proceedings}: Digunakan untuk merujuk ke sebuah \f{paper} ilmiah yang dipublikasikan dalam suatu \f{conference} atau prosiding.
+	\item \code{techreport}: Digunakan untuk merujuk ke suatu laporan teknis (misal: draf konvensi teknologi terbaru).
+	\item \code{unpublished}: Digunakan untuk merujuk ke suatu hal yang tidak dipublikasikan.
+	\item \code{misc}: Digunakan untuk merujuk ke hal-hal lain yang tidak masuk ke kategori-kategori yang telah disebutkan.
+\end{itemize}
+
+%-----------------------------------------------------------------------------%
+\subsection{Melakukan Sitasi pada Konten Tugas Akhir}
+\label{sec:bibtexAddCite}
+%-----------------------------------------------------------------------------%
+Berikut ini adalah contoh kalimat yang menggunakan sitasi: \\
+"Kalimat menurut \cite{book:sample} terdiri dari subjek, predikat, dan objek \citep{book:sample}."
+
+Ada format sitasi yang memiliki cara penulisan yang berbeda berdasarkan posisi sitasi, ada juga yang tidak. Format sitasi APA membedakan penulisan sitasi pada isi kalimat dengan akhir kalimat, sedangkan format sitasi IEEE tidak. Untuk melakukan sitasi pada isi kalimat, di mana sitasi tersebut umumnya sebagai subjek, objek, atau keterangan pada kalimat, gunakan perintah \code{\bslash{}citep}. Sedangkan untuk melakukan sitasi pada akhir kalimat, di mana sitasi tersebut umumnya sebagai rujukan suatu gagasan, gunakan perintah \code{\bslash{}cite}.
+
+Perlu diperhatikan bahwa \code{\bslash{}citep} hanya bisa digunakan untuk format sitasi yang butuh membedakan posisi sitasi. Penggunaan \code{\bslash{}citep} pada format sitasi seperti IEEE akan menimbulkan error. Jika Anda menggunakan format seperti itu, cukup gunakan \code{\bslash{}cite} dimanapun posisi sitasi Anda.
+
+%-----------------------------------------------------------------------------%
+\subsection{Mengubah Format Referensi/Sitasi}
+\label{sec:bibtexChangeFormat}
+%-----------------------------------------------------------------------------%
+Sejak versi \f{template} 2.0.2, format referensi \f{default} telah diganti menjadi APA dari sebelumnya IEEE karena banyaknya permintaan dosen penguji untuk menggunakan format APA. Pada dasarnya, peraturan Rektor UI terkait Tugas Akhir menyerahkan format referensi sesuai dengan aturan fakultas. Namun, mayoritas dari fakultas atau dosen pembimbing di Universitas Indonesia menggunakan APA sebagai format sitasinya. Oleh karena itu, jika fakultas atau dosen pembimbing/penguji Anda meminta format sitasi yang berbeda selain APA, Anda bisa menggantinya dengan mengikuti tahapan berikut:
+\begin{itemize}
+	\item Untuk mengubah ke format IEEE:
+	\begin{enumerate}
+		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{ieeetr\}}.
+		\item Buka berkas \code{uithesis.sty}, lalu jadikan baris kode \code{\bslash{}usepackage\{natbib\}} sebagai komentar.
+		\item Ganti semua sitasi yang menggunakan perintah \code{\bslash{}citep} menjadi \code{\bslash{}cite}, karena format sitasi IEEE hanya melibatkan angka urutan referensi.
+	\end{enumerate}
+	\item Untuk mengubah ke format ACM:
+	\begin{enumerate}
+		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{acm\}}.
+		\item Buka berkas \code{uithesis.sty}, lalu jadikan baris kode \code{\bslash{}usepackage\{natbib\}} sebagai komentar.
+		\item Ganti semua sitasi yang menggunakan perintah \code{\bslash{}citep} menjadi \code{\bslash{}cite}, karena format sitasi ACM hanya melibatkan angka urutan referensi.
+	\end{enumerate}
+	\item Untuk mengubah ke format MLA:
+	\begin{enumerate}
+		\item Format MLA tidak tersedia secara bawaan di BibTeX. Untuk menggunakannya, unduh berkas \code{mla.bst} dari \url{https://www.ctan.org/tex-archive/biblio/bibtex/contrib/mla/mla.bst}, kemudian letakkan pada direktori yang sama dengan \code{thesis.tex}.
+		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{mla\}}.
+		\item Buka berkas \code{uithesis.sty}, lalu kembalikan baris kode \code{\bslash{}usepackage\{natbib\}} dari komentar menjadi kode biasa. Abaikan jika baris kode tersebut sudah ada dan bukan berbentuk komentar.
+		\item Format sitasi MLA mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat. Ganti sitasi pada akhir kalimat atau tempat lain yang membutuhkan model sitasi dengan \f{parentheses} (kurung) dengan menggunakan perintah \code{\bslash{}citep}.
+	\end{enumerate}
+	\item Untuk mengembalikan ke format APA:
+	\begin{enumerate}
+		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{apacite\}}.
+		\item Buka berkas \code{uithesis.sty}, lalu kembalikan baris kode \code{\bslash{}usepackage\{natbib\}} dari komentar menjadi kode biasa.
+		\item Buka berkas \code{uithesis.sty}, lalu pastikan baris kode \code{\bslash{}usepackage\{apacite\}} ada sebelum baris kode \code{\bslash{}usepackage\{natbib\}} dan tidak berbentuk komentar.
+		\item Format sitasi APA mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat. Ganti sitasi pada akhir kalimat atau tempat lain yang membutuhkan model sitasi dengan \f{parentheses} (kurung) dengan menggunakan perintah \code{\bslash{}citep}.
+	\end{enumerate}
+	\item \f{Troubleshooting}:
+	\begin{enumerate}
+		\item Apabila terjadi \f{error} saat mengganti format ke selain APA, pastikan bahwa baris kode \code{\bslash{}usepackage\{apacite\}} telah dihapus atau dijadikan komentar.
+		\item Jika muncul pesan error seperti \code{[nama-format].bst not found}, maka unduh terlebih dahulu dari CTAN. Itu tandanya format tersebut tidak tersedia secara bawaan dari BibTeX.
+	\end{enumerate}
+\end{itemize}
+
+
+%-----------------------------------------------------------------------------%
 \section{Menambah Isi Daftar Isi}
+\label{sec:tableOfContent}
 %-----------------------------------------------------------------------------%
 Terkadang ada kebutuhan untuk memasukan kata-kata tertentu kedalam Daftar Isi.
 Perintah \code{\bslash{}addChapter} dapat digunakan untuk judul bab dalam Daftar isi.
@@ -159,6 +271,7 @@ Contohnya dapat dilihat pada berkas thesis.tex.
 
 %-----------------------------------------------------------------------------%
 \section{Memasukan PDF}
+\label{sec:pdf}
 %-----------------------------------------------------------------------------%
 Untuk memasukan PDF dapat menggunakan perintah \code{\bslash{}inpdf} yang menerima satu buah argumen.
 Argumen ini berisi nama berkas yang akan digabungkan dalam laporan.
@@ -173,18 +286,68 @@ Berbeda dengan perintah sebelumnya, PDF yang dimasukan dengan cara ini tidak aka
 
 
 %-----------------------------------------------------------------------------%
-\section{Membuat Perintah Baru}
+\section{Membuat Variabel atau Perintah Baru}
+\label{sec:newCommand}
 %-----------------------------------------------------------------------------%
-Ada dua perintah yang dapat digunakan untuk membuat perintah baru, yaitu: 
+Dalam \latex, Anda bisa menambahkan variabel atau perintah baru yang dapat membantu penulisan laporan Anda. Sebenarnya variabel dalam \latex~merupakan perintah, namun tanpa argumen, contohnya adalah \code{\bslash{}kucing}. Variabel dapat menyimpan suatu nilai teks. Sedangkan, suatu perintah pada \latex~sifatnya dapat menerima argumen dan mengolah argumen tersebut sesuai dengan kode yang didefinisikan di dalamnya. Contoh dari penggunaan perintah adalah \code{\bslash{}section\{Membuat Variabel atau Perintah Baru\}}.
+
+Ada dua perintah yang dapat digunakan untuk membuat variabel baru, yaitu: 
 \begin{itemize}
 	\item \code{\bslash{}Var} \\
-	Digunakan untuk membuat perintah baru, namun setiap kata yang diberikan akan diproses dahulu menjadi huruf kapital. 
-	Contoh jika perintahnya adalah \code{\bslash{}Var\{adalah\}} makan ketika perintah \code{\bslash{}Var} dipanggil, yang akan muncul adalah ADALAH. 
+	Digunakan untuk membuat variabel baru, namun setiap kata yang diberikan akan diproses dahulu menjadi huruf kapital. 
+	Contoh jika perintahnya adalah \code{\bslash{}Var\{\bslash{}kucingBesar\}\{Areng\}}, ketika perintah \code{\bslash{}kucingBesar} dipanggil, yang akan muncul adalah ARENG.
 	\item \code{\bslash{}var} \\
-	Digunakan untuk membuat perintah atau baru. 
+	Digunakan untuk membuat variabel baru.
+	Contoh jika perintahnya adalah \code{\bslash{}var\{\bslash{}kucingKecil\}\{Areng\}}, ketika perintah \code{\bslash{}kucingKecil} dipanggil, yang akan muncul adalah Areng.
 \end{itemize}
+
+Membuat variabel baru sebaiknya dilakukan pada berkas \code{laporan\_setting.tex}. Beberapa variabel yang terkait dengan metadata skripsi seperti judul, tanggal pengesahan, nama penulis, dsb. juga telah tersedia dalam \code{laporan\_setting.tex} untuk dikonfigurasi.
+
+Selain membuat variabel baru, membuat perintah baru dalam kasus tertentu diperlukan dalam melakukan \f{formatting}. Terdapat dua perintah untuk membuat suatu perintah baru yang nantinya bisa menerima argumen, yaitu:
+\begin{itemize}
+	\item \code{\bslash{}newcommand} \\
+	Digunakan untuk membuat perintah yang benar-benar baru. Beberapa contohnya adalah:
+	\begin{itemize}
+		\item \code{\bslash{}newcommand\{\bslash{}sumber\}[2]\{\bslash{}textbf\{\#1: \}\bslash{}texttt\{\#2\}\}} akan membuat perintah \code{\bslash{}sumber} yang menerima dua argumen dan akan mencetak tulisan dengan format tertentu. Sehingga, ketika perintah \code{\bslash{}sumber\{Disadur dari\}\{Cimung\}} dipanggil, yang akan muncul adalah \bo{Disadur dari: }\code{Cimung}.
+		\item \code{\bslash{}newcommand\{\bslash{}kucing\}[0]\{Uyik\}} akan membuat perintah \code{\bslash{}kucing}, tanpa argumen. Ketika perintah \code{\bslash{}kucing} dipanggil, yang akan muncul adalah Uyik.
+	\end{itemize}
+	\item \code{\bslash{}renewcommand} \\
+	Digunakan untuk mendefinisikan ulang perintah yang sudah ada. Contohnya adalah, jika sudah ada perintah \code{\bslash{}sumber} yang menerima dua argumen, maka Anda bisa mendefinisikan ulang seperti ini: \code{\bslash{}renewcommand\{\bslash{}sumber\}\{\bslash{}textbf\{\#1: \bslash{}texttt\{\#2\}\}\}}. Sehingga, ketika perintah \code{\bslash{}sumber\{Disadur dari\}\{Cimung\}} dipanggil, yang akan muncul adalah \bo{Disadur dari: \code{Cimung}}.
+\end{itemize}
+
 Membuat perintah baru sebaiknya dilakukan pada berkas \code{uithesis.sty}.
 Berkas \code{uithesis.sty} adalah berkas khusus pengatur \f{styling} untuk tugas akhir ini.
 Berkas itu berisikan semua konfigurasi yang dibutuhkan untuk membuat dokumen \latex~ini menjadi sesuai dengan Peraturan Rektor, termasuk perintah-perintah baru.
 
 Jika perubahan ini dirasa penting untuk disertakan dalam template, silakan lakukan \f{fork} repositori Git template ini di \url{https://gitlab.com/ichlaffterlalu/latex-skripsi-ui-2017}, lalu lakukan \f{merge request} perubahan Anda terhadap \f{branch} \code{master}.
+
+
+%-----------------------------------------------------------------------------%
+\section{Pengaturan \f{Header} dan \f{Footer}}
+\label{sec:fancyhdr}
+%-----------------------------------------------------------------------------%
+\f{Template} ini menggunakan \f{library} \code{fancyhdr} untuk mengatur \f{header} dan \f{footer}. Konfigurasi \code{fancyhdr} pada \f{template} ini terdiri dari empat profil, yaitu \code{empty}, \code{plain}, \code{first-pages}, dan \code{standard}. Profil \code{standard} merupakan profil standar untuk konten laporan, yaitu tulisan "Universitas Indonesia" di sisi kanan \f{footer}. Profil \code{first-pages} merupakan profil untuk konten depan laporan seperti abstrak, kata pengantar, dsb., yang mengharuskan nomor halaman di tengah \f{footer}. Profil \code{plain} dalam \f{template} ini akan selalu digunakan untuk halaman pertama pada setiap bab atau bagian (termasuk daftar isi, abstrak, dsb.), apapun jenis profil yang seharusnya digunakan pada bagian tersebut. Sedangkan, profil \code{empty} artinya tidak ada \f{header} dan \f{footer} sama sekali.
+
+Konfigurasi profil dapat dilakukan dengan menggunakan \code{\bslash{}pagestyle\{nama-profil\}}. Konfigurasi berlaku seterusnya dari halaman tersebut hingga ada konfigurasi profil berikutnya. Sedangkan untuk mendefinisikan sendiri isi \f{header} dan \f{footer} dapat dilakukan dengan perintah \code{\bslash{}fancyhead[....]\{....\}} atau \code{\bslash{}fancyfoot[....]\{....\}}. Contohnya, \code{\bslash{}fancyhead[LO,RE]\{Meong\}} akan memberikan teks "Meong" di sisi kiri \f{header} untuk halaman ganjil (\f{odd}), dan di sisi kanan \f{header} untuk halaman genap (\f{even}).
+
+
+%-----------------------------------------------------------------------------%
+\section{Konfigurasi Satu Halaman per Lembar}
+\label{sec:onePerSheet}
+%-----------------------------------------------------------------------------%
+Peraturan laporan tugas akhir di Universitas Indonesia tahun 2017 mensyaratkan pencetakan bolak-balik. Secara \f{default}, \f{template} ini juga sudah menggunakan konfigurasi bolak-balik. Namun, jika diperlukan, Anda dapat mengatur \f{header} dan \f{footer} ketika konfigurasi pencetakannya satu halaman per lembar. Penomoran halaman akan selalu dilakukan di bagian tengah pada \f{footer}. Oleh karena itu, dari bagian abstrak sampai akhir konten, cukup gunakan profil \code{first-page}. Kemudian, atur profil \code{plain} agar sama dengan profil \code{first-page}. Kemudian, hapus semua perintah \code{\bslash{}clearchapter}, \code{\bslash{}setoddevenheader}, \code{\bslash{}naiveoddclearchapter}, dan \code{\bslash{}naiveevenclearchapter} dalam berkas \code{thesis.tex}.
+
+
+%-----------------------------------------------------------------------------%
+\subsection{Konfigurasi untuk Submisi ke UI-ana}
+\label{sec:uiana}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+Berdasarkan peraturan terkini terkait pengumpulan naskah digital ke UI-ana, \f{header} dan \f{footer} perlu dihapus. Berikut ini adalah tahapan untuk mengatur hal tersebut:
+\begin{enumerate}
+	\item Buka berkas \code{uithesis.sty}, lalu cari semua baris perintah \code{\bslash{}fancypagestyle}. Hapus semua baris perintah tersebut.
+	\item Ubah isi dari perintah \code{\bslash{}setoddevenheader} menjadi \code{\bslash{}fancypagestyle\{empty\}}.
+	\item Di bagian akhir berkas \code{uithesis.sty}, tambahkan kode sebagai berikut:\\
+	\code{\bslash{}fancypagestyle\{plain\}\{\bslash{}fancyhead[L]\{\} \bslash{}fancyhead[C]\{\} \bslash{}fancyhead[R]\{\} \bslash{}fancyfoot[L]\{\} \bslash{}fancyfoot[C]\{\} \bslash{}fancyfoot[R]\{\}\}}
+    \item Buka berkas \code{thesis.sty}, lalu cari semua baris perintah \code{\bslash{}fancypagestyle} dan  \code{\bslash{}pagestyle\{....\}}. Hapus semua baris perintah tersebut.
+\end{enumerate}

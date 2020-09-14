@@ -1,5 +1,6 @@
 %-----------------------------------------------------------------------------%
 \chapter{\babEmpat}
+\label{bab:4}
 %-----------------------------------------------------------------------------%
 Bab ini menjelaskan tentang struktur dari \f{template} tugas akhir ini.
 Dengan memahami struktur \f{template}, pekerjaan Anda akan menjadi lebih terarah karena Anda tahu di mana Anda harus melakukan sesuatu.
@@ -9,6 +10,7 @@ Dengan memahami struktur \f{template}, pekerjaan Anda akan menjadi lebih terarah
 
 %-----------------------------------------------------------------------------%
 \section{thesis.tex}
+\label{sec:thesis-tex}
 %-----------------------------------------------------------------------------%
 Berkas ini berisi seluruh berkas Latex yang dibaca, jadi bisa dikatakan sebagai berkas utama.
 Dari berkas ini kita dapat mengatur bab apa saja yang ingin kita tampilkan dalam dokumen.
@@ -16,13 +18,15 @@ Dari berkas ini kita dapat mengatur bab apa saja yang ingin kita tampilkan dalam
 
 %-----------------------------------------------------------------------------%
 \section{laporan\_setting.tex}
+\label{sec:laporan-setting-tex}
 %-----------------------------------------------------------------------------%
 Berkas ini berguna untuk mempermudah pembuatan beberapa template standar. 
-Anda diminta untuk menuliskan judul laporan, nama, npm, dan hal-hal lain yang dibutuhkan untuk pembuatan template. 
+Anda diminta untuk menuliskan judul laporan, nama, NPM, dan hal-hal lain yang dibutuhkan untuk pembuatan template. 
 
 
 %-----------------------------------------------------------------------------%
 \section{istilah.tex}
+\label{sec:istilah-tex}
 %-----------------------------------------------------------------------------%
 Berkas istilah digunakan untuk mencatat istilah-istilah yang digunakan. 
 Fungsinya hanya untuk memudahkan penulisan.
@@ -32,6 +36,7 @@ Dengan menjadikan kata-kata tersebut sebagai sebuah perintah \latex~tentu akan m
 
 %-----------------------------------------------------------------------------%
 \section{hype.indonesia.tex}
+\label{sec:hype-indonesia-tex}
 %-----------------------------------------------------------------------------%
 Berkas ini berisi cara pemenggalan beberapa kata dalam bahasa Indonesia. 
 \latex~memiliki algoritma untuk memenggal kata-kata sendiri, namun untuk beberapa kasus algoritma ini memenggal dengan cara yang salah. 
@@ -39,17 +44,19 @@ Untuk memperbaiki pemenggalan yang salah inilah cara pemenggalan yang benar ditu
 
 
 %-----------------------------------------------------------------------------%
-\section{pustaka.tex}
+\section{pustaka.tex dan references.bib}
+\label{sec:pustaka-tex}
 %-----------------------------------------------------------------------------%
 Berkas pustaka.tex berisi seluruh daftar referensi yang digunakan dalam 
 laporan. 
-Anda bisa membuat model daftar referensi lain dengan menggunakan bibtex.
+Anda bisa membuat model daftar referensi lain dengan menggunakan BibTeX. Untuk menambahkan referensi dengan format BibTeX, Anda bisa mengisi berkas \code{references.bib}.
 Untuk mempelajari bibtex lebih lanjut, silahkan buka \url{http://www.bibtex.org/Format}. 
 Untuk merujuk pada salah satu referensi yang ada, gunakan perintah \bslash cite, e.g. \bslash cite\{book:sample\} yang akan akan memunculkan \cite{book:sample}.
 
 
 %-----------------------------------------------------------------------------%
 \section{bab[1 - 6].tex}
+\label{sec:bab-tex}
 %-----------------------------------------------------------------------------%
 Berkas ini berisi isi laporan yang Anda tulis. 
 Setiap nama berkas e.g. bab1.tex merepresentasikan bab dimana tulisan tersebut akan muncul. 

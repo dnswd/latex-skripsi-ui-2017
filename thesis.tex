@@ -1,13 +1,15 @@
 %
-% Template Laporan Skripsi/Thesis
+% Template Laporan Skripsi/Thesis Universitas Indonesia
 %
-% @author  Andreas Febrian, Lia Sadita
-% @version 1.03
+% @author  Ichlasul Affan, Azhar Kurnia
+% @version 2.02
 %
 % Dokumen ini dibuat berdasarkan standar IEEE dalam membuat class untuk
 % LaTeX dan konfigurasi LaTeX yang digunakan Fahrurrozi Rahman ketika
-% membuat laporan skripsi. Konfigurasi yang lama telah disesuaikan dengan
-% aturan penulisan thesis yang dikeluarkan UI pada tahun 2008.
+% membuat laporan skripsi, yang kemudian diadaptasi oleh Andreas Febrian dan
+% Lia Sadita untuk template skripsi tahun 2010.
+% Konfigurasi template sebelumnya telah disesuaikan dengan
+% aturan penulisan thesis yang dikeluarkan UI pada tahun 2017.
 %
 
 %
@@ -18,6 +20,7 @@
 
 % Load konfigurasi LaTeX untuk tipe laporan thesis
 \usepackage{uithesis}
+%
 
 
 % Load konfigurasi khusus untuk laporan yang sedang dibuat
@@ -38,7 +41,6 @@
 %
 % Gunakan penomeran romawi
 \pagenumbering{roman}
-\pagestyle{first-pages}
 
 %
 % load halaman judul dalam
@@ -75,6 +77,20 @@
 \addChapter{\kataPengantar}
 \include{pengantar}
 %
+
+%
+% Untuk halaman pertama setiap chapter mulai dari abstrak, tetap berikan mark universitas.
+%
+\pagestyle{first-pages}
+\fancypagestyle{plain}{
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+	\fancyfoot[L]{}
+	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{\footnotesize \fontfamily{phv} \selectfont \bo{Universitas Indonesia}}
+}
+
 %
 \addChapter{ABSTRAK}
 \include{abstrak}

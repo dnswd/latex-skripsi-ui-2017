@@ -1,8 +1,9 @@
 %
-% Konfigurasi LaTeX untuk laporan thesis/ta/skripsi/sp sesuai dengan aturan UI
+% Konfigurasi LaTeX untuk laporan thesis/ta/skripsi/sp sesuai dengan aturan UI tahun 2017
 %
 % @author  Andreas Febrian
-% @version 1.03
+% @version 2.0.2
+% @edit by Ichlasul Affan
 %
 % Terima kasih untuk:
 % 1. Lia Sadita
@@ -16,6 +17,8 @@
 % - konfigurasi LaTeX untuk proceeding ICACSIS 2009 yang dibuat oleh Andreas
 %	Febrian dan Andre Tampubolon
 % - Laporan Thesis yang dibuat Andreas Febrian
+% - Laporan Skripsi yang dibuat Ichlasul Affan
+% - Laporan Skripsi yang dibuat Azhar Kurnia
 %
 
 
@@ -192,6 +195,16 @@
 \strictpagecheck
 \usepackage{everyshi}
 
+%
+% Digunakan untuk membedakan sitasi dalam paragraf dan luar paragraf pada format sitasi APA.
+%
+\usepackage{apacite}
+\usepackage{natbib}
+
+%
+% Digunakan untuk hyphenation
+%
+\usepackage[english, indonesian]{babel}
 
 %-----------------------------------------------------------------------------%
 % Konfigurasi
@@ -250,8 +263,12 @@
 }
 
 \fancypagestyle{first-pages}{
-	\fancyfoot[R]{\footnotesize \fontfamily{phv} \selectfont \bo{Universitas Indonesia}}
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+	\fancyfoot[L]{}
 	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{\footnotesize \fontfamily{phv} \selectfont \bo{Universitas Indonesia}}
 }
 
 %
@@ -265,7 +282,7 @@
 % Perintah Baru
 %-----------------------------------------------------------------------------%
 %
-% Perintah untuk membuat huruf tecetak miring. (alias)
+% Perintah untuk membuat huruf tercetak miring. (alias)
 \newcommand{\f}[1]{\textit{#1}}
 %
 % Perintah untuk huruf tercetak tebal dan miring.
@@ -315,10 +332,10 @@
 % Tambahkan berkas PDF ke dalam laporan.
 \newcommand{\putpdf}[1]{\includepdf[pages=-]{#1.pdf}}
 %
-% Perintah untuk membuat perintah/variabel baru.
+% Perintah untuk membuat variabel baru.
 \newcommand{\var}[2]{\newcommand{#1}{#2}}
 %
-% Perintah untuk membuat perintah/variabel baru. Teks yang ditulis dalam
+% Perintah untuk membuat variabel baru. Teks yang ditulis dalam
 % perintah ini akan diformat ulang menggunakan huruf kapital.
 \newcommand{\Var}[2]{\newcommand{#1}{\uppercase{#2}}}
 %
@@ -427,6 +444,12 @@
 \renewcommand{\lstlistingname}{\bo{Kode}}
 %
 %
+\newcommand{\bab}{Bab}
+%
+%
+\newcommand{\sect}{Subbab}
+%
+%
 \newcommand{\pic}{Gambar}
 %
 %
@@ -437,3 +460,6 @@
 %
 %
 \newcommand{\lst}{Kode}
+%
+%
+\newcommand{\apdx}{Lampiran}
