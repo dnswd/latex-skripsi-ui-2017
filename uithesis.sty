@@ -125,6 +125,11 @@
 \usepackage{longtable}
 
 %
+% Untuk support landscape beberapa halaman yang diperlukan.
+%
+\usepackage{lscape}
+
+%
 % Membuat seluruh tulisan menjadi Times New Roman.
 %
 \usepackage{pslatex}
@@ -187,6 +192,7 @@
 		tabsize=2
 	}
     \lstset{style=uistyle}
+
 %
 % Digunakan untuk menambahkan sesuatu di akhir halaman
 %
@@ -406,11 +412,71 @@
 %
 % Untuk membuat daftar sumber gambar
 \newcommand*{\captionsource}[2]{
-	\caption[{#1}]{#1}\par
-	\footnotesize\textbf{Sumber:} #2\par
+	\caption[{#1}]{#1\par
+	\footnotesize\textbf{Sumber:} #2\par}
 }
 
 
+%-----------------------------------------------------------------------------%
+% Daftar Konten Custom (contoh: Daftar Aturan Transformasi Kode)
+% request by: Hafiyyan Sayyid Fadhlillah
+% based on:
+% - https://tex.stackexchange.com/questions/61086/how-to-create-my-own-list-of-things
+% - https://tex.stackexchange.com/questions/71162/reset-section-numbering-between
+%-----------------------------------------------------------------------------%
+%
+% tocloft: To define your own list of things
+%
+\usepackage[titles]{tocloft}
+
+%
+% Definisi jenis object custom beserta perintahnya.
+% \listof....name = Nama daftar isi untuk jenis objek tersebut
+% \listof.... = Daftar isi untuk jenis objek tersebut
+% \.... = Nama jenis objek tersebut
+% \caption.... = Caption untuk jenis objek tersebut
+% \captionsource.... = Caption dengan sumber untuk jenis objek tersebut
+%
+
+%
+% Sample: Sesuatu (thing)
+% Berkas auxiliary: thesis.loth -> mohon masukkan di gitignore.
+% Uncomment to use this sample.
+% Untuk menggunakan dengan istilah lain, cukup ganti frasa "Sesuatu", "thing", dan "loth".
+% Misal: Aturan Transformasi (transformationrule,thesis.lotr): "Sesuatu" -> "Aturan Transformasi", "thing" -> "transformationrule", "loth" -> "lotr"
+%
+
+%\newcommand{\thing}{Sesuatu}
+%\newcommand{\listofthingname}{Daftar \thing}
+%\newlistof{thing}{loth}{\listofthingname}
+%\newcommand{\captionthing}[1]
+%{%
+%	\refstepcounter{thing}
+%	\caption*{\textbf{\thing~\thechapter.\thething:} #1}
+%	\addcontentsline{loth}{thing}
+%	{\protect\numberline{\thechapter.\thething}{\ignorespaces #1}}\par
+%}
+%\newcommand{\captionsourcething}[2]
+%{%
+%	\refstepcounter{thing}
+%	\caption*{\textbf{\thing~\thechapter.\thething:} #1\par
+%		\footnotesize\textbf{Sumber:} #2\par}
+%	\addcontentsline{loth}{thing}
+%	{\protect\numberline{\thechapter.\thething}{\ignorespaces #1}}\par
+%}
+
+%
+% Daftar Lampiran
+%
+\newcommand{\apdx}{Lampiran}
+\newcommand{\listofappendixname}{Daftar \apdx}
+\newlistof{appendix}{lox}{\listofappendixname}
+\newcommand{\addappendix}[1]
+{%
+\refstepcounter{appendix}
+\addcontentsline{lox}{appendix}
+{\apdx~\protect\numberline{\theappendix.}{\ignorespaces #1}}\par
+}
 
 %-----------------------------------------------------------------------------%
 % Ubah Istilah Penulisan
@@ -418,6 +484,7 @@
 %
 % Beberapa istilah yang tepat untuk digunakan dalam laporan.
 \renewcommand{\bibname}{Daftar Referensi}
+\renewcommand{\refname}{Daftar Referensi}
 %
 %
 \renewcommand{\contentsname}{Daftar Isi}
@@ -460,6 +527,3 @@
 %
 %
 \newcommand{\lst}{Kode}
-%
-%
-\newcommand{\apdx}{Lampiran}

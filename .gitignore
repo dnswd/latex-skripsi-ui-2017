@@ -1,10 +1,12 @@
 **/*.aux
 **/*.bbl
 **/*.blg
+**/*.loe
 **/*.lof
 **/*.log
 **/*.lol
 **/*.lot
+**/*.lox
 **/*.out
 **/*.toc
 **/*.synctex.gz

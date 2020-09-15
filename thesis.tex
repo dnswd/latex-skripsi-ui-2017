@@ -122,6 +122,30 @@
 \lstlistoflistings
 \onehalfspacing
 
+%
+% Daftar Isi yang Didefinisikan Sendiri (Custom)
+% Definisi jenis objek baru dapat dilakukan di uithesis.sty
+% Uncomment to use.
+%
+
+%\phantomsection %hack to make them clickable
+%\addcontentsline{toc}{chapter}{\listofthingname}
+%\singlespacing
+%\listofthing
+%\onehalfspacing
+%\clearpage
+
+%
+% Daftar Lampiran
+% Comment to disable.
+%
+\phantomsection %hack to make them clickable
+\addcontentsline{toc}{chapter}{\listofappendixname}
+\singlespacing
+\listofappendix
+\onehalfspacing
+\clearpage
+
 % Jika penomoran romawi selesai di ganjil
 \naiveoddclearchapter
 % Jika penomoran romawi selesai di genap
@@ -158,9 +182,12 @@
 % Lampiran
 %
 \begin{appendix}
+	\newcounter{pagetemp}
+	\setcounter{pagetemp}{\thepage}
 	\include{markLampiran}
 	\clearchapter
-	\setcounter{page}{2}
+	\setcounter{page}{\thepagetemp}
+	\stepcounter{page}
 	\include{lampiran}
 \end{appendix}
 

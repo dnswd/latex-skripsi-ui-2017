@@ -9,14 +9,14 @@
 %%%             Jan. 8th Modified package name base date option
 %%%             Jan. 22th Modified FmN and FmTi for error in book.cls
 %%%                  \MakeUppercase{#}->{\MakeUppercase#}
-%%%             Apr. 6th Modified Lenny option to prevent undesired 
+%%%             Apr. 6th Modified Lenny option to prevent undesired
 %%%                  skip of line.
 %%%             Nov. 8th Fixed \@chapapp for AMS
 %%%
 %%% Revision    1.2 (1998)
 %%%
 %%%             Feb. 11th Fixed appendix problem related to Bjarne
-%%%             Aug. 11th Fixed problem related to 11pt and 12pt 
+%%%             Aug. 11th Fixed problem related to 11pt and 12pt
 %%%                  suggested by Tomas Lundberg. THANKS!
 %%%
 %%% Revision    1.3 (2004)
@@ -47,7 +47,7 @@
 %%%             Francois (2007-01-05).
 %%%             Reverted to \MakeUppercase{#} see rev 1.1, solved
 %%%             problem with MakeUppercase and MakeLowercase pointed
-%%%             out by Marco Feuerstein  (2007-06-06) 
+%%%             out by Marco Feuerstein  (2007-06-06)
 
 
 %%% Last modified   Jul. 2007
@@ -234,7 +234,7 @@
     \mghrulefill{\RW}\par\nobreak%
     \vskip \pyy}%
     \vskip 20\p@}
- 
+
 
   \renewcommand{\DOTI}[1]{%
     \raggedright
@@ -251,7 +251,7 @@
 
 \DeclareOption{PetersLenny}{%
 
-% five new lengths 
+% five new lengths
 \newlength{\bl}                           %  bottom left   : orig \space
 \setlength{\bl}{6pt}
 \newcommand{\BL}[1]{\setlength{\bl}{#1}}
@@ -261,10 +261,10 @@
 \newlength{\tl}                           %  top left      : orig 2pt
 \setlength{\tl}{2pt}
 \newcommand{\TL}[1]{\setlength{\tl}{#1}}
-\newlength{\trr}                           %  top right      :orig 1pt 
+\newlength{\trr}                           %  top right      :orig 1pt
 \setlength{\trr}{1pt}
 \newcommand{\TR}[1]{\setlength{\trr}{#1}}
-\newlength{\blrule}                           %  top right      :orig 1pt 
+\newlength{\blrule}                           %  top right      :orig 1pt
 \setlength{\trr}{0pt}
 \newcommand{\BLrule}[1]{\setlength{\blrule}{#1}}
 
@@ -347,21 +347,21 @@
     \parbox[b]{\textwidth}{%
     \rule[\py]{\RW}{\myhi}%
     \hskip -\RW%
-    \rule[\pyy]{\px}{\RW}% 
+    \rule[\pyy]{\px}{\RW}%
     \hskip -\px%
     \raggedright%
-    \CNV\FmN{\@chapapp}\rule{\blrule}{\RW}\hskip\bl\CNoV\thechapter%MOD 
+    \CNV\FmN{\@chapapp}\rule{\blrule}{\RW}\hskip\bl\CNoV\thechapter%MOD
 %    \CNV\FmN{\@chapapp}\space\CNoV\thechapter                     %ORIGINAL
     \hskip\br%                           %MOD 1pt to \br
-    \mghrulefill{\RW}% 
-    \rule{\RW}{\pyy}\par\nobreak% 
+    \mghrulefill{\RW}%
+    \rule{\RW}{\pyy}\par\nobreak%
     \vskip -\baselineskip%
     \vskip -\pyy%
     \hskip \mylen%
     \mghrulefill{\RW}\par\nobreak%
     \vskip \pyy}%
     \vskip 20\p@}
- 
+
 
   \renewcommand{\DOTI}[1]{%
     \raggedright
@@ -398,7 +398,7 @@
     \kern-\py\raise20pt%
     \hbox{\color[gray]{.5}\CNoV\thechapter}\\%
   }
-  
+
   \renewcommand{\DOTI}[1]{%
     \nointerlineskip\raggedright%
     \fboxsep=\myhi%
@@ -435,7 +435,7 @@
     \addtolength{\py}{\myhi}
     \setlength{\pyy}{\py}
     \addtolength{\pyy}{-1\RW}
-     
+
     \raggedright
     \CNV\FmN{\@chapapp}\space\CNoV\thechapter
     \hskip 3pt\mghrulefill{\RW}\rule[-1\pyy]{2\RW}{\py}\par\nobreak}
@@ -482,7 +482,7 @@
 
 \DeclareOption{Conny}{%
   \ChNameUpperCase
-  \ChTitleUpperCase  
+  \ChTitleUpperCase
   \ChNameVar{\centering\Huge\rm\bfseries}
   \ChNumVar{\Huge}
   \ChTitleVar{\centering\Huge\rm}
@@ -507,12 +507,12 @@
     \vskip 60\p@
     }
   }
-  
+
   %%%%%%% CONNY DEF- revised
 
 \DeclareOption{ConnyRevised}{%
   \ChNameUpperCase
-  \ChTitleUpperCase  
+  \ChTitleUpperCase
   \ChNameVar{\centering\large\rm\bfseries}
   \ChNumVar{\large\bfseries}
   \ChTitleVar{\centering\large\rm\bfseries}
@@ -541,7 +541,7 @@
 \DeclareOption{Rejne}{%
 
   \ChNameUpperCase
-  \ChTitleUpperCase  
+  \ChTitleUpperCase
   \ChNameVar{\centering\Large\rm}
   \ChNumVar{\Huge}
   \ChTitleVar{\centering\Huge\rm}
@@ -572,7 +572,7 @@
     \setlength{\fboxrule}{\RW}
     \setlength{\mylen}{\textwidth}
     \addtolength{\mylen}{-2\RW}
-    \fbox{\parbox{\mylen}{\vskip 2\baselineskip\CTV\FmTi{#1}\par\nobreak\vskip \baselineskip}} 
+    \fbox{\parbox{\mylen}{\vskip 2\baselineskip\CTV\FmTi{#1}\par\nobreak\vskip \baselineskip}}
     \setlength{\fboxrule}{\py}
     \vskip 60\p@
     }
@@ -583,7 +583,7 @@
 
 \DeclareOption{Bjarne}{%
   \ChNameUpperCase
-  \ChTitleUpperCase  
+  \ChTitleUpperCase
   \ChNameVar{\raggedleft\normalsize\rm}
   \ChNumVar{\raggedleft \bfseries\Large}
   \ChTitleVar{\raggedleft \Large\rm}
@@ -615,14 +615,14 @@
        \addtocounter{AlphaDecCnt}{-1}
        \addtocounter{AlphaCnt}{10}
      \fi
-     
-     
+
+
     \ifcase\number\theAlphaDecCnt\or TEN\or TWENTY\or THIRTY\or
     FORTY\or FIFTY\or SIXTY\or SEVENTY\or EIGHTY\or NINETY\fi
     }
   \newcommand{\TheAlphaChapter}{%
-    
-    \ifinapp 
+
+    \ifinapp
       \thechapter
     \else
       \setcounter{AlphaCnt}{\c@chapter}
@@ -632,10 +632,10 @@
         \AlphaDecNo\AlphaNo
       \fi
     \fi
-    }  
+    }
   \renewcommand{\DOCH}{%
     \mghrulefill{\RW}\par\nobreak
-    \CNV\FmN{\@chapapp}\par\nobreak 
+    \CNV\FmN{\@chapapp}\par\nobreak
     \CNoV\TheAlphaChapter\par\nobreak
     \vskip -1\baselineskip\vskip 5pt\mghrulefill{\RW}\par\nobreak
     \vskip 20\p@
@@ -657,7 +657,7 @@
 \ProcessOptions* \relax
 
 \ifusecolor
-  \RequirePackage{color} 
+  \RequirePackage{color}
 \fi
 \def\@makechapterhead#1{%
   \vspace*{10\p@}%
@@ -707,5 +707,3 @@
   }}
 
 \endinput
-
-

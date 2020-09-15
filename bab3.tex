@@ -19,17 +19,17 @@ Di \latex, kita dapat membuat persamaan matematis baik yang terdiri dari satu pe
 %-----------------------------------------------------------------------------%
 
 \noindent \begin{align}\label{equ:garis}
-	\cfrac{y - y_{1}}{y_{2} - y_{1}} = 
+	\cfrac{y - y_{1}}{y_{2} - y_{1}} =
 	\cfrac{x - x_{1}}{x_{2} - x_{1}}
 \end{align}
 
-\equ~\ref{equ:garis} diatas adalah persamaan garis. 
-\equ~\ref{equ:garis} dan \ref{equ:bola} sama-sama dibuat dengan perintah \code{\bslash{}align}. 
-Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan. 
+\equ~\ref{equ:garis} diatas adalah persamaan garis.
+\equ~\ref{equ:garis} dan \ref{equ:bola} sama-sama dibuat dengan perintah \code{\bslash{}align}.
+Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan.
 
 \noindent \begin{align}\label{equ:bola}
-	\underbrace{|\overline{ab}|}_{\text{pada bola $|\overline{ab}| = r$}} 
-	= \sqrt[2]{(x_{b} - x_{a})^{2} + (y_{b} - y_{a})^{2} + 
+	\underbrace{|\overline{ab}|}_{\text{pada bola $|\overline{ab}| = r$}}
+	= \sqrt[2]{(x_{b} - x_{a})^{2} + (y_{b} - y_{a})^{2} +
 		\vert\vert(z_{b} - z_{a})^{2}}
 \end{align}
 
@@ -37,10 +37,10 @@ Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan.
 \subsection{Lebih dari Satu Persamaan}
 \label{sec:multiEqu}
 %-----------------------------------------------------------------------------%
-\noindent \begin{align}\label{equ:matriks}	
-	|\overline{a} * \overline{b}| &= |\overline{a}| |\overline{b}| \sin\theta 
+\noindent \begin{align}\label{equ:matriks}
+	|\overline{a} * \overline{b}| &= |\overline{a}| |\overline{b}| \sin\theta
 	\\[0.2cm]
-	\overline{a} * \overline{b} &=  
+	\overline{a} * \overline{b} &=
 	\begin{array}{| c c c |}
 		\hat{i} & x_{1} & x_{2} \\
 		\hat{j} & y_{1} & y_{2} \\
@@ -50,13 +50,13 @@ Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan.
 	\begin{array}{ | c c | }
 		y_{1} & y_{2} \\
 		z_{1} & z_{2} \\
-	\end{array} 
+	\end{array}
 	+ \hat{j} \,
 	\begin{array}{ | c c | }
 		z_{1} & z_{2} \\
 		x_{1} & x_{2} \\
-	\end{array} 
-	+ \hat{k} \,	
+	\end{array}
+	+ \hat{k} \,
 	\begin{array}{ | c c | }
 		x_{1} & x_{2} \\
 		y_{1} & y_{2} \\
@@ -64,16 +64,16 @@ Perintah ini juga dapat digunakan untuk menulis lebih dari satu persamaan.
 	\nonumber
 \end{align}
 
-Pada \equ~\ref{equ:matriks} dapat dilihat beberapa baris menjadi satu bagian 
-dari \equ~\ref{equ:matriks}. 
+Pada \equ~\ref{equ:matriks} dapat dilihat beberapa baris menjadi satu bagian
+dari \equ~\ref{equ:matriks}.
 Sedangkan dibawah ini dapat dilihat bahwa dengan cara yang sama, \equ~
-\ref{equ:gabungan1}, \ref{equ:gabungan2}, dan \ref{equ:gabungan3} memiliki nomor 
-persamaannya masing-masing. 
+\ref{equ:gabungan1}, \ref{equ:gabungan2}, dan \ref{equ:gabungan3} memiliki nomor
+persamaannya masing-masing.
 
-\noindent \begin{align}\label{equ:gabungan1}	
+\noindent \begin{align}\label{equ:gabungan1}
 	\int_{a}^{b} f(x)\, dx + \int_{b}^{c} f(x) \, dx = \int_{a}^{c} f(x) \, dx
 	\\\label{equ:gabungan2}
-	\lim_{x \to \infty} \frac{f(x)}{g(x)} = 0 \hspace{1cm} 
+	\lim_{x \to \infty} \frac{f(x)}{g(x)} = 0 \hspace{1cm}
 	\text{jika pangkat $f(x)$ $<$ pangkat $g(x)$} \\\label{equ:gabungan3}
 	a^{m^{a \, ^{n}\log b }} = b^{\frac{m}{n}}
 \end{align}
@@ -84,10 +84,10 @@ persamaannya masing-masing.
 \section{Mengubah Tampilan Teks}
 \label{sec:textFormatting}
 %-----------------------------------------------------------------------------%
-Beberapa perintah yang dapat digunakan untuk mengubah tampilan adalah: 
+Beberapa perintah yang dapat digunakan untuk mengubah tampilan adalah:
 \begin{itemize}
 	\item \bslash{}f \\
-	Merupakan alias untuk perintah \bslash textit, contoh 
+	Merupakan alias untuk perintah \bslash textit, contoh
 	\f{contoh hasil tulisan}.
 	\item \bslash{}bi \\
 	\bi{Contoh hasil tulisan}.
@@ -97,7 +97,7 @@ Beberapa perintah yang dapat digunakan untuk mengubah tampilan adalah:
 	\m{Contoh hasil tulisan}.
 	\item \bslash{}mc \\
 	\mc{Contoh hasil tulisan}.
-	\item \bslash{}code \\ 
+	\item \bslash{}code \\
 	\code{Contoh hasil tulisan}.
 \end{itemize}
 
@@ -122,6 +122,91 @@ Satu contoh lagi, sebuah kode bahasa pemrograman Python:
 Anda juga bisa menambahkan \f{caption} untuk memberikan ringkasan tentang kode tersebut.
 Namun, jangan lupa untuk menjelaskan kode melalui paragraf, terutama pada bagian-bagian yang perlu penjelasan lebih.
 Penting bagi pembaca untuk memahami mengapa kode tersebut disertakan dalam laporan tugas akhir Anda.
+
+
+%-----------------------------------------------------------------------------%
+\section{Memberikan Catatan}
+\label{sec:note}
+%-----------------------------------------------------------------------------%
+Ada dua perintah untuk memberikan catatan penulisan dalam dokumen yang Anda kerjakan, yaitu:
+\begin{itemize}
+	\item \code{\bslash{}todo} \\
+	Contoh: \\ \todo{Contoh bentuk todo.}
+	\item \code{\bslash{}todoCite} \\
+	Contoh: \todoCite
+\end{itemize}
+
+
+%-----------------------------------------------------------------------------%
+\section{Menambahkan Tabel/Gambar Panjang secara Lanskap}
+\label{sec:landscape}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+Ketika Anda ingin memasukkan tabel atau gambar yang ukurannya cukup panjang ke samping, Anda diperkenankan untuk menyajikan konten tersebut dengan orientasi \f{landscape}. Caranya cukup mudah, yaitu dengan menambahkan \code{\bslash{}begin\{landscape\}} di sebelum konten dan \code{\bslash{}end\{landscape\}} di setelah konten. Format ini kompatibel juga dengan \code{longtable} untuk tabel yang panjang dan lebar. Contoh penggunaannya adalah pada \tab~\ref{tab:longTableLandscape}.
+
+\begin{landscape}
+\begin{footnotesize}
+\begin{longtable}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | }
+	\captionsource{Contoh Tabel: Data Kasus COVID-19 di Asia, 14 September 2020}{\url{https://worldometers.info/coronavirus}}
+	\label{tab:longTableLandscape} \\
+	\hline
+	\multirow{2}{*}{\#} & \multirow{2}{*}{Country, Other} & \multicolumn{2}{|c|}{Cases} & \multicolumn{2}{|c|}{Deaths} & \multicolumn{2}{|c|}{Recovered} & \multirow{2}{*}{Active} & \multirow{2}{*}{Critical} & \multicolumn{3}{|c|}{.../1M pop} & \multirow{2}{*}{Population} \\
+	& & Total & New & Total & New & Total & New & & & Tot Cases & Deaths & Tests & \\ \hline
+	\endfirsthead % batas akhir header yang akan muncul di halaman pertama
+	\hline
+	\multirow{2}{*}{\#} & \multirow{2}{*}{Country, Other} & \multicolumn{2}{|c|}{Cases} & \multicolumn{2}{|c|}{Deaths} & \multicolumn{2}{|c|}{Recovered} & \multirow{2}{*}{Active} & \multirow{2}{*}{Critical} & \multicolumn{3}{|c|}{.../1M pop} & \multirow{2}{*}{Population} \\
+	& & Total & New & Total & New & Total & New & & & Tot Cases & Deaths & Tests & \\ \hline
+	\endhead % batas akhir header yang akan muncul di halaman berikutnya
+	1 & India & 4850887 & 5884 & 79784 & 30 & 3780107 & 3063 & 990996 & 8944 & 3508 & 58 & 41395 & 1382752528 \\ \hline
+	2 & Iran & 404648 & 2619 & 23313 & 156 & 348013 & 1771 & 33322 & 3798 & 4805 & 277 & 42594 & 84209239 \\ \hline
+	3 & Bangladesh & 339332 & 1812 & 4759 & 26 & 243155 & 2512 & 91418 &  & 2056 & 29 & 10560 & 165021623 \\ \hline
+	4 & Saudi Arabia & 325651 &  & 4268 &  & 302870 &  & 18513 & 1326 & 9325 & 122 & 163863 & 34922248 \\ \hline
+	5 & Pakistan & 302020 & 539 & 6383 & 4 & 289806 & 377 & 5831 & 551 & 1362 & 29 & 13388 & 221741906 \\ \hline
+	6 & Turkey & 291162 &  & 7056 &  & 258833 &  & 25273 & 1267 & 3445 & 83 & 100796 & 84522503 \\ \hline
+	7 & Iraq & 290309 &  & 8014 &  & 224705 &  & 57590 & 546 & 7186 & 198 & 46610 & 40399964 \\ \hline
+	8 & Philippines & 265888 & 4699 & 4630 & 259 & 207504 & 249 & 53754 & 1048 & 2420 & 42 & 28018 & 109874163 \\ \hline
+	9 & Indonesia & 221523 & 3141 & 8841 & 118 & 158405 & 3395 & 54277 &  & 808 & 32 & 9751 & 274108479 \\ \hline
+	10 & Israel & 156823 & 1219 & 1126 & 7 & 115128 & 130 & 40569 & 529 & 17050 & 122 & 297533 & 9197590 \\ \hline
+	11 & Qatar & 121740 &  & 205 &  & 118682 &  & 2853 & 37 & 43358 & 73 & 246111 & 2807805 \\ \hline
+	12 & Kazakhstan & 106855 & 52 & 1634 &  & 100627 & 12 & 4594 & 221 & 5677 & 87 & 136625 & 18821980 \\ \hline
+	13 & Kuwait & 94764 &  & 560 &  & 84995 &  & 9209 & 94 & 22124 & 131 & 157765 & 4283219 \\ \hline
+	14 & Oman & 90222 & 476 & 790 & 10 & 83928 & 157 & 5504 & 171 & 17580 & 154 & 60252 & 5131974 \\ \hline
+	15 & China & 85194 & 10 & 4634 &  & 80415 & 16 & 145 & 2 & 59 & 3 & 111163 & 1439323776 \\ \hline
+	16 & UAE & 79489 &  & 399 &  & 69451 &  & 9639 &  & 8017 & 40 & 819752 & 9914483 \\ \hline
+	17 & Japan & 75218 &  & 1439 &  & 66899 &  & 6880 & 180 & 595 & 11 & 13576 & 126395837 \\ \hline
+	18 & Bahrain & 60307 &  & 212 &  & 53681 &  & 6414 & 29 & 35209 & 124 & 731472 & 1712845 \\ \hline
+	19 & Singapore & 57454 & 48 & 27 &  & 56764 &  & 663 &  & 9805 & 5 & 389287 & 5859703 \\ \hline
+	20 & Nepal & 54159 &  & 345 &  & 38697 &  & 15117 &  & 1852 & 12 & 28745 & 29240966 \\ \hline
+	21 & Uzbekistan & 47620 & 333 & 394 & 4 & 44002 & 136 & 3224 & 246 & 1419 & 12 & 41050 & 33566409 \\ \hline
+	22 & Armenia & 45969 & 107 & 919 & 3 & 41693 & 34 & 3357 &  & 15507 & 310 & 81279 & 2964385 \\ \hline
+	23 & Kyrgyzstan & 44928 & 47 & 1063 &  & 41023 & 101 & 2842 & 24 & 6864 & 162 & 40900 & 6545664 \\ \hline
+	24 & Afghanistan & 38772 & 56 & 1425 & 5 & 32073 & 435 & 5274 & 93 & 992 & 36 & 2741 & 39100693 \\ \hline
+	25 & Azerbaijan & 38327 &  & 562 &  & 35756 &  & 2009 &  & 3773 & 55 & 98716 & 10157722 \\ \hline
+	26 & Palestine & 30574 &  & 221 &  & 20082 &  & 10271 &  & 5966 & 43 & 66248 & 5124685 \\ \hline
+	27 & Lebanon & 24310 &  & 241 &  & 8334 &  & 15735 & 113 & 3565 & 35 & 94995 & 6819062 \\ \hline
+	28 & S. Korea & 22285 & 109 & 363 & 5 & 18489 & 263 & 3433 & 157 & 435 & 7 & 41948 & 51278298 \\ \hline
+	29 & Malaysia & 9946 & 31 & 128 &  & 9203 & 7 & 615 & 11 & 307 & 4 & 42286 & 32449426 \\ \hline
+	30 & Maldives & 9173 &  & 32 &  & 7326 &  & 1815 & 12 & 16911 & 59 & 240315 & 542438 \\ \hline
+	31 & Tajikistan & 9049 &  & 72 &  & 7816 &  & 1161 &  & 945 & 8 &  & 9579764 \\ \hline
+	32 & Syria & 3540 &  & 155 &  & 842 &  & 2543 &  & 201 & 9 &  & 17583867 \\ \hline
+	33 & Thailand & 3475 & 2 & 58 &  & 3312 &  & 105 & 1 & 50 & 0.8 & 10728 & 69836028 \\ \hline
+	34 & Jordan & 3314 &  & 24 &  & 2206 &  & 1084 & 13 & 324 & 2 & 95814 & 10223646 \\ \hline
+	35 & Sri Lanka & 3234 &  & 12 &  & 3005 & 9 & 217 &  & 151 & 0.6 & 11844 & 21431662 \\ \hline
+	36 & Myanmar & 3015 & 83 & 24 & 4 & 699 &  & 2292 &  & 55 & 0.4 & 3518 & 54484197 \\ \hline
+	37 & Georgia & 2392 & 165 & 19 &  & 1369 &  & 1004 &  & 600 & 5 & 118041 & 3987576 \\ \hline
+	38 & Yemen & 2011 &  & 583 &  & 1212 &  & 216 &  & 67 & 19 &  & 29955256 \\ \hline
+	39 & Cyprus & 1526 &  & 22 &  & 1281 &  & 223 & 2 & 1262 & 18 & 274810 & 1209149 \\ \hline
+	40 & Vietnam & 1063 &  & 35 &  & 918 &  & 110 &  & 11 & 0.4 & 10348 & 97516308 \\ \hline
+	41 & Taiwan & 499 & 1 & 7 &  & 476 & 1 & 16 &  & 21 & 0.3 & 3770 & 23825661 \\ \hline
+	42 & Mongolia & 311 &  &  &  & 300 & 2 & 11 & 1 & 95 &  & 18720 & 3288830 \\ \hline
+	43 & Cambodia & 275 &  &  &  & 274 &  & 1 &  & 16 &  & 6926 & 16765404 \\ \hline
+	44 & Bhutan & 245 & 1 &  &  & 161 & 2 & 84 &  & 317 &  & 151934 & 773324 \\ \hline
+	45 & Brunei & 145 &  & 3 &  & 139 &  & 3 &  & 331 & 7 & 124633 & 438328 \\ \hline
+	46 & Timor-Leste & 27 &  &  &  & 25 &  & 2 &  & 20 &  & 3888 & 1323423 \\ \hline
+	47 & Laos & 23 &  &  &  & 22 & 1 & 1 &  & 3 &  & 6138 & 7296716 \\ \hline
+\end{longtable}
+\end{footnotesize}
+\end{landscape}
 
 
 %-----------------------------------------------------------------------------%
@@ -157,19 +242,6 @@ Dengan menggunakan \latex, Anda tidak perlu lagi melakukan referensi ke suatu ba
 	Contoh: \code{\bslash{}lstinputlisting[language=Python, caption=Kode sampel Python, label=code:python]} \\
 	Cara referensi: \code{\bslash{}lst\~\bslash{}ref\{code:python\}} \\
 	Hasil referensi: \lst~\ref{code:python}.
-\end{itemize}
-
-
-%-----------------------------------------------------------------------------%
-\section{Memberikan Catatan}
-\label{sec:note}
-%-----------------------------------------------------------------------------%
-Ada dua perintah untuk memberikan catatan penulisan dalam dokumen yang Anda kerjakan, yaitu: 
-\begin{itemize}
-	\item \code{\bslash{}todo} \\
-	Contoh: \\ \todo{Contoh bentuk todo.}
-	\item \code{\bslash{}todoCite} \\ 
-	Contoh: \todoCite
 \end{itemize}
 
 
@@ -261,12 +333,46 @@ Sejak versi \f{template} 2.0.2, format referensi \f{default} telah diganti menja
 
 
 %-----------------------------------------------------------------------------%
-\section{Menambah Isi Daftar Isi}
+\section{Daftar Isi atau Daftar Konten Lainnya}
 \label{sec:tableOfContent}
 %-----------------------------------------------------------------------------%
-Terkadang ada kebutuhan untuk memasukan kata-kata tertentu kedalam Daftar Isi.
-Perintah \code{\bslash{}addChapter} dapat digunakan untuk judul bab dalam Daftar isi.
-Contohnya dapat dilihat pada berkas thesis.tex.
+
+
+%-----------------------------------------------------------------------------%
+\subsection{Menambahkan Konten ke Daftar Isi/Lampiran Secara Manual}
+\label{sec:addTocEntry}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+Terkadang ada kebutuhan untuk memasukan kata-kata tertentu kedalam Daftar Isi. Perintah \code{\bslash{}addChapter} dapat digunakan untuk judul bab dalam Daftar Isi. Contohnya dapat dilihat pada berkas \code{thesis.tex}. Untuk judul lampiran, Anda bisa menambahkannya ke dalam Daftar Lampiran dengan menggunakan \code{\bslash{}addappendix}. Kedua perintah ini akan menambahkan entri baru setingkat sebuah bab (\f{chapter}).
+
+
+%-----------------------------------------------------------------------------%
+\subsection{Menambahkan Daftar Konten \f{Custom}}
+\label{sec:addCustomContentList}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+Selain itu, jika dibutuhkan, Anda juga bisa menambahkan daftar objek dengan jenis atau tujuan tertentu ke dalam laporan Anda. Misalkan, Anda ingin membuat "Daftar Aturan Transformasi" khusus untuk grafik-grafik yang menggambarkan aturan \f{transpiling} antar bahasa pemrograman. Untuk menambahkan hal tersebut, Anda perlu melakukan tahapan berikut:
+
+\begin{enumerate}
+	\item Buka berkas \code{uithesis.sty} pada bagian "Daftar Konten Custom". \\
+	Terdapat contoh kode untuk membuat daftar konten \f{custom}, dengan nama "Daftar Sesuatu" dan nama objek "Sesuatu". Untuk mencobanya, \f{uncomment} kode tersebut. Ada lima perintah yang akan dibuat kode tersebut.
+	\begin{itemize}
+		\item \code{\bslash{}listof....name}: Nama daftar isi untuk jenis objek tersebut, contoh: \code{\bslash{}listofthingname} yang akan mengembalikan teks "Daftar Sesuatu".
+		\item \code{\bslash{}listof....}: Daftar isi untuk jenis objek tersebut, contoh: \code{\bslash{}listofthing} yang akan menghasilkan Daftar Sesuatu, yaitu daftar konten objek-objek Sesuatu.
+		\item \code{\bslash{}....} = Nama jenis objek tersebut, contoh: \code{\bslash{}thing} yang akan mengembalikan teks "Sesuatu".
+		\item \code{\bslash{}caption....}: Caption untuk jenis objek tersebut, contoh: \code{\bslash{}captionthing} yang berfungsi sebagai \f{caption} dari gambar/kode/tabel/persamaan yang masuk kategori "Sesuatu".
+		\item \code{\bslash{}captionsource....}: Caption dengan sumber untuk jenis objek tersebut, contoh: \code{\bslash{}captionsourcething} yang berfungsi sebagai \f{caption} dari gambar/kode/tabel/persamaan yang masuk kategori "Sesuatu", beserta dengan sumbernya.
+	\end{itemize}
+	\item Untuk membuat daftar baru dengan nama berbeda, terdapat tiga frasa yang perlu diubah dari kode tersebut. Misalkan, Anda ingin membuat "Daftar Aturan Transformasi", maka Anda harus mengganti:
+	\begin{itemize}
+		\item "Sesuatu" menjadi "Aturan Transformasi" untuk mengubah nama jenis objek,
+		\item \code{thing} menjadi \code{transformationrule} untuk mengubah tipe objek dalam \latex, dan
+		\item \code{loth} (akronim dari "list of things") menjadi \code{lotr} (singkatan dari "list of transformation rules") untuk mengubah ekstensi berkas \f{auxiliary} yang digunakan untuk menyimpan daftar objek tersebut.
+	\end{itemize}
+	\item Kemudian, Anda bisa menampilkan daftar konten \f{custom} yang baru Anda buat tersebut dengan mengikuti contoh kode yang ada di \f{thesis.tex}.
+	\item Gunakan \code{\bslash{}caption....} dan \code{\bslash{}captionsource....} untuk memberikan \f{caption} pada suatu objek (gambar/persamaan/tabel/kode) sekaligus menambahkannya ke dalam daftar objek tersebut.
+	\item Silakan definisikan sendiri konvensi label dan \f{cross-reference} yang menurut Anda cocok untuk jenis objek tersebut. Misal: \code{\bslash{}label\{rule:....\}} dan \code{\bslash{}transformationrule\~\bslash{}ref\{rule:....\}}
+\end{enumerate}
 
 
 %-----------------------------------------------------------------------------%
@@ -275,12 +381,12 @@ Contohnya dapat dilihat pada berkas thesis.tex.
 %-----------------------------------------------------------------------------%
 Untuk memasukan PDF dapat menggunakan perintah \code{\bslash{}inpdf} yang menerima satu buah argumen.
 Argumen ini berisi nama berkas yang akan digabungkan dalam laporan.
-PDF yang dimasukan degnan cara ini akan memiliki header dan footer seperti pada halaman lainnya. 
+PDF yang dimasukan degnan cara ini akan memiliki header dan footer seperti pada halaman lainnya.
 
 \inpdf{pdfs/include}
 
 Cara lain untuk memasukan PDF adalah dengan menggunakan perintah \code{\bslash{}putpdf} dengan satu argumen yang berisi nama berkas pdf.
-Berbeda dengan perintah sebelumnya, PDF yang dimasukan dengan cara ini tidak akan memiliki footer atau header seperti pada halaman lainnya. 
+Berbeda dengan perintah sebelumnya, PDF yang dimasukan dengan cara ini tidak akan memiliki footer atau header seperti pada halaman lainnya.
 
 \putpdf{pdfs/include}
 
@@ -291,10 +397,10 @@ Berbeda dengan perintah sebelumnya, PDF yang dimasukan dengan cara ini tidak aka
 %-----------------------------------------------------------------------------%
 Dalam \latex, Anda bisa menambahkan variabel atau perintah baru yang dapat membantu penulisan laporan Anda. Sebenarnya variabel dalam \latex~merupakan perintah, namun tanpa argumen, contohnya adalah \code{\bslash{}kucing}. Variabel dapat menyimpan suatu nilai teks. Sedangkan, suatu perintah pada \latex~sifatnya dapat menerima argumen dan mengolah argumen tersebut sesuai dengan kode yang didefinisikan di dalamnya. Contoh dari penggunaan perintah adalah \code{\bslash{}section\{Membuat Variabel atau Perintah Baru\}}.
 
-Ada dua perintah yang dapat digunakan untuk membuat variabel baru, yaitu: 
+Ada dua perintah yang dapat digunakan untuk membuat variabel baru, yaitu:
 \begin{itemize}
 	\item \code{\bslash{}Var} \\
-	Digunakan untuk membuat variabel baru, namun setiap kata yang diberikan akan diproses dahulu menjadi huruf kapital. 
+	Digunakan untuk membuat variabel baru, namun setiap kata yang diberikan akan diproses dahulu menjadi huruf kapital.
 	Contoh jika perintahnya adalah \code{\bslash{}Var\{\bslash{}kucingBesar\}\{Areng\}}, ketika perintah \code{\bslash{}kucingBesar} dipanggil, yang akan muncul adalah ARENG.
 	\item \code{\bslash{}var} \\
 	Digunakan untuk membuat variabel baru.
@@ -332,7 +438,7 @@ Konfigurasi profil dapat dilakukan dengan menggunakan \code{\bslash{}pagestyle\{
 
 
 %-----------------------------------------------------------------------------%
-\section{Konfigurasi Satu Halaman per Lembar}
+\subsection{Konfigurasi Satu Halaman per Lembar}
 \label{sec:onePerSheet}
 %-----------------------------------------------------------------------------%
 Peraturan laporan tugas akhir di Universitas Indonesia tahun 2017 mensyaratkan pencetakan bolak-balik. Secara \f{default}, \f{template} ini juga sudah menggunakan konfigurasi bolak-balik. Namun, jika diperlukan, Anda dapat mengatur \f{header} dan \f{footer} ketika konfigurasi pencetakannya satu halaman per lembar. Penomoran halaman akan selalu dilakukan di bagian tengah pada \f{footer}. Oleh karena itu, dari bagian abstrak sampai akhir konten, cukup gunakan profil \code{first-page}. Kemudian, atur profil \code{plain} agar sama dengan profil \code{first-page}. Kemudian, hapus semua perintah \code{\bslash{}clearchapter}, \code{\bslash{}setoddevenheader}, \code{\bslash{}naiveoddclearchapter}, dan \code{\bslash{}naiveevenclearchapter} dalam berkas \code{thesis.tex}.
