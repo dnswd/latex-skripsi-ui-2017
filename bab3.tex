@@ -138,7 +138,13 @@ Ada dua perintah untuk memberikan catatan penulisan dalam dokumen yang Anda kerj
 
 
 %-----------------------------------------------------------------------------%
-\section{Menambahkan Tabel/Gambar Panjang secara Lanskap}
+\section{\f{Layoutting} Tingkat Lanjut}
+\label{sec:advancedLayoutting}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+
+%-----------------------------------------------------------------------------%
+\subsection{Menambahkan Tabel/Gambar Panjang secara Lanskap}
 \label{sec:landscape}
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
@@ -153,6 +159,7 @@ Ketika Anda ingin memasukkan tabel atau gambar yang ukurannya cukup panjang ke s
 	\multirow{2}{*}{\#} & \multirow{2}{*}{Country, Other} & \multicolumn{2}{|c|}{Cases} & \multicolumn{2}{|c|}{Deaths} & \multicolumn{2}{|c|}{Recovered} & \multirow{2}{*}{Active} & \multirow{2}{*}{Critical} & \multicolumn{3}{|c|}{.../1M pop} & \multirow{2}{*}{Population} \\
 	& & Total & New & Total & New & Total & New & & & Tot Cases & Deaths & Tests & \\ \hline
 	\endfirsthead % batas akhir header yang akan muncul di halaman pertama
+	\captionsourcecont{Contoh Tabel: Data Kasus COVID-19 di Asia, 14 September 2020}{\url{https://worldometers.info/coronavirus}} \\
 	\hline
 	\multirow{2}{*}{\#} & \multirow{2}{*}{Country, Other} & \multicolumn{2}{|c|}{Cases} & \multicolumn{2}{|c|}{Deaths} & \multicolumn{2}{|c|}{Recovered} & \multirow{2}{*}{Active} & \multirow{2}{*}{Critical} & \multicolumn{3}{|c|}{.../1M pop} & \multirow{2}{*}{Population} \\
 	& & Total & New & Total & New & Total & New & & & Tot Cases & Deaths & Tests & \\ \hline
@@ -210,6 +217,74 @@ Ketika Anda ingin memasukkan tabel atau gambar yang ukurannya cukup panjang ke s
 
 
 %-----------------------------------------------------------------------------%
+\subsection{\f{Alignment} dan \f{Word Wrapping} pada Tabel}
+\label{sec:cellAlignmentAndWordWrap}
+% Hal baru di template 2017
+%-----------------------------------------------------------------------------%
+
+Mulai versi 2.1.0, Anda bisa melakukan \f{word wrapping} dalam tabel, dengan \f{alignment} sesuai yang diinginkan.
+Karakter \f{alignment} dapat ditambahkan pada konfigurasi tabel, contohnya adalah: \code{\bslash{}begin\{tabular\}\{|P{0.5\bslash{}textwidth}|p\{0.4\bslash{}textwidth\}|\}}.
+
+\begin{itemize}
+	\item \code{p} untuk \f{alignment} \f{justified} atas dengan \f{word wrapping}.
+	\item \code{m} untuk \f{alignment} \f{justified} tengah dengan \f{word wrapping}.
+	\item \code{b} untuk \f{alignment} \f{justified} bawah dengan \f{word wrapping}.
+	\item \code{P} untuk \f{alignment} kiri-atas.
+	\item \code{L} untuk \f{alignment} kiri-tengah.
+	\item \code{B} untuk \f{alignment} kiri-bawah.
+	\item \code{U} untuk \f{alignment} tengah-atas.
+	\item \code{C} untuk \f{alignment} tengah-tengah.
+	\item \code{O} untuk \f{alignment} tengah-bawah.
+	\item \code{E} untuk \f{alignment} kanan-atas.
+	\item \code{R} untuk \f{alignment} kanan-tengah.
+	\item \code{T} untuk \f{alignment} kanan-bawah.
+\end{itemize}
+
+Contoh pemanfaatan \f{alignment} dan \f{word-wrapping} pada suatu \code{longtable} dapat dilihat pada \tab~\ref{tab:cellAlignmentWrapping}.
+
+\begin{longtable}{|p{0.14\textwidth}|p{0.26\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
+	\caption{Contoh Tabel: Perbandingan metode pemodelan \f{access control}}
+	\label{tab:cellAlignmentWrapping} \\
+	\hline
+	\multicolumn{1}{|C{0.14\textwidth}|}{\bo{Kategori}}
+	&
+	\multicolumn{1}{C{0.26\textwidth}|}{\bo{Model A}}
+	&
+	\multicolumn{1}{C{0.25\textwidth}|}{\bo{Model B}}
+	&
+	\multicolumn{1}{C{0.25\textwidth}|}{\bo{Model C}} \\
+	\hline
+	\endfirsthead % batas akhir header yang akan muncul di halaman pertama
+	\caption[]{Contoh Tabel: Perbandingan metode pemodelan \f{access control} (sambungan)} \\
+	\hline
+	\multicolumn{1}{|C{0.14\textwidth}|}{\bo{Kategori}}
+	&
+	\multicolumn{1}{C{0.26\textwidth}|}{\bo{Model A}}
+	&
+	\multicolumn{1}{C{0.25\textwidth}|}{\bo{Model B}}
+	&
+	\multicolumn{1}{C{0.25\textwidth}|}{\bo{Model C}} \\
+	\hline
+	\endhead
+
+	Latar \newline~belakang &
+	Memodelkan struktur RBAC dalam perangkat lunak &
+	Ekstensi dari RBAC sehingga bisa mendukung \f{constraint} berdasarkan properti subjek, objek, dan lingkungan &
+	Memodelkan seluruh aspek keamanan dari sebuah \f{secure system} \\
+	\hline
+	Cakupan &
+	Struktur eksplisit &
+	Struktur eksplisit dengan \f{usage awareneess} &
+	Aspek-aspek keamanan generik dengan detil struktur bersifat implisit \\
+	\hline
+	Format \newline\f{diagram} &
+	\f{Class diagram} &
+	\f{Use case diagram} dan \f{sequence diagram} &
+	RBAC pada \f{activity diagram} \\
+	\hline
+\end{longtable}
+
+%-----------------------------------------------------------------------------%
 \section{Melakukan \f{Cross-Reference} ke Suatu Bagian dalam Laporan}
 \label{sec:crossReference}
 %-----------------------------------------------------------------------------%
@@ -231,9 +306,9 @@ Dengan menggunakan \latex, Anda tidak perlu lagi melakukan referensi ke suatu ba
 	Cara referensi: \code{\bslash{}equ\~\bslash{}ref\{equ:matriks\}} \\
 	Hasil referensi: \equ~\ref{equ:matriks}.
 	\item \code{\bslash{}label\{fig:[....]\}} untuk sebuah gambar. \\
-	Contoh: \code{\bslash{}label\{fig:lisensi\}} \\
-	Cara referensi: \code{\bslash{}pic\~\bslash{}ref\{fig:lisensi\}} \\
-	Hasil referensi: \pic~\ref{fig:lisensi}.
+	Contoh: \code{\bslash{}label\{fig:testGambar\}} \\
+	Cara referensi: \code{\bslash{}pic\~\bslash{}ref\{fig:testGambar\}} \\
+	Hasil referensi: \pic~\ref{fig:testGambar}.
 	\item \code{\bslash{}label\{tab:[....]\}} untuk sebuah tabel. \\
 	Contoh: \code{\bslash{}label\{tab:\tab1\}} \\
 	Cara referensi: \code{\bslash{}tab\~\bslash{}ref\{tab:tab1\}} \\

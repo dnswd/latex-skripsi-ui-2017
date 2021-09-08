@@ -2,7 +2,7 @@
 % Template Laporan Skripsi/Thesis Universitas Indonesia
 %
 % @author  Ichlasul Affan, Azhar Kurnia
-% @version 2.02
+% @version 2.1.0
 %
 % Dokumen ini dibuat berdasarkan standar IEEE dalam membuat class untuk
 % LaTeX dan konfigurasi LaTeX yang digunakan Fahrurrozi Rahman ketika
@@ -32,7 +32,6 @@
 
 % Awal bagian penulisan laporan
 \begin{document}
-
 %
 % Sampul Laporan
 \include{sampul}
@@ -101,6 +100,7 @@
 %
 % Daftar isi, gambar, tabel, dan kode
 %
+\CAPinToC % All entries in ToC will be CAPITALIZED from here on
 \phantomsection %hack to make them clickable
 \singlespacing
 \tableofcontents
@@ -116,24 +116,40 @@
 \listoftables
 \onehalfspacing
 \clearpage
+
+%
+% Daftar Kode Program
+% Comment to disable.
+%
 \phantomsection %hack to make them clickable
 \addcontentsline{toc}{chapter}{\lstlistlistingname}
 \singlespacing
-\lstlistoflistings
+\listoflistings
 \onehalfspacing
+\clearpage
 
 %
 % Daftar Isi yang Didefinisikan Sendiri (Custom)
 % Definisi jenis objek baru dapat dilakukan di uithesis.sty
 % Uncomment to use.
 %
-
 %\phantomsection %hack to make them clickable
 %\addcontentsline{toc}{chapter}{\listofthingname}
 %\singlespacing
 %\listofthing
 %\onehalfspacing
 %\clearpage
+
+%
+% Daftar Equation (Persamaan Matematis)
+% Uncomment to use.
+%
+% \phantomsection %hack to make them clickable
+% \addcontentsline{toc}{chapter}{\listofequname}
+% \singlespacing
+% \listofequ
+% \onehalfspacing
+% \clearpage
 
 %
 % Daftar Lampiran
@@ -147,9 +163,11 @@
 \clearpage
 
 % Jika penomoran romawi selesai di ganjil
-\naiveoddclearchapter
+%\naiveoddclearchapter
 % Jika penomoran romawi selesai di genap
 %\naiveevenclearchapter
+
+\noCAPinToC % Revert to original \addcontentsline formatting
 
 %
 % Gunakan penomeran Arab (1, 2, 3, ...) setelah bagian ini.
@@ -175,8 +193,10 @@
 
 %
 % Daftar Pustaka
+\CAPinToC % All entries in ToC will be CAPITALIZED from here on
 \include{pustaka}
 \clearchapter
+\noCAPinToC % Revert to original \addcontentsline formatting
 
 %
 % Lampiran
