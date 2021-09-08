@@ -2,13 +2,15 @@
 % Konfigurasi LaTeX untuk laporan thesis/ta/skripsi/sp sesuai dengan aturan UI tahun 2017
 %
 % @author  Andreas Febrian
-% @version 2.0.2
+% @version 2.0.4
 % @edit by Ichlasul Affan
 %
 % Terima kasih untuk:
 % 1. Lia Sadita
 % 2. Andre Tampubolon
 % 3. Erik Dominikus
+% 4. Azhar Kurnia
+% 5. Galangkangin Gotera
 %
 
 %
@@ -19,7 +21,7 @@
 % - Laporan Thesis yang dibuat Andreas Febrian
 % - Laporan Skripsi yang dibuat Ichlasul Affan
 % - Laporan Skripsi yang dibuat Azhar Kurnia
-%
+% - Feedback dari skripsi Fasilkom UI angkatan 2016-2017, KP Fasilkom UI angkatan 2018, dan tesis MIK Fasilkom UI angkatan 2019-2020
 
 
 %-----------------------------------------------------------------------------%
@@ -38,6 +40,7 @@
 \usepackage{enumitem}
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
 
 %
 % From [Wikipedia]:
@@ -106,7 +109,7 @@
 %
 % Digunakan untuk mengatur caption dalam dokumen.
 %
-\usepackage[font=footnotesize,format=plain,labelfont=bf,up,textfont=up]{caption}
+\usepackage[font=footnotesize,format=plain,labelfont=bf,up,textfont=up,justification=centering]{caption}
 
 %
 % Membantu penulisan notasi matematika terutama untuk dokumen dengan banyak
@@ -153,6 +156,32 @@
 % Digunakan untuk membuat tabel berwarna-warni.
 %
 \usepackage{colortbl}
+
+%
+% Formatting alignment dan wrapping tabel.
+\usepackage{array}
+% [P]aragraph --> align top-left (not justified)
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+% middle [L]eft --> align middle-left (not justified)
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+% [B]ottom left --> align bottom-left (not justified)
+\newcolumntype{B}[1]{>{\raggedright\arraybackslash}b{#1}}
+
+% [U]pper  --> align top-centered
+\newcolumntype{U}[1]{>{\centering\arraybackslash}p{#1}}
+% middle [C]enter --> align middle-centered
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+% l[O]wer --> align bottom-centered
+\newcolumntype{O}[1]{>{\centering\arraybackslash}b{#1}}
+
+% north [E]ast --> align top-right
+\newcolumntype{E}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% middle [R]ight --> align middle-right
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
+% [T]enggara --> align bottom-right
+\newcolumntype{T}[1]{>{\raggedleft\arraybackslash}b{#1}}
+
+% Justified alignment: use standard to[p], [m]iddle, and [b]ottom
 
 %
 % Digunakan untuk membuat objek yang menimpa teks di atas.
@@ -207,11 +236,6 @@
 \usepackage{apacite}
 \usepackage{natbib}
 
-%
-% Digunakan untuk hyphenation
-%
-\usepackage[english, indonesian]{babel}
-
 %-----------------------------------------------------------------------------%
 % Konfigurasi
 %-----------------------------------------------------------------------------%
@@ -251,6 +275,14 @@
 \setcounter{secnumdepth}{3}
 
 \setcounter{tocdepth}{3}
+
+% Command untuk membuat halaman-halaman intro (daftar isi, daftar gambar, etc.) tampak ALL CAPS pada entri daftar isi.
+\let\oldaddcontentsline\addcontentsline
+\newcommand{\ADDCONTENTSLINE}[3]{
+	\oldaddcontentsline{#1}{#2}{\uppercase{#3}}
+}
+\newcommand{\CAPinToC}{\let\addcontentsline\ADDCONTENTSLINE}
+\newcommand{\noCAPinToC}{\let\addcontentsline\oldaddcontentsline}
 
 %
 % Atur header dan footer dalam dokumen.
@@ -410,9 +442,14 @@
 	\newpage
 }
 %
-% Untuk membuat daftar sumber gambar
+% Untuk membuat caption gambar/tabel dengan sumber
 \newcommand*{\captionsource}[2]{
 	\caption[{#1}]{#1\par
+		\footnotesize\textbf{Sumber:} #2\par}
+}
+% Caption sumber untuk gambar/tabel lintas halaman
+\newcommand*{\captionsourcecont}[2]{
+\caption[]{#1 (sambungan)\par
 	\footnotesize\textbf{Sumber:} #2\par}
 }
 
@@ -428,6 +465,30 @@
 % tocloft: To define your own list of things
 %
 \usepackage[titles]{tocloft}
+
+% Daftar Equation (Persamaan Matematis)
+\newcommand{\listofequname}{Daftar \equ}
+\newlistof{equ}{loe}{\listofequname}
+\newcommand{\captionequ}[1]
+{%
+	\refstepcounter{equ}
+	\caption*{\textbf{\equ~\thechapter.\theequ:} #1}
+	\addcontentsline{loe}{equ}
+	{\protect\numberline{\thechapter.\theequ}{\ignorespaces #1}}\par
+}
+\renewcommand\cftequindent{0pt}
+\renewcommand\cftequnumwidth{75pt}
+\renewcommand\cftequaftersnum{.}
+\renewcommand\cftequpresnum{\equ~}
+
+% Daftar Kode Program
+\newcommand{\listoflistings}{
+	\begingroup
+	\let\oldnumberline\numberline
+	\renewcommand{\numberline}[1]{\hspace{-1.5em}\lst~\oldnumberline{##1.}}
+	\lstlistoflistings
+	\endgroup
+}
 
 %
 % Definisi jenis object custom beserta perintahnya.
@@ -464,11 +525,14 @@
 %	\addcontentsline{loth}{thing}
 %	{\protect\numberline{\thechapter.\thething}{\ignorespaces #1}}\par
 %}
+%\renewcommand\cftthingindent{0pt}
+%\renewcommand\cftthingnumwidth{50pt} % sesuaikan lebar ini agar penomoran tidak menimpa judul konten
+%\renewcommand\cftthingaftersnum{.}
+%\renewcommand\cftthingpresnum{\thing~}
 
 %
 % Daftar Lampiran
 %
-\newcommand{\apdx}{Lampiran}
 \newcommand{\listofappendixname}{Daftar \apdx}
 \newlistof{appendix}{lox}{\listofappendixname}
 \newcommand{\addappendix}[1]
@@ -485,45 +549,95 @@
 % Beberapa istilah yang tepat untuk digunakan dalam laporan.
 \renewcommand{\bibname}{Daftar Referensi}
 \renewcommand{\refname}{Daftar Referensi}
-%
-%
 \renewcommand{\contentsname}{Daftar Isi}
-%
-%
 \renewcommand{\listfigurename}{Daftar Gambar}
-%
-%
 \renewcommand{\listtablename}{Daftar Tabel}
-%
-%
 \renewcommand{\lstlistlistingname}{Daftar Kode Program}
 %
 %
 \renewcommand{\chaptername}{BAB}
-%
-%
 \renewcommand{\figurename}{\bo{Gambar}}
-%
-%
 \renewcommand{\tablename}{\bo{Tabel}}
-%
-%
 \renewcommand{\lstlistingname}{\bo{Kode}}
 %
 %
 \newcommand{\bab}{Bab}
-%
-%
 \newcommand{\sect}{Subbab}
-%
-%
 \newcommand{\pic}{Gambar}
-%
-%
 \newcommand{\tab}{Tabel}
-%
-%
 \newcommand{\equ}{Persamaan}
-%
-%
 \newcommand{\lst}{Kode}
+\newcommand{\apdx}{Lampiran}
+%
+% Pengaturan prefiks entri daftar konten (tabel, gambar)
+\renewcommand{\cftfigindent}{0pt}
+\renewcommand{\cftfignumwidth}{70pt}
+\renewcommand{\cftfigaftersnum}{.}
+\renewcommand{\cftfigpresnum}{\pic~}
+\renewcommand{\cfttabindent}{0pt}
+\renewcommand{\cfttabnumwidth}{60pt}
+\renewcommand{\cfttabaftersnum}{.}
+\renewcommand{\cfttabpresnum}{\tab~}
+
+%-----------------------------------------------------------------------------%
+% Multi-Language Support
+% Ditujukan untuk teman-teman jurusan Sastra bahasa asing di FIB UI yang membutuhkan support untuk typesetting karakter non-Latin.
+% Perlu uji coba dan pengembangan lebih lanjut. Syilakan buat kontribusi Anda di repo template ini, jika ada perbaikan yang perlu dilakukan. (silakan baca bagian CONTRIBUTING di README.md)
+% Silakan uncomment untuk menggunakan konfigurasi terkait suatu bahasa.
+%-----------------------------------------------------------------------------%
+
+%
+% Hyphenation Support
+% v2.1 - added multilanguage support
+% Available: english, bahasai, french, ngerman, dutch
+%
+%\usepackage[english, indonesian]{babel}
+
+%
+% Arabic Support
+% https://en.wikipedia.org/wiki/ArabTeX
+%
+%\usepackage{arabtex}
+
+%
+% Chinese/Japanese/Korean Support
+%
+\usepackage{CJKutf8}
+
+%
+% Simplified Chinese Support
+% Usage: \begin{simpchinese} ... japanese text ... \end{simpchinese}
+%
+%\newenvironment{simpchinese}
+%	{\begin{CJK}{UTF8}{gbsn}
+%		\CJKtilde}
+%	{\end{CJK}}
+
+%
+% Traditional Chinese Support
+% Usage: \begin{tradchinese} ... traditional chinese text ... \end{tradchinese}
+%
+%\newenvironment{tradchinese}
+%	{\begin{CJK}{UTF8}{bsmi}
+%		\CJKtilde}
+%	{\end{CJK}}
+
+%
+% Japanese Support
+% Usage: \begin{japanese} ... japanese text ... \end{japanese}
+%
+\newenvironment{japanese}
+	{\begin{CJK}{UTF8}{}
+		\CJKfamily{min}
+		\CJKtilde}
+	{\end{CJK}}
+
+%
+% Korean Support
+% Usage: \begin{korean} ... korean text ... \end{korean}
+%
+%\newenvironment{korean}
+%	{\begin{CJK}{UTF8}{}
+%		\CJKfamily{mj}
+%		\CJKtilde}
+%	{\end{CJK}}
