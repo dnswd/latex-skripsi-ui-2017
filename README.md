@@ -44,6 +44,11 @@ Anda bisa membaca tutorialnya lebih lanjut dengan melakukan kompilasi template L
 Atau cara lebih praktis: silakan unduh PDF hasil kompilasi di GitLab melalui https://gitlab.com/ichlaffterlalu/latex-skripsi-ui-2017/-/jobs/artifacts/master/download?job=Generate+PDF.
 Daftar perubahan (CHANGELOG) juga terdapat di PDF hasil kompilasi (`thesis.pdf`) atau `lampiran.tex`.
 
+#### Overleaf
+Template ini juga tersedia di [Overleaf](https://www.overleaf.com/latex/templates/thesis-template-for-universitas-indonesia/brfkhqvmkzhv) untuk kebutuhan penulisan secara daring tanpa instalasi LaTex.
+
+[![Open as template in Overleaf](https://img.shields.io/badge/Overleaf-Open%20as%20template-green?style=flat-square)](https://www.overleaf.com/project/new/template/9383?id=26018259&latexEngine=pdflatex&mainFile=thesis.tex&templateName=Thesis+Template+for+Universitas+Indonesia&texImage=texlive-full%3A2021.1)
+
 ### CONTRIBUTING
 Tentunya, kami sangat berharap kontribusi teman-teman jika ada perubahan yang diperlukan atau ada pembaharuan aturan dari pihak Rektorat Universitas Indonesia terkait format tugas akhir.
 Setiap orang dapat dengan bebas melakukan fork repositori ini. Setiap orang juga bebas mengajukan perubahan dengan mengubah template ini pada repositori hasil fork masing-masing, kemudian melakukan merge request ke repositori ini (https://gitlab.com/ichlaffterlalu/latex-skripsi-ui-2017).
