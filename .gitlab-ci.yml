@@ -1,21 +1,17 @@
+---
+default:
+  image: docker.io/texlive/texlive:latest
+  before_script:
+    - latex --version
+    - latexmk --version
+
 stages:
   - Build
 
 Generate PDF:
   stage: Build
-  image: texlive/texlive:latest
-  script: # repeat 2 then 8 times to make sure everything is completely generated
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - bibtex "thesis"
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
-    - pdflatex -synctex=1 -interaction=nonstopmode thesis.tex
+  script:
+    - latexmk -bibtex -output-format=pdf -pdf -time thesis.tex
   artifacts:
     paths:
       - thesis.pdf
