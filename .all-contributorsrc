@@ -1,0 +1,53 @@
+{
+  "projectName": "latex-skripsi-ui-2017",
+  "projectOwner": "ichlaffterlalu",
+  "repoType": "gitlab",
+  "repoHost": "https://gitlab.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "ichlaffterlalu",
+      "name": "Ichlasul Affan",
+      "avatar_url": "https://secure.gravatar.com/avatar/41dbf3f17d58e10b7d0b883ce3ff5cb8?s=80&d=identicon",
+      "profile": "https://gitlab.com/ichlaffterlalu",
+      "contributions": [
+        "infra",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "Artemis1872",
+      "name": "Dennis Al Baihaqi Walangadi",
+      "avatar_url": "https://secure.gravatar.com/avatar/7d289c9da266a123575f550d8200e09f?s=80&d=identicon",
+      "profile": "https://gitlab.com/Artemis1872",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "aulia-adil",
+      "name": "Muhammad Aulia Adil",
+      "avatar_url": "https://secure.gravatar.com/avatar/1606c6c224747210cd6d4df42fb030a6?s=80&d=identicon",
+      "profile": "https://gitlab.com/aulia-adil",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "addianto",
+      "name": "Daya Adianto",
+      "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/398706/avatar.png",
+      "profile": "https://gitlab.com/addianto",
+      "contributions": [
+        "doc",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
