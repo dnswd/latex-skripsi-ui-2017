@@ -108,7 +108,7 @@ Beberapa perintah yang dapat digunakan untuk mengubah tampilan adalah:
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
 Pada \latex, kode program seringkali disebut \f{listing}. Kita bisa memasukkan kode program (\f{listing}) ke dalam tugas akhir kita seperti kode Java seperti berikut:
-\lstinputlisting[language=Java, caption=Kode sampel Java, label=code:java]{codes/3-sample.java}
+\lstinputlisting[language=Java, caption=Kode sampel Java, label=code:java]{assets/codes/3-sample.java}
 
 \f{Syntax highlighting} kini sudah bisa dilakukan secara otomatis oleh \f{library} yang ada di \latex.
 Sudah tidak perlu lagi membuat skrip manual untuk menambahkan \f{syntax highlighting} sendiri.
@@ -117,7 +117,7 @@ Cukup definisikan bahasa pemrograman yang digunakan, pada parameter \code{langua
 Berikut ini adalah daftar bahasa pemrograman yang didukung \f{library} \code{listings}: ABAP, ACSL, Ada, Algol, Ant, Assembler, Awk, bash, Basic, C\#, C++, C, Caml, Clean, Cobol, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran, GCL, Gnuplot, Haskell, HTML, IDL, inform, Java, JVMIS, ksh, Lisp, Logo, Lua, make, Mathematica, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C, OCL, Octave, Oz, Pascal, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S, SAS, Scilab, sh, SHELXL, Simula, SQL, tcl, TeX, VBScript, Verilog, VHDL, VRML, XML, XSLT. \citep{latex:source_code_listings}
 
 Satu contoh lagi, sebuah kode bahasa pemrograman Python:
-\lstinputlisting[language=Python, caption=Kode sampel Python, label=code:python]{codes/3-sample.py}
+\lstinputlisting[language=Python, caption=Kode sampel Python, label=code:python]{assets/codes/3-sample.py}
 
 Anda juga bisa menambahkan \f{caption} untuk memberikan ringkasan tentang kode tersebut.
 Namun, jangan lupa untuk menjelaskan kode melalui paragraf, terutama pada bagian-bagian yang perlu penjelasan lebih.
@@ -333,7 +333,7 @@ BibTeX adalah \f{library} dalam \latex~yang dapat membantu Anda untuk menuliskan
 \label{sec:bibtexAddRef}
 %-----------------------------------------------------------------------------%
 Anda bisa menambahkan bahan bacaan yang ingin Anda jadikan referensi ke dalam berkas \code{references.bib}. Contoh isi kode \f{references.bib} saat ini dapat dilihat di \lst~\ref{code:references}.
-\lstinputlisting[language=TeX, caption=Daftar referensi di \code{references.bib}, label=code:references]{references.bib}
+\lstinputlisting[language=TeX, caption=Daftar referensi di \code{references.bib}, label=code:references]{config/references.bib}
 
 Format suatu objek referensi pada BibTex adalah sebagai berikut: \\
 \code{@[tipe-referensi]\{[kode-untuk-sitasi]}\\
@@ -370,41 +370,29 @@ Perlu diperhatikan bahwa \code{\bslash{}citep} hanya bisa digunakan untuk format
 %-----------------------------------------------------------------------------%
 \subsection{Mengubah Format Referensi/Sitasi}
 \label{sec:bibtexChangeFormat}
+% Hal baru di template 2017
 %-----------------------------------------------------------------------------%
 Sejak versi \f{template} 2.0.2, format referensi \f{default} telah diganti menjadi APA dari sebelumnya IEEE karena banyaknya permintaan dosen penguji untuk menggunakan format APA. Pada dasarnya, peraturan Rektor UI terkait Tugas Akhir menyerahkan format referensi sesuai dengan aturan fakultas. Namun, mayoritas dari fakultas atau dosen pembimbing di Universitas Indonesia menggunakan APA sebagai format sitasinya. Oleh karena itu, jika fakultas atau dosen pembimbing/penguji Anda meminta format sitasi yang berbeda selain APA, Anda bisa menggantinya dengan mengikuti tahapan berikut:
-\begin{itemize}
-	\item Untuk mengubah ke format IEEE:
+\begin{enumerate}
+	\item Pada berkas \code{uithesis.sty}, terdapat bagian \bo{Package}. Cari konfigurasi "Format sitasi".
+	\item Hilangkan tanda komentar (\f{uncomment}) pada bagian konfigurasi format yang akan digunakan, misal: APA. Pastikan hanya satu jenis konfigurasi format yang di-\f{uncomment}.
+	\item Cari "Konfigurasi khusus sitasi APA" di bagian \bo{Ubah Istilah Penulisan}.
+	\begin{itemize}
+		\item Jika Anda akan menggunakan format APA, hilangkan tanda komentar (\f{uncomment}) pada bagian konfigurasi tersebut.
+		\item Jika Anda akan menggunakan format selain APA, jadikan bagian konfigurasi tersebut sebagai komentar (\f{comment}).
+	\end{itemize}
+	\item Tidak semua format sitasi mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat. Contoh format yang mengenal perbedaan tersebut adalah APA dan MLA. IEEE dan ACM tidak mengenal format tersebut.
+	\begin{itemize}
+		\item Jika format sitasi yang akan digunakan mengenal perbedaan tersebut, ganti sitasi pada akhir kalimat atau tempat lain yang membutuhkan model sitasi dengan \f{parentheses} (kurung) dengan menggunakan perintah \code{\bslash{}citep}.
+		\item Jika format sitasi yang akan digunakan tidak mengenal perbedaan tersebut, pastikan semua sitasi menggunakan perintah \code{\bslash{}cite}.
+	\end{itemize}
+	\item Jika muncul pesan error seperti \code{[nama-format].bst not found}, itu tandanya format tersebut tidak tersedia secara bawaan dari BibTeX. Unduh berkas terkait dahulu dari CTAN, lalu letakkan di direktori \code{\_internals}. Contoh format sitasi yang membutuhkan berkas eksternal adalah MLA (konfigurasi MLA sudah tersedia di \code{uithesis.sty}, namun berkas \code{mla.bst} belum tersedia).
+	\item Jika konfigurasi format sitasi belum tersedia di \code{uithesis.sty}, ikuti langkah-langkah berikut:
 	\begin{enumerate}
-		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{IEEEtran\}}.
-		\item Buka berkas \code{uithesis.sty}, lalu jadikan baris kode \code{\bslash{}usepackage\{natbib\}} dan \code{\bslash{}usepackage\{apacite\}} sebagai komentar.
-		\item Ganti semua sitasi yang menggunakan perintah \code{\bslash{}citep} menjadi \code{\bslash{}cite}, karena format sitasi IEEE hanya melibatkan angka urutan referensi.
+		\item Tambahkan konfigurasi baru di \code{uithesis.sty}, pada bagian \bo{Package} $>$ "Format sitasi". Contoh bisa mengikuti dengan format-format lain yang sudah tersedia, namun silakan sesuaikan dengan kebutuhan format sitasi yang akan digunakan.
+		\item Jika format sitasi yang akan digunakan mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat, gunakan \f{package} \code{natbib} sehingga mendukung \f{command} sitasi \code{\bslash{}citep}.
 	\end{enumerate}
-	\item Untuk mengubah ke format ACM:
-	\begin{enumerate}
-		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{acm\}}.
-		\item Buka berkas \code{uithesis.sty}, lalu jadikan baris kode \code{\bslash{}usepackage\{natbib\}} sebagai komentar.
-		\item Ganti semua sitasi yang menggunakan perintah \code{\bslash{}citep} menjadi \code{\bslash{}cite}, karena format sitasi ACM hanya melibatkan angka urutan referensi.
-	\end{enumerate}
-	\item Untuk mengubah ke format MLA:
-	\begin{enumerate}
-		\item Format MLA tidak tersedia secara bawaan di BibTeX. Untuk menggunakannya, unduh berkas \code{mla.bst} dari \url{https://www.ctan.org/tex-archive/biblio/bibtex/contrib/mla/mla.bst}, kemudian letakkan pada direktori yang sama dengan \code{thesis.tex}.
-		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{mla\}}.
-		\item Buka berkas \code{uithesis.sty}, lalu kembalikan baris kode \code{\bslash{}usepackage\{natbib\}} dari komentar menjadi kode biasa. Abaikan jika baris kode tersebut sudah ada dan bukan berbentuk komentar.
-		\item Format sitasi MLA mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat. Ganti sitasi pada akhir kalimat atau tempat lain yang membutuhkan model sitasi dengan \f{parentheses} (kurung) dengan menggunakan perintah \code{\bslash{}citep}.
-	\end{enumerate}
-	\item Untuk mengembalikan ke format APA:
-	\begin{enumerate}
-		\item Buka berkas \code{pustaka.tex}, lalu ubah baris kode \code{\bslash{}bibliographystyle\{...\}} menjadi \code{\bslash{}bibliographystyle\{apacite\}}.
-		\item Buka berkas \code{uithesis.sty}, lalu kembalikan baris kode \code{\bslash{}usepackage\{natbib\}} dari komentar menjadi kode biasa.
-		\item Buka berkas \code{uithesis.sty}, lalu pastikan baris kode \code{\bslash{}usepackage\{apacite\}} ada sebelum baris kode \code{\bslash{}usepackage\{natbib\}} dan tidak berbentuk komentar.
-		\item Format sitasi APA mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat. Ganti sitasi pada akhir kalimat atau tempat lain yang membutuhkan model sitasi dengan \f{parentheses} (kurung) dengan menggunakan perintah \code{\bslash{}citep}.
-	\end{enumerate}
-	\item \f{Troubleshooting}:
-	\begin{enumerate}
-		\item Apabila terjadi \f{error} saat mengganti format ke selain APA, pastikan bahwa baris kode \code{\bslash{}usepackage\{apacite\}} telah dihapus atau dijadikan komentar.
-		\item Jika muncul pesan error seperti \code{[nama-format].bst not found}, maka unduh terlebih dahulu dari CTAN. Itu tandanya format tersebut tidak tersedia secara bawaan dari BibTeX.
-	\end{enumerate}
-\end{itemize}
+\end{enumerate}
 
 
 %-----------------------------------------------------------------------------%
@@ -458,12 +446,12 @@ Untuk memasukan PDF dapat menggunakan perintah \code{\bslash{}inpdf} yang meneri
 Argumen ini berisi nama berkas yang akan digabungkan dalam laporan.
 PDF yang dimasukan degnan cara ini akan memiliki header dan footer seperti pada halaman lainnya.
 
-\inpdf{pdfs/include}
+\inpdf{assets/pdfs/include}
 
 Cara lain untuk memasukan PDF adalah dengan menggunakan perintah \code{\bslash{}putpdf} dengan satu argumen yang berisi nama berkas pdf.
 Berbeda dengan perintah sebelumnya, PDF yang dimasukan dengan cara ini tidak akan memiliki footer atau header seperti pada halaman lainnya.
 
-\putpdf{pdfs/include}
+\putpdf{assets/pdfs/include}
 
 
 %-----------------------------------------------------------------------------%
@@ -530,5 +518,54 @@ Berdasarkan peraturan terkini terkait pengumpulan naskah digital ke UI-ana, \f{h
 	\item Ubah isi dari perintah \code{\bslash{}setoddevenheader} menjadi \code{\bslash{}fancypagestyle\{empty\}}.
 	\item Di bagian akhir berkas \code{uithesis.sty}, tambahkan kode sebagai berikut:\\
 	\code{\bslash{}fancypagestyle\{plain\}\{\bslash{}fancyhead[L]\{\} \bslash{}fancyhead[C]\{\} \bslash{}fancyhead[R]\{\} \bslash{}fancyfoot[L]\{\} \bslash{}fancyfoot[C]\{\} \bslash{}fancyfoot[R]\{\}\}}
-    \item Buka berkas \code{thesis.sty}, lalu cari semua baris perintah \code{\bslash{}fancypagestyle} dan  \code{\bslash{}pagestyle\{....\}}. Hapus semua baris perintah tersebut.
+    \item Buka berkas \code{thesis.tex}, lalu cari semua baris perintah \code{\bslash{}fancypagestyle} dan  \code{\bslash{}pagestyle\{....\}}. Hapus semua baris perintah tersebut.
 \end{enumerate}
+
+%-----------------------------------------------------------------------------%
+\section{Dukungan Multibahasa}
+\label{sec:multilanguageSupport}
+% Hal baru di template 2017 (fitur versi beta)
+%-----------------------------------------------------------------------------%
+\todo{
+	\bo{Fitur ini sedang dalam uji coba.}
+	Bagi yang memiliki saran atau ingin menyempurnakan fitur ini, silakan kunjungi repositori GitLab template ini (\url{https://gitlab.com/ichlaffterlalu/latex-skripsi-ui-2017}), lalu buat Issue atau Merge Request baru.
+}
+
+Fitur ini ditujukan bagi yang ingin menggunakan bahasa berkarakter non-alfabet, seperti huruf Arab (Arab, Persia, Uyghur), Mandarin (Traditional, Simplified), Jepang, dan Korea.
+Selain itu, fitur ini juga mengatur pemenggalan kata (\f{hyphenation}) untuk beberapa bahasa asing seperti Perancis, Jerman, dan Belanda.
+Untuk mengaktifkan fitur ini, diperlukan modifikasi pada \code{uithesis.sty} pada bagian \bo{Multi-Language Support}.
+Untuk mengaktifkan atau menonaktifkan dukungan bahasa, dapat dengan melakukan \f{commenting} atau \f{uncommenting} bagian yang terkait.
+Jika dukungan terhadap suatu bahasa tidak diperlukan, disarankan untuk menonaktifkan konfigurasi bahasa tersebut untuk mempercepat waktu \f{compile}.
+Sebagai catatan, saat ini dukungan untuk bahasa Arab dan bahasa Jepang/Korea/Mandarin tidak bisa diaktifkan bersamaan.
+Saat ini, untuk menyediakan contoh pada tutorial, dukungan bahasa Jepang diaktifkan secara \f{default}.
+
+Berikut adalah contoh penggunaan bahasa Jepang (sumber kutipan: \url{https://en.wikipedia.org/wiki/Kimigayo}):
+\begin{itemize}
+	\item Huruf kanji:\\
+	\begin{japanese}
+		君が代は\\
+		千代に八千代に\\
+		さざれ石の\\
+		いわおとなりて\\
+		こけのむすまで
+	\end{japanese}
+	\item Huruf hiragana:\\
+	\begin{japanese}
+		きみがよは\\
+		ちよにやちよに\\
+		さざれいしの\\
+		いわおとなりて\\
+		こけのむすまで
+	\end{japanese}
+	\item Huruf katakana:\\
+	\begin{japanese}
+		キミガヨハ\\
+		チヨニヤチヨニ\\
+		サザレイシノ\\
+		イワオトナリテ\\
+		コケノムスマデ
+	\end{japanese}
+	\item Contoh \f{in-line text}: \begin{japanese}ありがとうございます\end{japanese} artinya "terima kasih".
+\end{itemize}
+
+Untuk penggunaan Simplified Chinese dapat menggunakan \f{environment} \code{simpchinese}. Untuk penggunaan Traditional Chinese dapat menggunakan \f{environment} \code{tradchinese}. Untuk penggunaan bahasa Korea dapat menggunakan \f{environment} \code{korean}. Untuk penggunaan huruf Arab, baik itu untuk bahasa Arab, Persia, maupun Uyghur, dapat mengunjungi tutorial ArabTeX di \url{https://en.wikipedia.org/wiki/ArabTeX}. Sebelum menyalakan dukungan terhadap suatu bahasa, pastikan tersedia \f{font} untuk bahasa terkait di dalam sistem operasi Anda.
