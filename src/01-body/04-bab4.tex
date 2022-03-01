@@ -9,45 +9,66 @@ Dengan memahami struktur \f{template}, pekerjaan Anda akan menjadi lebih terarah
 
 
 %-----------------------------------------------------------------------------%
-\section{thesis.tex}
+\section{\code{thesis.tex}}
 \label{sec:thesis-tex}
 %-----------------------------------------------------------------------------%
-Berkas ini berisi seluruh berkas Latex yang dibaca, jadi bisa dikatakan sebagai berkas utama.
+Berkas \code{thesis.tex} berisi seluruh berkas Latex yang dibaca, jadi bisa dikatakan sebagai berkas utama.
 Dari berkas ini kita dapat mengatur bab apa saja yang ingin kita tampilkan dalam dokumen.
 
 
 %-----------------------------------------------------------------------------%
-\section{laporan\_setting.tex}
-\label{sec:laporan-setting-tex}
+\section{Direktori \code{config}}
+\label{sec:config-dir}
 %-----------------------------------------------------------------------------%
-Berkas ini berguna untuk mempermudah pembuatan beberapa template standar.
+Direktori \code{config} berisi berkas-berkas yang menyimpan konfigurasi variabel dan istilah-istilah yang bisa dimodifikasi sesuai dengan kebutuhan tugas akhir.
+
+%-----------------------------------------------------------------------------%
+\subsection{\code{settings.tex}}
+\label{sec:settings-tex}
+%-----------------------------------------------------------------------------%
+Berkas \code{settings.tex} berguna untuk mempermudah pembuatan beberapa template standar.
 Anda diminta untuk menuliskan judul laporan, nama, NPM, dan hal-hal lain yang dibutuhkan untuk pembuatan template.
 
 
 %-----------------------------------------------------------------------------%
-\section{istilah.tex}
+\subsection{\code{istilah.tex}}
 \label{sec:istilah-tex}
 %-----------------------------------------------------------------------------%
-Berkas istilah digunakan untuk mencatat istilah-istilah yang digunakan.
+Berkas \code{istilah.tex} digunakan untuk mencatat istilah-istilah yang digunakan.
 Fungsinya hanya untuk memudahkan penulisan.
 Pada beberapa kasus, ada kata-kata yang harus selalu muncul dengan tercetak miring atau tercetak tebal.
 Dengan menjadikan kata-kata tersebut sebagai sebuah perintah \latex~tentu akan mempercepat dan mempermudah pengerjaan laporan.
 
+%-----------------------------------------------------------------------------%
+\subsection{\code{references.bib}}
+\label{sec:references-bib}
+%-----------------------------------------------------------------------------%
+Berkas \code{references.bib} berisi seluruh daftar referensi yang digunakan dalam
+laporan.
+Anda bisa membuat model daftar referensi lain dengan menggunakan BibTeX. Untuk menambahkan referensi dengan format BibTeX, Anda bisa mengisi berkas \code{references.bib}.
+Untuk mempelajari bibtex lebih lanjut, silahkan buka \url{http://www.bibtex.org/Format}.
+Untuk merujuk pada salah satu referensi yang ada, gunakan perintah \bslash cite, e.g. \bslash cite\{book:sample\} yang akan akan memunculkan \cite{book:sample}.
+
+%--------------------------------	---------------------------------------------%
+\section{Direktori \code{\_internals}}
+\label{sec:thesis-tex}
+%-----------------------------------------------------------------------------%
+Direktori \code{\_internals} berisi halaman-halaman dan \f{styling} yang tidak perlu diubah untuk penggunaan normal dari template ini. \f{Styling} bisa diubah jika diperlukan untuk menyesuaikan beberapa fitur template dengan kebutuhan tugas akhir, atau untuk menyesuaikan dengan aturan terbaru yang dirilis oleh Universitas Indonesia.
 
 %-----------------------------------------------------------------------------%
-\section{hype.indonesia.tex}
+\subsection{\code{hype.indonesia.tex}}
 \label{sec:hype-indonesia-tex}
 %-----------------------------------------------------------------------------%
-Berkas ini berisi cara pemenggalan beberapa kata dalam bahasa Indonesia.
+Berkas \code{hype.indonesia.tex} berisi cara pemenggalan beberapa kata dalam bahasa Indonesia.
 \latex~memiliki algoritma untuk memenggal kata-kata sendiri, namun untuk beberapa kasus algoritma ini memenggal dengan cara yang salah.
 Untuk memperbaiki pemenggalan yang salah inilah cara pemenggalan yang benar ditulis dalam berkas \f{hype.indonesia.tex}.
 
 
 %-----------------------------------------------------------------------------%
-\section{uithesis.sty}
+\subsection{\code{uithesis.sty}}
 \label{sec:uithesis.sty}
 %-----------------------------------------------------------------------------%
-Berkas ini berisi konfigurasi inti dari \f{layoutting} untuk \f{template} ini.
+%Berkas \code{uithesis.sty} berisi konfigurasi inti dari \f{layoutting} untuk \f{template} ini.
 Secara umum, Anda tidak perlu mengubah apapun pada berkas ini.
 Akan tetapi, untuk kasus-kasus lanjutan, seperti menambahkan daftar konten \f{custom} atau menyalakan dukungan terhadap \f{multi-language}, Anda bisa mengubahnya secara langsung pada \code{uithesis.sty}.
 Jika Anda memiliki feedback maupun ingin berkontribusi terhadap perbaikan \f{layout}, selama ke arah yang sesuai dengan ketentuan Peraturan Rektor UI terkait format Tugas Akhir, Anda bisa mengubah berkas ini dan berkas lainnya yang terkait lalu membuat Merge Request di repositori.
@@ -55,21 +76,10 @@ Keterangan lebih lanjut terkait cara kontribusi dapat dilihat di berkas \code{RE
 
 
 %-----------------------------------------------------------------------------%
-\section{pustaka.tex dan references.bib}
-\label{sec:pustaka-tex}
-%-----------------------------------------------------------------------------%
-Berkas pustaka.tex berisi seluruh daftar referensi yang digunakan dalam
-laporan.
-Anda bisa membuat model daftar referensi lain dengan menggunakan BibTeX. Untuk menambahkan referensi dengan format BibTeX, Anda bisa mengisi berkas \code{references.bib}.
-Untuk mempelajari bibtex lebih lanjut, silahkan buka \url{http://www.bibtex.org/Format}.
-Untuk merujuk pada salah satu referensi yang ada, gunakan perintah \bslash cite, e.g. \bslash cite\{book:sample\} yang akan akan memunculkan \cite{book:sample}.
-
-
-%-----------------------------------------------------------------------------%
-\section{bab[1 - 6].tex}
+\section{Direktori \code{src/01-body}}
 \label{sec:bab-tex}
 %-----------------------------------------------------------------------------%
-Berkas ini berisi isi laporan yang Anda tulis.
+Direktori ini berisi isi laporan yang Anda tulis.
 Setiap nama berkas e.g. bab1.tex merepresentasikan bab dimana tulisan tersebut akan muncul.
 Sebagai contoh, kode dimana tulisan ini dibaut berada dalam berkas dengan nama \code{bab4.tex}.
 Ada enam buah berkas yang telah disiapkan untuk mengakomodir enam bab dari laporan Anda, diluar bab kesimpulan dan saran.

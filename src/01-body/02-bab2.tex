@@ -31,9 +31,8 @@ Dokumen \latex~sangat mudah, seperti halnya membuat dokumen teks biasa.
 Ada beberapa perintah yang diawali dengan tanda '\bslash'.
 Seperti perintah \code{\bslash\bslash}~yang digunakan untuk memberi baris baru.
 Perintah tersebut juga sama dengan perintah \code{\bslash{}newline}.
-Pada bagian ini akan sedikit dijelaskan cara manipulasi teks dan
-perintah-perintah \latex~yang mungkin akan sering digunakan.
-Jika ingin belajar hal-hal dasar mengenai \latex, silahkan kunjungi:
+Pada bagian ini akan sedikit dijelaskan cara manipulasi teks dan perintah-perintah \latex~yang mungkin akan sering digunakan.
+Jika ingin belajar hal-hal dasar mengenai \latex, silakan kunjungi:
 
 \begin{itemize}
 	\item \url{http://frodo.elon.edu/tutorial/tutorial/}, atau
@@ -45,19 +44,23 @@ Jika ingin belajar hal-hal dasar mengenai \latex, silahkan kunjungi:
 \subsection{\latex~Kompiler dan IDE}
 \label{sec:latexCompiler}
 %-----------------------------------------------------------------------------%
-Agar dapat menggunakan \latex~(pada konteks hanya sebagai pengguna), Anda tidak perlu banyak tahu mengenai hal-hal didalamnya.
-Seperti halnya pembuatan dokumen secara visual (contohnya Open Office (OO) Writer), Anda dapat menggunakan \latex~dengan cara yang sama.
-Orang-orang yang menggunakan \latex~relatif lebih teliti dan terstruktur mengenai cara penulisan yang dia gunakan, \latex~memaksa Anda untuk seperti itu.
+Untuk menggunakan \latex~(pada konteks hanya sebagai pengguna), tidak perlu banyak tahu mengenai hal-hal didalamnya.
+Dengan menggunakan \f{Integrated Development Environment} (IDE), penggunaan \latex~akan serupa dengan pembuatan dokumen secara visual, layaknya OpenOffice Writer atau Microsoft Word.
+Orang-orang yang menggunakan \latex~relatif lebih teliti dan terstruktur mengenai cara penulisan yang dia gunakan, karena \latex~memaksa untuk seperti itu.
 
-Kembali pada bahasan utama, untuk mencoba \latex~Anda cukup mendownload kompiler dan IDE. Saya menyarankan menggunakan Texlive dan Texmaker.
-Texlive dapat didownload dari \url{http://www.tug.org/texlive/}.
-Sedangkan Texmaker dapat didownload dari \url{http://www.xm1math.net/texmaker/}.
-Untuk pertama kali, coba buka berkas thesis.tex dalam template yang Anda miliki pada Texmaker.
-Dokumen ini adalah dokumen utama.
-Tekan F6 (PDFLaTeX) dan Texmaker akan mengkompilasi berkas tersebut menjadi berkas PDF.
-Jika tidak bisa, pastikan Anda sudah menginstall Texlive.
-Buka berkas tersebut dengan menekan F7.
-Hasilnya adalah sebuah dokumen yang sama seperti dokumen yang Anda baca saat ini.
+Untuk mencoba \latex, diperlukan kompiler dan IDE.
+Bagi pengguna Microsoft Windows dan Mac OS, instalasi kompiler \latex~dapat menggunakan MikTeX (\url{https://miktex.org/download}).
+Bagi pengguna Linux, instalasi kompiler \latex~dapat menggunakan Texlive ( \url{http://www.tug.org/texlive/}).
+Distro-distro \f{mainstream} di Linux seperti Ubuntu biasanya telah menyediakan \f{package} \code{texlive} melalui \f{package manager}.
+Apabila ingin melakukan instalasi Texlive melalui \f{package manager}, lakukan instalasi package \code{texlive-full} atau setidaknya \code{texlive-science} agar prasyarat \f{template} ini tersedia secara lengkap.
+
+Beberapa text editor atau IDE yang dapat digunakan adalah sebagai berikut:
+\begin{itemize}
+	\item TeXstudio (\url{https://www.texstudio.org/}).
+	\item TeXWorks (biasanya bawaan dari MikTeX).
+	\item Texmaker (\url{http://www.xm1math.net/texmaker/}).
+	\item Microsoft Visual Studio Code, dengan \f{plugin} LaTeX Workshop (\url{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}). Untuk menggunakan \f{plugin} tersebut, diperlukan instalasi MikTeX dan Perl. Alternatif lain untuk persyaratan tersebut adalah menggunakan \f{plugin} Remote - WSL jika memiliki distro Windows Subsystem for Linux (WSL) 2 yang sudah terpasang \code{texlive}.
+\end{itemize}
 
 
 %-----------------------------------------------------------------------------%
@@ -108,7 +111,7 @@ Harap diingat bahwa caption untuk gambar selalu terletak dibawah gambar.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.50\textwidth]
-	{pics/creative_commons.png}
+	{assets/pics/creative_commons.png}
 	\caption{\license.}
 	\label{fig:testGambar}
 \end{figure}
@@ -169,16 +172,6 @@ baris 12 & 23 & 24 \\
 baris 13 & 25 & 26 \\
 baris 14 & 27 & 28 \\
 baris 15 & 29 & 30 \\
-baris 16 & 31 & 32 \\
-baris 17 & 33 & 34 \\
-baris 18 & 35 & 36 \\
-baris 19 & 37 & 38 \\
-baris 20 & 39 & 40 \\
-baris 21 & 41 & 42 \\
-baris 22 & 43 & 44 \\
-baris 23 & 45 & 46 \\
-baris 24 & 47 & 48 \\
-baris 25 & 49 & 50 \\
 \hline
 \end{longtable}
 
@@ -249,7 +242,7 @@ Contoh-contoh ini bersumber dari \url{http://en.wikibooks.org/wiki/LaTeX/Tables}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{pics/research_concept_map.png}
+	\includegraphics[width=\textwidth]{assets/pics/research_concept_map.png}
 	\caption{Keterkaitan konsep hasil studi literatur terhadap penelitian}
 	\label{fig:research_concept_map}
 \end{figure}

@@ -1,10 +1,8 @@
-
 Ketentuan mengenai lisensi hanya berlaku untuk template.
 Dokumen yang dibuat dengan menggunakan template tersebut sepenuhnya menjadi
 milik penulis dan dapat didistribusikan sesuai dengan keperluan masing-masing.
 Setiap template baru yang dibuat dari template ini harus mengikuti aturan
 yang tertera dalam LICENSE.
-
 
 Penulis Template: Ichlasul Affan
 
@@ -17,3 +15,9 @@ Template sebelumnya (standar tahun 2010) dibuat oleh:
  - Fahrurrozi Rahman
  - Andre Tampubolon
  - Erik Dominikus
+Link: https://github.com/edom/uistyle
+
+Template ini juga menggabungkan fork dari template 2010 yang dibuat oleh:
+- Rakha Kanz Kautsar
+- Yohanes Gultom
+Link: https://github.com/rkkautsar/ui-thesis-template

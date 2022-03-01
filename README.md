@@ -40,9 +40,6 @@ Template ini dimodifikasi oleh Azhar Kurnia (Fasilkom UI 2016)
 dan Ichlasul Affan (Fasilkom UI 2016) agar mengikuti standar terbaru
 Tugas Akhir di Universitas Indonesia (tahun 2017).
 
-Orang yang membaca karya Anda tidak peduli cara Anda buat karya itu;
-mereka hanya mau tahu karya itu bagus.
-
 Selamat menggunakan template ini.
 
 ### How To Use
