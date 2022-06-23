@@ -11,10 +11,18 @@
 
 \vspace*{0.2cm}
 
+% Untuk conditional statement pembimbing dua
+\def\blank{}
+
 \noindent \begin{tabular}{l l p{11.0cm}}
 	Name&: & \penulis \\
-	Program&: & \program \\
+	Study Program&: & \studyProgram \\
 	Title&: & \judulInggris \\
+	Counsellor&: & \pembimbingSatu \\
+	\ifx\blank\pembimbingDua
+    \else
+        \ &\ & \pembimbingDua \\
+    \fi
 \end{tabular} \\
 
 \vspace*{0.5cm}
@@ -23,7 +31,7 @@
 
 \vspace*{0.2cm}
 
-\noindent \bo{Key words:} \\ Keyword one, keyword two \\
+\noindent Key words: \\ Keyword one, keyword two \\
 
 \onehalfspacing
 \newpage
