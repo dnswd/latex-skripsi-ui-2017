@@ -2,12 +2,12 @@
 % Halaman Pengesahan Sidang
 %
 % @author  Andreas Febrian, Andre Tampubolon
-% @version 2.00
-% @edit by Ichlasul Affan
+% @version 2.1.2
+% @edit by Muhammad Aulia Adil Murtito
 %
 
 \chapter*{HALAMAN PENGESAHAN}
-
+\thispagestyle{empty}
 \vspace*{0.4cm}
 \noindent
 
@@ -24,7 +24,7 @@
 
 \noindent \bo{Telah berhasil dipertahankan di hadapan Dewan Penguji
 dan diterima sebagai bagian persyaratan yang diperlukan untuk
-memperoleh gelar \gelar~pada Program Studi \program, Fakultas
+memperoleh gelar \jenjang~pada Program Studi \program, Fakultas
 \fakultas, Universitas Indonesia.}\\[0.2cm]
 
 \begin{center}
@@ -33,16 +33,25 @@ memperoleh gelar \gelar~pada Program Studi \program, Fakultas
 
 \vspace*{0.3cm}
 
+\def\blank{}
 \begin{tabular}{l l p{7cm} l }
 	\centering
 	& & & \\
 	Pembimbing 1&: & \pembimbingSatu & (\hspace*{3.0cm}) \\
-	& & & \\
-	Pembimbing 2&: & \pembimbingDua & (\hspace*{3.0cm}) \\
+	\ifx\blank\pembimbingDua
+    \else
+        & & & \\
+    	Pembimbing 2&: & \pembimbingDua & (\hspace*{3.0cm}) \\
+    \fi
 	& & & \\
 	Penguji 1&: & \pengujiSatu & (\hspace*{3.0cm}) \\
 	& & & \\
 	Penguji 2&: & \pengujiDua & (\hspace*{3.0cm}) \\
+	\ifx\blank\pengujiTiga
+    \else
+        & & & \\
+    	Penguji 3&: & \pengujiTiga & (\hspace*{3.0cm}) \\
+    \fi
 \end{tabular}\\
 
 \vspace*{2.0cm}

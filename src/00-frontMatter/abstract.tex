@@ -2,7 +2,7 @@
 % Halaman Abstract
 %
 % @author  Andreas Febrian
-% @version 2.00
+% @version 2.1.2
 % @edit by Ichlasul Affan
 %
 
@@ -20,9 +20,13 @@
 	Title&: & \judulInggris \\
 	Counsellor&: & \pembimbingSatu \\
 	\ifx\blank\pembimbingDua
-    \else
-        \ &\ & \pembimbingDua \\
-    \fi
+	\else
+		\ &\ & \pembimbingDua \\
+	\fi
+	\ifx\blank\pembimbingTiga
+	\else
+		\ &\ & \pembimbingTiga \\
+	\fi
 \end{tabular} \\
 
 \vspace*{0.5cm}
@@ -33,5 +37,5 @@
 
 \noindent Key words: \\ Keyword one, keyword two \\
 
-\onehalfspacing
+\setstretch{1.4}
 \newpage

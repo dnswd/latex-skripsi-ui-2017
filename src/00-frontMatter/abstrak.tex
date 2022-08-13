@@ -2,7 +2,7 @@
 % Halaman Abstrak
 %
 % @author  Andreas Febrian
-% @version 2.00
+% @version 2.1.2
 % @edit by Ichlasul Affan
 %
 
@@ -23,6 +23,10 @@
     \else
         \ &\ & \pembimbingDua \\
     \fi
+    \ifx\blank\pembimbingTiga
+    \else
+    	\ &\ & \pembimbingTiga \\
+    \fi
 \end{tabular} \\
 
 \vspace*{0.5cm}
@@ -33,5 +37,5 @@
 
 \noindent Kata kunci: \\ \f{Keyword} satu, kata kunci dua \\
 
-\onehalfspacing
+\setstretch{1.4}
 \newpage

@@ -2,7 +2,7 @@
 % Konfigurasi LaTeX untuk laporan thesis/ta/skripsi/sp sesuai dengan aturan UI tahun 2017
 %
 % @author  Andreas Febrian
-% @version 2.1.1
+% @version 2.1.2
 % @edit by Ichlasul Affan
 
 % Terima kasih untuk:
@@ -72,7 +72,7 @@
 % Digunakan untuk mengantur line spacing pada laporan. Umumnya spacing yang
 % digunakan adalah 1.5.
 \usepackage{setspace}
-  \onehalfspacing
+  \setstretch{1.4}
   %\doublespacing
   %\singlespacing
 
@@ -99,6 +99,9 @@
 
 % Untuk support landscape beberapa halaman yang diperlukan.
 \usepackage{lscape}
+
+% Untuk memberikan gambar dengan letak yang absolute (bisa diatur sesuka hati)
+\usepackage{tikzpagenodes}
 
 % Membuat seluruh tulisan menjadi Times New Roman.
 \usepackage{pslatex}
@@ -178,6 +181,11 @@
 	pdfview=FitH
 }
 
+% Uncomment untuk menghilangkan spasi di antara tiap-tiap Bab pada daftar pustaka
+% \newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+% \addtocontents{lot}{\protect\noaddvspace}
+
+
 % Link page numbers in TOC
 \makeatletter
 \def\contentsline#1#2#3#4{%
@@ -213,6 +221,14 @@
 % Atur header dan footer dalam dokumen.
 \renewcommand{\headrulewidth}{0.0pt}
 \fancyhf{}
+\fancypagestyle{plain}{
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+	\fancyfoot[L]{}
+	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{\footnotesize \fontfamily{phv} \selectfont \bo{Universitas Indonesia}}
+}
 \fancypagestyle{standard}{
 	\fancyhead[L]{}
 	\fancyhead[C]{}
@@ -319,12 +335,22 @@
 	\renewcommand{\BBAA}{\&}
 	\renewcommand{\BBAB}{dan}
 	\renewcommand{\BRetrievedFrom}{Diakses dari }
+	\renewcommand{\BRetrieved}[1]{Diakses pada tanggal {#1}, dari\ }
+}
+\AtBeginDocument{
+    \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+    \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 }
 
 
 %-----------------------------------------------------------------------------%
 % Perintah Baru
 %-----------------------------------------------------------------------------%
+% Perintah string compare
+\ExplSyntaxOn
+\cs_new_eq:NN \strcompare \str_if_eq:eeTF
+\ExplSyntaxOff
+
 % Perintah untuk membuat huruf tercetak miring. (alias)
 \newcommand{\f}[1]{\textit{#1}}
 % Perintah untuk huruf tercetak tebal dan miring.
@@ -381,7 +407,18 @@
 
 % Alias untuk perintah \LaTeX
 \newcommand{\latex}{\LaTeX}
-
+%
+% Untuk mematikan kalimat bold di table of content
+\newcommand*{\enableboldchapterintoc}{%
+  \addtocontents{toc}{\string\renewcommand{\protect\cftchapfont}{\protect\normalfont\protect\bfseries}}
+  \addtocontents{toc}{\string\renewcommand{\protect\cftchappagefont}{\protect\normalfont\protect\bfseries}}
+  \addtocontents{toc}{\string\renewcommand{\protect\cftchapleader}{\protect\bfseries\protect\cftdotfill{\protect\cftsecdotsep}}}% dot leaders in bold
+}
+\newcommand*{\disableboldchapterintoc}{%
+  \addtocontents{toc}{\string\renewcommand{\protect\cftchappagefont}{\protect\normalfont}}
+  \addtocontents{toc}{\string\renewcommand{\protect\cftchapfont}{\protect\normalfont}}
+  \addtocontents{toc}{\string\renewcommand{\protect\cftchapleader}{\protect\normalfont\protect\cftdotfill{\protect\cftsecdotsep}}}%
+}
 % Alias untuk menambahkan halaman baru setiap akhir bab
 \newcommand{\clearchapter}{
 	\ifodd\thechapterpagecount
