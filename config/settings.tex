@@ -3,64 +3,73 @@
 %-----------------------------------------------------------------------------%
 %
 % Judul laporan.
-\var{\judul}{Judul Karya Ilmiah Anda}
+\def\judul{Judul Karya Ilmiah Anda}
 %
 % Tulis kembali judul laporan, kali ini akan diubah menjadi huruf kapital
 \Var{\Judul}{Judul Karya Ilmiah Anda}
 %
 % Tulis kembali judul laporan namun dengan bahasa Ingris
-\var{\judulInggris}{Your Scientific Publication Title}
+\def\judulInggris{Your Scientific Publication Title}
 
 %
-% Tipe laporan, dapat berisi Skripsi, Tugas Akhir, Thesis, atau Disertasi
-\var{\type}{Skripsi}
+% Tipe laporan, dapat berisi: Laporan Kerja Praktik, Skripsi, Tugas Akhir, Thesis, atau Disertasi
+\def\type{Skripsi}
+%
+% Jenjang studi, dapat berisi: Diploma, Sarjana, Magister, atau Doktor
+\def\jenjang{Sarjana}
 %
 % Tulis kembali tipe laporan, kali ini akan diubah menjadi huruf kapital
 \Var{\Type}{Skripsi}
 %
 % Tulis nama penulis
-\var{\penulis}{Nama Lengkap Anda}
+\def\penulis{Nama Lengkap Anda}
 %
 % Tulis kembali nama penulis, kali ini akan diubah menjadi huruf kapital
 \Var{\Penulis}{Nama Lengkap Anda}
 %
 % Tulis NPM penulis
-\var{\npm}{Nomor Anda}
+\def\npm{Nomor Anda}
 %
 % Tuliskan Fakultas dimana penulis berada
 \Var{\Fakultas}{Fakultas Anda}
-\var{\fakultas}{Fakultas Anda}
+\def\fakultas{Fakultas Anda}
 %
 % Tuliskan Program Studi yang diambil penulis
 \Var{\Program}{Jurusan Anda}
-\var{\program}{Jurusan Anda}
+\def\program{Jurusan Anda}
 % Program Studi dalam bahasa inggris
-\var{\studyProgram}{Your study program}
+\def\studyProgram{Your study program}
 %
 % Tuliskan tahun publikasi laporan
 \Var{\bulanTahun}{Bulan Tahun}
 %
 % Tuliskan gelar yang akan diperoleh dengan menyerahkan laporan ini
-\var{\gelar}{Gelar Jurusan Anda}
+\def\gelar{Gelar Jurusan Anda}
 %
 % Tuliskan tanggal pengesahan laporan, waktu dimana laporan diserahkan ke
 % penguji/sekretariat
-\var{\tanggalSiapSidang}{Tanggal Bulan Tahun}
+\def\tanggalSiapSidang{Tanggal Bulan Tahun}
 %
 % Tuliskan tanggal keputusan sidang dikeluarkan dan penulis dinyatakan
 % lulus/tidak lulus
-\var{\tanggalLulus}{Tanggal Bulan Tahun}
-% Tuliskan tanggal pengesahan laporan final, waktu dimana laporan
-% diserahkan ke perpustakaan
-\var{\tanggalFinal}{Tanggal Bulan Tahun}
+\def\tanggalLulus{Tanggal Bulan Tahun}
 %
 % Tuliskan pembimbing
-\var{\pembimbingSatu}{Pembimbing Pertama Anda}
-\var{\pembimbingDua}{Pembimbing Kedua Anda}
+\def\pembimbingSatu{Pembimbing Pertama Anda}
+% S1 s.d. S3: Kosongkan jika tidak ada pembimbing kedua
+\def\pembimbingDua{}
+% S2 & S3: Kosongkan jika tidak ada pembimbing ketiga
+\def\pembimbingTiga{}
 %
 % Tuliskan penguji
-\var{\pengujiSatu}{Penguji Pertama Anda}
-\var{\pengujiDua}{Penguji Kedua Anda}
+\def\pengujiSatu{Penguji Pertama Anda}
+\def\pengujiDua{Penguji Kedua Anda}
+% Kosongkan jika tidak ada penguji ketiga (umumnya penguji ketiga hanya ada untuk S2)
+\def\pengujiTiga{}
+% Kosongkan jika tidak ada penguji keempat, kelima, atau keenam (umumnya penguji > 3 hanya ada untuk S3)
+\def\pengujiEmpat{}
+\def\pengujiLima{}
+\def\pengujiEnam{}
 
 %-----------------------------------------------------------------------------%
 % Judul Setiap Bab

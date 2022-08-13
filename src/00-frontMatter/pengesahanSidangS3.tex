@@ -1,0 +1,85 @@
+%
+% Halaman Pengesahan Sidang (S3)
+%
+% @author  Andreas Febrian, Andre Tampubolon
+% @version 2.1.2
+% @edit by Ichlasul Affan
+%
+
+\chapter*{HALAMAN PENGESAHAN}
+\thispagestyle{empty}
+\vspace*{0.4cm}
+\noindent
+
+\noindent
+\begin{tabular}{ll p{9cm}}
+	\type~ini diajukan oleh&: & \\
+	Nama&: & \penulis \\
+	NPM&: & \npm \\
+	Program Studi&: & \program \\
+	Judul \type&: & \judul \\
+\end{tabular} \\
+
+\vspace*{1.0cm}
+
+\noindent \bo{Telah berhasil dipertahankan di hadapan Dewan Penguji
+dan diterima sebagai bagian persyaratan yang diperlukan untuk
+memperoleh gelar Doktor pada Program Studi \program, Fakultas
+\fakultas, Universitas Indonesia.}\\[0.2cm]
+
+\begin{center}
+	\bo{DEWAN PENGUJI}
+\end{center}
+
+\vspace*{0.3cm}
+
+\def\blank{}
+\begin{longtable}{l l p{7cm} l }
+	\centering
+	& & & \\
+	Promotor&: & \pembimbingSatu & (\hspace*{3.0cm}) \\
+	\ifx\blank\pembimbingDua
+    \else
+        & & & \\
+    	Kopromotor&: & \pembimbingDua & (\hspace*{3.0cm}) \\
+    \fi
+    \ifx\blank\pembimbingTiga
+    \else
+        & & & \\
+    	&: & \pembimbingTiga & (\hspace*{3.0cm}) \\
+    \fi
+	& & & \\
+	Tim Penguji&: & \pengujiSatu~(Ketua) & (\hspace*{3.0cm}) \\
+	& & & \\
+	&: & \pengujiDua~(Anggota) & (\hspace*{3.0cm}) \\
+	\ifx\blank\pengujiTiga
+    \else
+        & & & \\
+    	&: & \pengujiTiga~(Anggota) & (\hspace*{3.0cm}) \\
+    \fi
+	\ifx\blank\pengujiEmpat
+	\else
+		& & & \\
+		&: & \pengujiEmpat~(Anggota) & (\hspace*{3.0cm}) \\
+	\fi
+	\ifx\blank\pengujiLima
+	\else
+		& & & \\
+		&: & \pengujiLima~(Anggota) & (\hspace*{3.0cm}) \\
+	\fi
+	\ifx\blank\pengujiEnam
+	\else
+		& & & \\
+		&: & \pengujiEnam~(Anggota) & (\hspace*{3.0cm}) \\
+	\fi
+\end{longtable}
+
+\vspace*{2.0cm}
+
+\begin{tabular}{ll l}
+	Ditetapkan di&: & Depok\\
+	Tanggal&: & \tanggalLulus \\
+\end{tabular}
+
+
+\newpage

@@ -17,7 +17,11 @@
       "profile": "https://gitlab.com/ichlaffterlalu",
       "contributions": [
         "infra",
-        "maintenance"
+        "maintenance",
+        "question",
+        "bug",
+        "code",
+        "security"
       ]
     },
     {
@@ -35,7 +39,8 @@
       "avatar_url": "https://secure.gravatar.com/avatar/1606c6c224747210cd6d4df42fb030a6?s=80&d=identicon",
       "profile": "https://gitlab.com/aulia-adil",
       "contributions": [
-        "doc"
+        "doc",
+        "code"
       ]
     },
     {

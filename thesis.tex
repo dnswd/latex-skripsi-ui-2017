@@ -2,7 +2,7 @@
 % Template Laporan Skripsi/Thesis Universitas Indonesia
 %
 % @author  Ichlasul Affan, Azhar Kurnia
-% @version 2.1.0
+% @version 2.1.2
 %
 % Dokumen ini dibuat berdasarkan standar IEEE dalam membuat class untuk
 % LaTeX dan konfigurasi LaTeX yang digunakan Fahrurrozi Rahman ketika
@@ -40,7 +40,10 @@
 %
 % Gunakan penomeran romawi
 \pagenumbering{roman}
-
+%
+% Menghilangkan penebalan pada huruf-huruf table of content
+% dari halaman judul hingga daftar lampiran
+\disableboldchapterintoc
 %
 % load halaman judul dalam
 \addChapter{HALAMAN JUDUL}
@@ -48,49 +51,71 @@
 \forceclearchapter
 
 %
+% load halaman orisinalitas
+
+% Menghilangkan penomoran
+\pagenumbering{gobble}
+
+\strcompare{Laporan Kerja Praktik}{\type}{}
+{
+	\include{src/00-frontMatter/pernyataanOrisinalitas}
+	\forceclearchapter
+}
+
+% Memunculkan penomoran kembali
+\pagenumbering{roman}
+
+%
 % setelah bagian ini, halaman dihitung sebagai halaman ke 2
 \setcounter{page}{2}
 
 %
-% load halaman orisinalitas
-\addChapter{LEMBAR PERNYATAAN ORISINALITAS}
-\include{src/00-front_matter/02-orisinal}
-\forceclearchapter
-%
-%
-\addChapter{LEMBAR PENGESAHAN}
-\include{src/00-front_matter/03-pengesahan_sidang}
-\forceclearchapter
-%
-%
-\addChapter{\kataPengantar}
-\include{src/00-front_matter/05-pengantar}
-\forceclearchapter
-%
-%
-\addChapter{LEMBAR PERSETUJUAN PUBLIKASI ILMIAH}
-\include{src/00-front_matter/04-persetujuan_publikasi}
-%
+% Lembar Penegesahan
+\strcompare{Laporan Kerja Praktik}{\type}
+{
+	% Lembar Pengesahan Kerja Praktik dari LaTeX
+	\addChapter{LEMBAR PERSETUJUAN DOSEN KERJA PRAKTIK}
+	\include{src/00-frontMatter/pengesahanKP}
+	\forceclearchapter
+}
+{
+	\addChapter{LEMBAR PENGESAHAN}
+	% Gunakan salah satu (comment atau hapus kode yang tidak perlu):
+	% Lembar Pengesahan Tugas Akhir dari LaTeX
+	\strcompare{Doktor}{\jenjang}
+	{\include{src/00-frontMatter/pengesahanSidangS3}}
+	{\include{src/00-frontMatter/pengesahanSidang}}
+	\forceclearchapter
+	% Lembar Pengesahan dari PDF lain (misal: generated oleh SISIDANG [Fasilkom])
+	%\putpdf{assets/pdfs/pengesahanSidang.pdf}
+}
+
+
+\strcompare{Laporan Kerja Praktik}{\type}{}
+{
+	%
+	% Kata Pengantar
+	\addChapter{\kataPengantar}
+	\include{src/00-frontMatter/kataPengantar}
+	\forceclearchapter
+	%
+	% Lembar Persetujuan Publikasi Ilmiah
+	\addChapter{LEMBAR PERSETUJUAN PUBLIKASI ILMIAH}
+	\include{src/00-frontMatter/persetujuanPublikasi}
+	\forceclearchapter
+}
 
 %
 % Untuk halaman pertama setiap chapter mulai dari abstrak, tetap berikan mark universitas.
 %
 \pagestyle{first-pages}
-\fancypagestyle{plain}{
-	\fancyhead[L]{}
-	\fancyhead[C]{}
-	\fancyhead[R]{}
-	\fancyfoot[L]{}
-	\fancyfoot[C]{\thepage}
-	\fancyfoot[R]{\footnotesize \fontfamily{phv} \selectfont \bo{Universitas Indonesia}}
-}
 
 %
 \addChapter{ABSTRAK}
-\include{src/00-front_matter/06-abstrak}
+\include{src/00-frontMatter/abstrak}
 %
 %
-\include{src/00-front_matter/07-abstract}
+\include{src/00-frontMatter/abstract}
 
 %
 % Daftar isi, gambar, tabel, dan kode
@@ -99,17 +124,17 @@
 \phantomsection %hack to make them clickable
 \singlespacing
 \tableofcontents
-\onehalfspacing
+\setstretch{1.4}
 \clearpage
 \phantomsection %hack to make them clickable
 \singlespacing
 \listoffigures
-\onehalfspacing
+\setstretch{1.4}
 \clearpage
 \phantomsection %hack to make them clickable
 \singlespacing
 \listoftables
-\onehalfspacing
+\setstretch{1.4}
 \clearpage
 
 %
@@ -120,7 +145,7 @@
 \addcontentsline{toc}{chapter}{\lstlistlistingname}
 \singlespacing
 \listoflistings
-\onehalfspacing
+\setstretch{1.4}
 \clearpage
 
 %
@@ -132,7 +157,7 @@
 %\addcontentsline{toc}{chapter}{\listofthingname}
 %\singlespacing
 %\listofthing
-%\onehalfspacing
+%\setstretch{1.4}
 %\clearpage
 
 %
@@ -143,7 +168,7 @@
 % \addcontentsline{toc}{chapter}{\listofequname}
 % \singlespacing
 % \listofequ
-% \onehalfspacing
+% \setstretch{1.4}
 % \clearpage
 
 %
@@ -154,7 +179,11 @@
 \addcontentsline{toc}{chapter}{\listofappendixname}
 \singlespacing
 \listofappendix
-\onehalfspacing
+\setstretch{1.4}
+
+% Table of content normal lagi hurufnya
+\enableboldchapterintoc
+
 \clearpage
 
 % Jika penomoran romawi selesai di ganjil
@@ -173,17 +202,17 @@
 
 
 \setoddevenheader
-\include{src/01-body/01-bab1}
+\include{src/01-body/bab1}
 \clearchapter
-\include{src/01-body/02-bab2}
+\include{src/01-body/bab2}
 \clearchapter
-\include{src/01-body/03-bab3}
+\include{src/01-body/bab3}
 \clearchapter
-\include{src/01-body/04-bab4}
+\include{src/01-body/bab4}
 \clearchapter
-\include{src/01-body/05-bab5}
+\include{src/01-body/bab5}
 \clearchapter
-\include{src/01-body/99-kesimpulan}
+\include{src/01-body/kesimpulan}
 \clearchapter
 
 %
@@ -203,7 +232,7 @@
 	\clearchapter
 	\setcounter{page}{\thepagetemp}
 	\stepcounter{page}
-	\include{src/99-back_matter/01-lampiran}
+	\include{src/99-backMatter/lampiran}
 \end{appendix}
 
 \end{document}
