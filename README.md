@@ -61,7 +61,7 @@ Link di bawah ini merupakan template **Overleaf versi lama**, yaitu versi 1.03
 
 #### Menggunakan Development Container
 
-[Development Container](https://containers.dev/) adalah spesifikasi yang memungkinkan pengguna untuk mempunyai lingkungan pengembangan menggunakan *container*. Terdapat dua cara untuk memanfaatkan Development Container dalam pengerjaan skripsi Anda:
+[Development Container (Devcontainer)](https://containers.dev/) adalah spesifikasi yang memungkinkan pengguna untuk mempunyai lingkungan pengembangan menggunakan *container*. Terdapat dua cara untuk memanfaatkan Development Container dalam pengerjaan skripsi Anda:
 
 - **Local menggunakan VSCode**
   Anda dapat menggunakan template ini dengan Devcontainer dengan bantuan [*extension* Dev Container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) di VSCode. Anda dapat clone repo ini, mengaktifkan Devcontainer, dan langsung mengerjakan tugas Anda ketika VSCode anda sudah memasuki ke dalam Devcontainer.
@@ -75,6 +75,8 @@ Karena Dev Container umumnya disupport oleh turunan dari VSCode, maka anda dapat
 - LiveShare code collaboration
 - Grammarly
 - Zotero LaTex
+
+PDF yang dihasilkan Devcontainer akan dapat diakses melalui folder `PDF`.
 
 ## Contributing
 
