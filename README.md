@@ -64,7 +64,7 @@ Link di bawah ini merupakan template **Overleaf versi lama**, yaitu versi 1.03
 [Development Container](https://containers.dev/) adalah spesifikasi yang memungkinkan pengguna untuk mempunyai lingkungan pengembangan menggunakan *container*. Terdapat dua cara untuk memanfaatkan Development Container dalam pengerjaan skripsi Anda:
 
 - **Local menggunakan VSCode**
-  Anda dapat menggunakan template ini dengan Devcontainer dengan bantuan [*extension* Dev Container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) di VSCode. Anda dapat langsung mengerjakan tugas Anda ketika VSCode anda sudah memasuki ke dalam Devcontainer.
+  Anda dapat menggunakan template ini dengan Devcontainer dengan bantuan [*extension* Dev Container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) di VSCode. Anda dapat clone repo ini, mengaktifkan Devcontainer, dan langsung mengerjakan tugas Anda ketika VSCode anda sudah memasuki ke dalam Devcontainer.
 - **Remote menggunakan GitHub Codespace**
   Anda dapat fork repo ini ke akun GitHub Anda, dan kemudian membuat Codespace dari repo hasil fork. Cara untuk membuat GitHub Codespace dapat dilihat di [laman ini](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository).
 
