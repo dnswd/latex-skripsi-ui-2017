@@ -48,7 +48,7 @@ Anda bisa membaca tutorialnya lebih lanjut dengan melakukan kompilasi template L
 Atau cara lebih praktis: silakan unduh PDF hasil kompilasi di GitLab melalui https://gitlab.com/ichlaffterlalu/latex-skripsi-ui-2017/-/jobs/artifacts/master/download?job=Generate+PDF.
 Daftar perubahan (CHANGELOG) juga terdapat di PDF hasil kompilasi (`thesis.pdf`) atau `lampiran.tex`.
 
-#### Overleaf
+#### Menggunakan Overleaf
 
 Template ini dapat digunakan di Overleaf. Berikut prosedur untuk menggunakannya:
 
@@ -58,6 +58,25 @@ Template ini dapat digunakan di Overleaf. Berikut prosedur untuk menggunakannya:
 Link di bawah ini merupakan template **Overleaf versi lama**, yaitu versi 1.03 
 
 [![Open as template in Overleaf](https://img.shields.io/badge/Overleaf-Open%20as%20template-green?style=flat-square)](https://www.overleaf.com/project/new/template/9383?id=26018259&latexEngine=pdflatex&mainFile=thesis.tex&templateName=Thesis+Template+for+Universitas+Indonesia&texImage=texlive-full%3A2021.1)
+
+#### Menggunakan Development Container
+
+[Development Container (Devcontainer)](https://containers.dev/) adalah spesifikasi yang memungkinkan pengguna untuk mempunyai lingkungan pengembangan menggunakan *container*. Terdapat dua cara untuk memanfaatkan Development Container dalam pengerjaan skripsi Anda:
+
+- **Local menggunakan VSCode**
+  Anda dapat menggunakan template ini dengan Devcontainer dengan bantuan [*extension* Dev Container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) di VSCode. Anda dapat clone repo ini, mengaktifkan Devcontainer, dan langsung mengerjakan tugas Anda ketika VSCode anda sudah memasuki ke dalam Devcontainer.
+- **Remote menggunakan GitHub Codespace**
+  Anda dapat fork repo ini ke akun GitHub Anda, dan kemudian membuat Codespace dari repo hasil fork. Cara untuk membuat GitHub Codespace dapat dilihat di [laman ini](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository).
+
+Karena Dev Container umumnya disupport oleh turunan dari VSCode, maka anda dapat memanfaatkan *VSCode extension* untuk mempermudah pengerjaan tugas anda. Beberapa *extension* yang sudah menjadi bawaan *template* ini antara lain:
+
+- LaTex Workshop
+- GitLens
+- LiveShare code collaboration
+- Grammarly
+- Zotero LaTex
+
+PDF yang dihasilkan Devcontainer akan dapat diakses melalui folder `PDF`.
 
 ## Contributing
 
