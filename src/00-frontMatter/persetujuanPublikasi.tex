@@ -6,22 +6,38 @@
 
 \chapter*{\uppercase{Halaman Pernyataan Persetujuan Publikasi Tugas Akhir untuk Kepentingan Akademis}}
 \thispagestyle{empty}
-\vspace*{0.2cm}
 \noindent
-Sebagai sivitas akademik Universitas Indonesia, saya yang bertanda
+Sebagai sivitas akademik Universitas Indonesia, \ifx\blank\npmDua{saya}\else{kami}\fi~yang bertanda
 tangan di bawah ini:
-\vspace*{0.4cm}
 
+\vspace*{0.2cm}
 
-\begin{tabular}{p{4.2cm} l p{6cm}}
-	\bo{Nama} & : & \penulis \\
-	\bo{NPM} & : & \npm \\
-	\bo{Program Studi} & : & \program\\
-	\bo{Fakultas} & : & \fakultas\\
+\begin{tabular}{p{4.2cm} l p{6.5cm}}
+	\ifx\blank\npmDua
+	Nama&: & \penulisSatu \\
+	NPM&: & \npmSatu \\
+	Program Studi&: & \programSatu\\
+	\else
+	\bo{Penulis 1}\\
+	Nama&: & \penulisSatu \\
+	NPM&: & \npmSatu \\
+	Program Studi&: & \programSatu \vspace*{0.1cm}\\
+	\bo{Penulis 2}\\
+	Nama&: & \penulisDua \\
+	NPM&: & \npmDua \\
+	Program Studi&: & \programDua \vspace*{0.1cm}\\
+	\fi
+	\ifx\blank\npmTiga\else
+	\bo{Penulis 3}\\
+	Nama&: & \penulisTiga \\
+	NPM&: & \npmTiga \\
+	Program Studi&: & \programTiga \vspace*{0.1cm}\\
+	\fi
 	\bo{Jenis Karya} & : & \type \\
 \end{tabular}
 
-\vspace*{0.6cm}
+\vspace*{0.2cm}
+
 \noindent demi pengembangan ilmu pengetahuan, menyetujui untuk memberikan
 kepada Universitas Indonesia \bo{Hak Bebas Royalti Noneksklusif
 (\textit{Non-exclusive Royalty Free Right})} atas karya ilmiah saya yang berjudul:
@@ -37,10 +53,13 @@ pemilik Hak Cipta. \\
 
 \noindent Demikian pernyataan ini saya buat dengan sebenarnya.
 
+\ifx\blank\npmDua\else\clearpage\fi
+
 % Untuk input gambar tanda tangan, silahkan sesuaikan xshift, yshift, dan width dengan gambar tanda tangan Anda
 %\begin{tikzpicture}[remember picture,overlay,shift={(current page.north east)}]
 %\node[anchor=north east,xshift=-9cm,yshift=-23.5cm]{\includegraphics[width=3cm]{assets/pics/tanda_tangan_wikipedia.png}};
 %\end{tikzpicture}
+
 
 \begin{center}
 	\vspace*{0.8cm}
@@ -51,8 +70,26 @@ pemilik Hak Cipta. \\
 
 	\vspace*{0.2cm}
 	Yang menyatakan \\
-	\vspace*{2cm}
-	(\penulis)
+	\ifx\blank\npmDua
+		\vspace*{2cm}
+		(\penulisSatu)
+	\else
+		\begin{multicols}{2}
+			Penulis 1:\\
+			\vspace*{2cm}
+			(\penulisSatu)\\
+			
+			Penulis 2:\\
+			\vspace*{2cm}
+			(\penulisDua)\\
+		\end{multicols}
+	\fi
+	\ifx\blank\npmTiga\else
+		\vspace*{0.2cm}
+		Penulis 3:\\
+		\vspace*{2cm}
+		(\penulisTiga)
+	\fi
 \end{center}
 
 \newpage

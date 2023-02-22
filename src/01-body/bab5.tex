@@ -2,37 +2,161 @@
 \chapter{\babLima}
 \label{bab:5}
 %-----------------------------------------------------------------------------%
-Apa itu Bab 5?
-
-\todo{Tuliskan paragraf pengantar bab lima di sini. Bab lima pada tugas akhir S1 umumnya merupakan pembahasan analisis dari penelitian. Namun, sekali lagi, sesuaikan dengan kebutuhan Anda. Tesis atau disertasi tentunya berbeda dengan skripsi.}
+Awalnya, \f{template} ini hanya digunakan untuk Tugas Akhir (Skripsi) mahasiswa S1 di Fakultas Ilmu Komputer, Universitas Indonesia. Seiring berkembangnya kegiatan pendidikan dan kemahasiswaan di lingkup Fakultas Ilmu Komputer hingga tingkat universitas, penyusun \f{template} menyadari ada kasus-kasus lain yang bisa menggunakan format Tugas Akhir UI. Beberapa di antaranya adalah tesis S2, disertasi S3, dan laporan kegiatan/kerja praktik. Oleh karena itu, perlu ada penjelasan terkait berbagai kasus penggunaan (\f{use case}) untuk \f{template} \LaTeX ini, dan bagaimana cara pengguna bisa memanfaatkan \f{template} untuk kasus tersebut.
+\todo{Sejatinya bab ini digunakan untuk membahas inti penelitian Anda. Bab lima pada tugas akhir S1 umumnya merupakan pembahasan analisis dari penelitian. Namun, sekali lagi, sesuaikan dengan kebutuhan Anda. Tesis atau disertasi tentunya berbeda dengan skripsi.}
 
 
 %-----------------------------------------------------------------------------%
-\section{Metode Analisis}
-\label{sec:method}
+\section{Tugas Akhir Individu S1, Proposal Tesis, dan Tesis S2}
+\label{sec:skripsiIndividu}
 %-----------------------------------------------------------------------------%
-Metode analisis yang dilakukan dalam penelitian ini adalah sebagai berikut:
+Tugas Akhir Individu di Fakultas Ilmu Komputer Universitas Indonesia berlaku sama dengan Tugas Akhir atau Skripsi mahasiswa S1 di fakultas lain di Universitas Indonesia.
+Proposal Tesis dan Tesis (di beberapa jurusan disebut Karya Akhir) di Fakultas Ilmu Komputer Universitas Indonesia juga berlaku sama dengan Tesis mahasiswa S2 di fakultas lain di Universitas Indonesia.
+Format yang digunakan untuk semua fakultas juga sama, mengacu ke Keputusan Rektor Universitas Indonesia nomor 2143/SK/R/UI/2017 tentang Pedoman Teknis Penulisan Tugas Akhir Mahasiswa Universitas Indonesia.
+Sejak versi 2.0.0, \f{template} ini sudah mengacu ke Keputusan Rektor UI tersebut.
+Pada versi tersebut juga dukungan untuk cetak skripsi atau tesis bolak-balik sudah tersedia.
+Tidak ada perubahan khusus yang perlu dilakukan terhadap konfigurasi \f{template} untuk Tugas Akhir untuk Mahasiswa S1 atau Proposal Tesis dan Tesis untuk Mahasiswa S2.
+Anda bisa mengikuti tahapan berikut untuk memulai penulisan Anda:
+\begin{enumerate}
+	\item Buka \code{config/settings.tex}. Terdapat lima bagian yang perlu dilengkapi:
+	\begin{itemize}
+		\item \bo{Judul dokumen}: Anda bisa memasukkan judul dalam bahasa Indonesia dan bahasa Inggris di sini.
+		\item \bo{Tipe dokumen}: Pada variabel \code{\bslash{}type}, cukup tuliskan "Skripsi" atau "Tugas Akhir", sesuaikan dengan aturan dari Fakultas masing-masing.
+		Isi variabel \code{\bslash{}jenjang} dengan "Sarjana" atau "Magister". Kosongkan variabel lainnya yang tidak relevan (jangan dihapus).
+		\item \bo{Informasi penulis}: Karena pada kasus ini, tugas akhir Anda bersifat individu, cukup isi variabel \code{\bslash{}penulisSatu} dengan nama Anda, \code{\bslash{}npmSatu} dengan NPM Anda, \code{\bslash{}programSatu} dengan nama program studi Anda dalam bahasa Indonesia, dan \code{\bslash{}studyProgramSatu} dengan nama program studi Anda dalam bahasa Inggris.
+		Untuk variabel lain mohon agar tetap dikosongkan (namun jangan dihapus) sehingga \f{template} bisa mendeteksi bahwa Anda akan menuliskan skripsi individu.
+		\item \bo{Informasi dosen pembimbing dan penguji}: Pada umumnya, dosen pembimbing skripsi di UI terdiri dari satu atau dua orang dosen, dan penguji skripsi di UI terdiri dari dua orang dosen.
+		Silakan isi variabel yang relevan dan kosongkan variabel lainnya (namun jangan dihapus).
+		\item \bo{Informasi lain}: Anda bisa melihat komentar di setiap variabel untuk mengetahui apa yang harus diisi di setiap variabel.
+		\item \bo{Judul setiap bab}: Silakan isi variabel yang ada untuk judul setiap bab. Jika ada bab yang ingin ditambahkan sebelum bab kesimpulan (misal: bab 6, bab 7), Anda dapat membuat variabel baru, contohnya: \code{\bslash{}Var\{\bslash{}bab6\}\{Analisis Pendapat Pengguna Aplikasi\}}.
+		\item Bagian lainnya seperti "Capitalized Variables" tidak perlu dimodifikasi. Variabel-variabel tersebut menunjang fungsi-fungsi khusus di \f{template}, salah satunya adalah versi \f{all caps} dari judul skripsi di halaman judul.
+	\end{itemize}
+	\item Setelah mengisi konfigurasi, Anda bisa periksa halaman-halaman awal dokumen.
+	Jika terdapat ketidaksesuaian pada ukuran atau jarak antar elemen, Anda bisa mengatur melalui berkas-berkas yang ada di \code{src/00-frontMatter}.
+	Halaman pengesahan sidang yang dipakai di format Tugas Akhir Individu ada di \code{src/00-frontMatter/pengesahanSidang.tex}.
+	Silakan perbesar atau perkecil ukuran yang ada pada kode \code{\bslash{}vspace*\{...\}}, untuk menyesuaikan \f{spacing}.
+	Tahapan ini akan berguna terutama jika judul tugas akhir Anda cukup panjang sehingga beberapa teks ada yang terlempar ke halaman berikutnya.
+	Jika ada perubahan kode yang signifikan, Anda bisa mengusulkan ke penyusun \f{template}.
+	Keterangan lebih lanjut terkait cara kontribusi dapat dilihat di berkas \code{README.md} dan \code{CONTRIBUTING}.
+	\item Anda juga bisa mengatur beberapa hal sebagai berikut:
+	\begin{itemize}
+		\item Pelajari cara sitasi dengan melihat \sect~\ref{sec:bibtex} dan cara melakukan \f{cross-reference} dengan melihat \sect~\ref{sec:crossReference}.
+		Kedua fitur tersebut merupakan fitur yang sangat penting dalam penulisan skripsi menggunakan \LaTeX.
+		\item Jika fakultas Anda memerlukan format sitasi selain APA (yang menjadi \f{default} di tingkat universitas), silakan baca \sect~\ref{sec:bibtexChangeFormat}.
+		\item Jika Anda membutuhkan support untuk selain tulisan alfabet, silakan baca \sect~\ref{sec:multilanguageSupport}.
+		Jika Anda membutuhkan penulisan notasi matematis, silakan baca \sect~\ref{sec:mathEqu}.
+		Jika Anda membutuhkan penulisan kode program, silakan baca \sect~\ref{sec:codeListing}.
+	\end{itemize}
+	\item Di akhir penulisan, Anda perlu memeriksa ulang tulisan Anda secara lebih teliti untuk memaksimalkan penggunaan kertas, sebisa mungkin hindari \f{unused space}. Selain itu, perhatikan juga pemenggalan yang dilakukan \LaTeX apakah sudah sesuai atau belum. Jika ada pemenggalan yang kurang sesuai, silakan tambahkan di \code{\_internals/hypeindonesia.tex} dan \f{request} untuk kontribusi.
+	Keterangan lebih lanjut terkait cara kontribusi dapat dilihat di berkas \code{README.md} dan \code{CONTRIBUTING}.
+\end{enumerate}
+
+%-----------------------------------------------------------------------------%
+\section{Tugas Akhir Kelompok S1}
+\label{sec:skripsiKelompok}
+%-----------------------------------------------------------------------------%
+Beberapa fakultas, salah satunya Fakultas Ilmu Komputer Universitas Indonesia (sejak tahun 2022) mengizinkan pengerjaan skripsi secara berkelompok paling banyak 3 (tiga) orang.
+Format yang digunakan juga mengacu ke Keputusan Rektor Universitas Indonesia nomor 2143/SK/R/UI/2017 tentang Pedoman Teknis Penulisan Tugas Akhir Mahasiswa Universitas Indonesia, namun ada penyesuaian di beberapa hal.
+Sejak versi 2.1.3, \f{template} ini mendukung \f{format} Tugas Akhir kelompok dengan menyesuaikan bagian depan dari \f{template}.
+Untuk memanfaatkan \f{format} tersebut, silakan ikuti tahapan berikut:
+\begin{enumerate}
+	\item Buka \code{config/settings.tex}. Isi variabel pada bagian "\bo{Informasi Penulis}" untuk penulis pertama, kedua dan ketiga secara berurutan. Misal: \code{\bslash{}penulisSatu} untuk nama penulis pertama, \code{\bslash{}penulisDua} untuk nama penulis kedua, dan \code{\bslash{}penulisTiga} untuk nama penulis ketiga.
+	Pastikan Anda mengisi data secara lengkap pada variabel yang sesuai.
+	Jika kelompok Anda hanya terdiri dari 2 (dua) orang, maka variabel-variabel data penulis ketiga harus dikosongkan (namun jangan dihapus).
+	\f{Template} akan menyesuaikan \f{format} sesuai dengan jumlah anggota kelompok di skripsi Anda.
+	\item Setelah mengisi konfigurasi, Anda bisa periksa halaman-halaman awal dokumen.
+	Jika terdapat ketidaksesuaian pada ukuran atau jarak antar elemen, Anda bisa mengatur melalui berkas-berkas yang ada di \code{src/00-frontMatter}.
+	Halaman pengesahan sidang yang dipakai di format Tugas Akhir Kelompok ada di \code{src/00-frontMatter/pengesahanSidang.tex}.
+	Silakan perbesar atau perkecil ukuran yang ada pada kode \code{\bslash{}vspace*\{...\}}, untuk menyesuaikan \f{spacing}.
+	Tahapan ini akan berguna terutama jika judul tugas akhir Anda dan data kelompok Anda cukup panjang sehingga beberapa teks ada yang terlempar ke halaman berikutnya.
+	Jika ada perubahan kode yang signifikan, Anda bisa mengusulkan ke penyusun \f{template}.
+	Keterangan lebih lanjut terkait cara kontribusi dapat dilihat di berkas \code{README.md} dan \code{CONTRIBUTING}.
+\end{enumerate}
+
+
+%-----------------------------------------------------------------------------%
+\section{Laporan Ilmiah dan Disertasi S3}
+\label{sec:disertasi}
+%-----------------------------------------------------------------------------%
+Disertasi S3 dan laporan-laporan lain yang diwajibkan untuk jenjang S3 juga menggunakan format sesuai Keputusan Rektor Universitas Indonesia nomor 2143/SK/R/UI/2017 tentang Pedoman Teknis Penulisan Tugas Akhir Mahasiswa Universitas Indonesia, namun ada penyesuaian di beberapa hal.
+Salah satu penyesuaian yang perlu dilakukan adalah istilah pembimbing yang berganti menjadi Promotor, Kopromotor.
+Jumlah penguji juga lebih banyak, bisa mencapai 6 orang dosen penguji.
+Sejak versi 2.1.2, \f{template} ini mendukung \f{format} disertasi dengan menyesuaikan bagian depan dari \f{template}.
+Untuk memanfaatkan \f{format} tersebut, silakan ikuti tahapan berikut:
+\begin{enumerate}
+	\item Buka \code{config/settings.tex}.
+	\begin{itemize}
+		\item Pada bagian "\bo{Tipe Dokumen}", variabel \code{\bslash{}type} bisa diisi dengan "Disertasi" atau tipe dokumen lainnya.
+		Variabel \code{\bslash{}jenjang} wajib diisi dengan "Doktor".
+		\item Pada bagian "\bo{Informasi Pembimbing dan Penguji}", isi nama lengkap dan gelar Promotor pada variabel \code{\bslash{}pembimbingSatu}, dan Kopromotor pada variabel  \code{\bslash{}pembimbingDua} (jika kopromotor ada dua orang, variabel  \code{\bslash{}pembimbingTiga} bisa diisi).
+		Untuk penguji, Anda bisa mengisi secara berurutan dari  \code{\bslash{}pengujiSatu} hingga \code{\bslash{}pengujiEnam}.
+	\end{itemize}
+	Konfigurasi untuk dokumen laporan ilmiah S3 tidak mendukung format Tugas Akhir Kelompok.
+	\item Setelah mengisi konfigurasi, Anda bisa periksa halaman-halaman awal dokumen.
+	Jika terdapat ketidaksesuaian pada ukuran atau jarak antar elemen, Anda bisa mengatur melalui berkas-berkas yang ada di \code{src/00-frontMatter}.
+	Halaman pengesahan sidang yang dipakai di format laporan ilmiah S3 ada di \code{src/00-frontMatter/pengesahanSidangS3.tex}.
+	Jika "Halaman Pengesahan" menjadi dua halaman, hal tersebut adalah lumrah.
+	Jika ada hal yang tidak lumrah, silakan perbesar atau perkecil ukuran yang ada pada kode \code{\bslash{}vspace*\{...\}}, untuk menyesuaikan \f{spacing}.
+	Jika ada perubahan kode yang signifikan, Anda bisa mengusulkan ke penyusun \f{template}.
+	Keterangan lebih lanjut terkait cara kontribusi dapat dilihat di berkas \code{README.md} dan \code{CONTRIBUTING}.
+\end{enumerate}
+
+
+%-----------------------------------------------------------------------------%
+\section{Laporan Kerja Praktik}
+\label{sec:laporanKerjaPraktik}
+%-----------------------------------------------------------------------------%
+Mata kuliah Kerja Praktik umumnya ditawarkan bagi individu sebagai mata kuliah bernilai SKS untuk mempresentasikan dan mendokumentasikan pekerjaan magang di industri melalui laporan karya ilmiah.
+Laporan Kerja Praktik di Fakultas Ilmu Komputer UI (dan sebagian fakultas yang menyediakan mata kuliah Kerja Praktik) juga menggunakan format sesuai Keputusan Rektor Universitas Indonesia nomor 2143/SK/R/UI/2017 tentang Pedoman Teknis Penulisan Tugas Akhir Mahasiswa Universitas Indonesia, namun ada penyesuaian di beberapa hal.
+Salah satu penyesuaian yang perlu dilakukan adalah halaman persetujuan yang berbeda karena Kerja Praktik tidak memerlukan sidang.
+Selain itu, ada beberapa halaman yang tidak diperlukan seperti Pernyataan Orisinalitas dan Persetujuan Publikasi.
+Sejak versi 2.1.2, \f{template} ini mendukung \f{format} laporan kerja praktik dengan menyesuaikan bagian depan dari \f{template}.
+Untuk memanfaatkan \f{format} tersebut, silakan ikuti tahapan berikut:
+\begin{enumerate}
+\item Buka \code{config/settings.tex}.
 \begin{itemize}
-	\item Tahap 1.
-	\item Tahap 2.
+	\item Pada bagian "\bo{Tipe Dokumen}", variabel \code{\bslash{}type} wajib diisi dengan "Laporan Kerja Praktik".
+	Variabel \code{\bslash{}jenjang} wajib diisi dengan "Sarjana".
+	\item Pada bagian "\bo{Informasi Pembimbing dan Penguji}", isi nama lengkap dan gelar dosen kelas Kerja Praktik pada \code{\bslash{}pembimbingSatu}, dan kosongkan semua variabel lain pada bagian tersebut (namun jangan dihapus).
 \end{itemize}
+Konfigurasi untuk Laporan Kerja Praktik tidak mendukung format Tugas Akhir Kelompok.
+\item Setelah mengisi konfigurasi, Anda bisa periksa halaman-halaman awal dokumen. Jika terdapat ketidaksesuaian pada ukuran atau jarak antar elemen, Anda bisa mengatur melalui berkas-berkas yang ada di \code{src/00-frontMatter}.
+Halaman persetujuan yang dipakai di format Laporan Kerja Praktik ada di \code{src/00-frontMatter/pengesahanKP.tex}.
+Silakan perbesar atau perkecil ukuran yang ada pada kode \code{\bslash{}vspace*\{...\}}, untuk menyesuaikan \f{spacing}.
+Jika ada perubahan kode yang signifikan, Anda bisa mengusulkan ke penyusun \f{template}.
+Keterangan lebih lanjut terkait cara kontribusi dapat dilihat di berkas \code{README.md} dan \code{CONTRIBUTING}.
+\end{enumerate}
 
 
 %-----------------------------------------------------------------------------%
-\section{Hasil Analisis}
-\label{sec:analisis}
+\section{Laporan Kegiatan Merdeka Belajar Kampus Merdeka}
+\label{sec:laporanKampusMerdeka}
 %-----------------------------------------------------------------------------%
-Berdasarkan analisis yang dilakukan pada \f{hardware} dengan spesifikasi ...., berikut ini adalah performa pembuatan produk yang dilakukan secara bersamaan:
-\begin{table}
-	\centering
-	\begin{tabular}{|l|c|c|c|c|}
-		\hline
-		Jumlah   & \f{CPU Time} (s) & CPU \% / \f{core} & Waktu (s) & Memori (MB) \\ \hline
-		1 produk & 101,21           & 35                & 37,86     & 917,35      \\ \hline
-		5 produk & 120,728          & 17,18             & 87,46     & 915,28      \\ \hline
-	\end{tabular}
-	\caption{Contoh Tabel: Analisis performa pembuatan produk ketika dijalankan bersamaan}
-	\label{table:sample}
-\end{table}
-
-\todo{Tulis penjelasan terkait \tab~\ref{table:sample} di sini. Jika Anda hanya menunjukkan data, pembaca tidak akan tahu apakah data tersebut berharga.}
+Program Merdeka Belajar Kampus Merdeka\footnote{\url{https://kampusmerdeka.kemdikbud.go.id/}} merupakan program \f{flagship} dari Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (Kemendikbud) Republik Indonesia yang bertujuan untuk memberikan peluang mahasiswa mendapatkan pengalaman belajar di luar kampus.
+Terdapat banyak pilihan program Kampus Merdeka yang tersedia bagi mahasiswa UI, beberapa di antaranya adalah Magang Bersertifikat, Studi Independen Bersertifikat (termasuk Program Bangkit\footnote{\url{https://www.dicoding.com/programs/bangkit}}), dan beberapa program lain di tingkat UI seperti \f{Build Your Own Course} (BYOC).
+Pada akhir program, mahasiswa diminta menyusun laporan dengan format yang disediakan untuk Kemendikbud, yang tentunya hanya tersedia untuk program dan jalur yang dikelola Kemendikbud.
+Beberapa program seperti BYOC dan jalur yang diselenggarakan UI seperti Kampus Merdeka Mandiri tidak memiliki akses ke template Kemendikbud.
+Di Fakultas Ilmu Komputer, laporan MBKM yang tidak melewati jalur yang dikelola Kemendikbud menggunakan laporan akhir layaknya Laporan Kerja Praktik yang formatnya menggunakan aturan Keputusan Rektor Universitas Indonesia nomor 2143/SK/R/UI/2017 tentang Pedoman Teknis Penulisan Tugas Akhir Mahasiswa Universitas Indonesia, dengan beberapa penyesuaian.
+Salah satu penyesuaian yang perlu dilakukan adalah halaman persetujuan yang berbeda karena Kampus Merdeka tidak memerlukan sidang, namun berbeda dengan Kerja Praktik, laporan kegiatan Kampus Merdeka membutuhkan persetujuan dari mitra.
+Sejak versi 2.1.3, \f{template} ini mendukung \f{format} laporan kerja praktik dengan menyesuaikan bagian depan dari \f{template}.
+Untuk memanfaatkan \f{format} tersebut, silakan ikuti tahapan berikut:
+\begin{enumerate}
+\item Buka \code{config/settings.tex}.
+\begin{itemize}
+	\item Pada bagian "\bo{Tipe Dokumen}", variabel \code{\bslash{}type} wajib diisi dengan "Kampus Merdeka".
+	Variabel \code{\bslash{}jenjang} wajib diisi dengan "Sarjana".
+	Variabel \code{\bslash{}kampusMerdekaType} wajib diisi dengan tipe kegiatan atau jalur yang diambil, misal: Magang, Studi Independen, Bangkit, dsb.
+	Jika program memiliki mitra, variabel \code{\bslash{}partnerPosition} wajib diisi dengan jabatan yang dimiliki perwakilan mitra yang akan menandatangani laporan Anda.
+	Jika program memiliki mitra, variabel \code{\bslash{}partnerInstance} wajib diisi dengan instansi, perusahaan, atau program yang menjadi tempat kerja perwakilan mitra yang akan menandatangani laporan Anda.
+	\item Pada bagian "\bo{Informasi Pembimbing dan Penguji}", isi nama lengkap dan gelar dosen penanggungjawab program Kampus Merdeka yang diambil (untuk mahasiswa Fasilkom UI) atau Pembimbing Akademik (untuk fakultas lain) pada \code{\bslash{}pembimbingSatu}.
+	Kemudian, isi nama lengkap perwakilan penyelia atau manajer dari mitra tempat kegiatan pada \code{\bslash{}pembimbingDua}.
+	Jika program tidak memiliki mitra (misalkan BYOC), kosongkan variabel \code{\bslash{}pembimbingDua}.
+	Kosongkan semua variabel lain pada bagian tersebut (namun jangan dihapus).
+\end{itemize}
+Konfigurasi untuk Kampus Merdeka tidak mendukung format Tugas Akhir Kelompok.
+\item Setelah mengisi konfigurasi, Anda bisa periksa halaman-halaman awal dokumen. Jika terdapat ketidaksesuaian pada ukuran atau jarak antar elemen, Anda bisa mengatur melalui berkas-berkas yang ada di \code{src/00-frontMatter}.
+Halaman persetujuan yang dipakai di format Laporan Kerja Praktik ada di \code{src/00-frontMatter/pengesahanMBKM.tex}.
+Silakan perbesar atau perkecil ukuran yang ada pada kode \code{\bslash{}vspace*\{...\}}, untuk menyesuaikan \f{spacing}.
+Jika ada perubahan kode yang signifikan, Anda bisa mengusulkan ke penyusun \f{template}.
+Keterangan lebih lanjut terkait cara kontribusi dapat dilihat di berkas \code{README.md} dan \code{CONTRIBUTING}.
+\end{enumerate}

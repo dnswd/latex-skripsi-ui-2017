@@ -1,46 +1,100 @@
 %-----------------------------------------------------------------------------%
-% Informasi Mengenai Dokumen
+% Judul Dokumen
 %-----------------------------------------------------------------------------%
 %
 % Judul laporan.
 \def\judul{Judul Karya Ilmiah Anda}
 %
-% Tulis kembali judul laporan, kali ini akan diubah menjadi huruf kapital
-\Var{\Judul}{Judul Karya Ilmiah Anda}
-%
 % Tulis kembali judul laporan namun dengan bahasa Ingris
 \def\judulInggris{Your Scientific Publication Title}
 
+
+%-----------------------------------------------------------------------------%
+% Tipe Dokumen
+%-----------------------------------------------------------------------------%
 %
-% Tipe laporan, dapat berisi: Laporan Kerja Praktik, Skripsi, Tugas Akhir, Thesis, atau Disertasi
+% Tipe laporan, dapat berisi: Laporan Kerja Praktik, Kampus Merdeka, Skripsi, Tugas Akhir, Thesis, atau Disertasi
 \def\type{Skripsi}
+%
+% Nama jalur Kampus Merdeka (hanya perlu diisi jika tipe laporan adalah Kampus Merdeka
+% Contoh isian (khusus Fasilkom): Studi Independen, Magang Mitra, Magang BUMN, Bangkit, Apple Academy, BYOC
+\def\kampusMerdekaType{}
+% Jika ada perwakilan mitra, isi dengan jabatan perwakilan mitra tersebut
+% (misal: Cohort Manager)
+% Kosongkan jika tidak ada perwakilan mitra
+\def\partnerPosition{}
+% Jika ada perwakilan mitra, isi dengan nama perusahaan atau nama program
+% (misal: PT. Astra International, Bangkit Academy 2023)
+% Kosongkan jika tidak ada perwakilan mitra
+\def\partnerInstance{}
 %
 % Jenjang studi, dapat berisi: Diploma, Sarjana, Magister, atau Doktor
 \def\jenjang{Sarjana}
+
+
+%-----------------------------------------------------------------------------%
+% Informasi Penulis
+%-----------------------------------------------------------------------------%
 %
-% Tulis kembali tipe laporan, kali ini akan diubah menjadi huruf kapital
-\Var{\Type}{Skripsi}
+% Tulis nama Anda
+% Kosongkan penulisDua dan penulisTiga jika Anda melaksanakan tugas akhir/laporan secara individu
+\def\penulisSatu{Nama Lengkap Anda 1} % nama lengkap penulis pertama
+\def\penulisDua{} % nama lengkap penulis kedua
+\def\penulisTiga{} % nama lengkap penulis ketiga
 %
-% Tulis nama penulis
-\def\penulis{Nama Lengkap Anda}
+% Tulis NPM Anda
+% Kosongkan npmDua dan npmTiga jika Anda melaksanakan tugas akhir/laporan secara individu
+\def\npmSatu{Nomor Anda 1} % NPM penulis pertama
+\def\npmDua{} % NPM penulis kedua
+\def\npmTiga{} % NPM penulis ketiga
 %
-% Tulis kembali nama penulis, kali ini akan diubah menjadi huruf kapital
-\Var{\Penulis}{Nama Lengkap Anda}
+% Tulis Program Studi yang Anda ambil
+% Kosongkan programDua dan programTiga jika Anda melaksanakan tugas akhir/laporan secara individu
+\def\programSatu{Jurusan Anda 1} % program studi penulis pertama
+\def\programDua{} % program studi penulis kedua
+\def\programTiga{} % program studi penulis ketiga
 %
-% Tulis NPM penulis
-\def\npm{Nomor Anda}
+% Tulis Program Studi yang Anda ambil dalam bahasa inggris
+% Kosongkan programDua dan programTiga jika Anda melaksanakan tugas akhir/laporan secara individu
+\def\studyProgramSatu{Your study program 1} % 1st author's study program
+\def\studyProgramDua{} % 2nd author's study program
+\def\studyProgramTiga{} % 3rd author's study program
+
+
+%-----------------------------------------------------------------------------%
+% Informasi Dosen Pembimbing & Penguji
+%-----------------------------------------------------------------------------%
+%
+% Tuliskan pembimbing
+% Untuk Kampus Merdeka: Tuliskan dosen PIC/pembimbing dari Fakultas Anda
+\def\pembimbingSatu{Pembimbing Pertama Anda}
+% S1 s.d. S3: Kosongkan jika tidak ada pembimbing kedua
+% Untuk Kampus Merdeka: Tuliskan penanggung jawab/penyelia/mitra
+%                       dari program Kampus Merdeka yang Anda ambil (jika ada)
+\def\pembimbingDua{}
+% S2 & S3: Kosongkan jika tidak ada pembimbing ketiga
+\def\pembimbingTiga{}
+
+%
+% Tuliskan penguji
+\def\pengujiSatu{Penguji Pertama Anda}
+\def\pengujiDua{Penguji Kedua Anda}
+% Kosongkan jika tidak ada penguji ketiga (umumnya penguji ketiga hanya ada untuk S2)
+\def\pengujiTiga{}
+% Kosongkan jika tidak ada penguji keempat, kelima, atau keenam (umumnya penguji > 3 hanya ada untuk S3)
+\def\pengujiEmpat{}
+\def\pengujiLima{}
+\def\pengujiEnam{}
+
+
+%-----------------------------------------------------------------------------%
+% Informasi Lain (Asal Fakultas, Tanggal, dsb.)
+%-----------------------------------------------------------------------------%
 %
 % Tuliskan Fakultas dimana penulis berada
-\Var{\Fakultas}{Fakultas Anda}
 \def\fakultas{Fakultas Anda}
 %
-% Tuliskan Program Studi yang diambil penulis
-\Var{\Program}{Jurusan Anda}
-\def\program{Jurusan Anda}
-% Program Studi dalam bahasa inggris
-\def\studyProgram{Your study program}
-%
-% Tuliskan tahun publikasi laporan
+% Tuliskan bulan dan tahun publikasi laporan
 \Var{\bulanTahun}{Bulan Tahun}
 %
 % Tuliskan gelar yang akan diperoleh dengan menyerahkan laporan ini
@@ -53,23 +107,7 @@
 % Tuliskan tanggal keputusan sidang dikeluarkan dan penulis dinyatakan
 % lulus/tidak lulus
 \def\tanggalLulus{Tanggal Bulan Tahun}
-%
-% Tuliskan pembimbing
-\def\pembimbingSatu{Pembimbing Pertama Anda}
-% S1 s.d. S3: Kosongkan jika tidak ada pembimbing kedua
-\def\pembimbingDua{}
-% S2 & S3: Kosongkan jika tidak ada pembimbing ketiga
-\def\pembimbingTiga{}
-%
-% Tuliskan penguji
-\def\pengujiSatu{Penguji Pertama Anda}
-\def\pengujiDua{Penguji Kedua Anda}
-% Kosongkan jika tidak ada penguji ketiga (umumnya penguji ketiga hanya ada untuk S2)
-\def\pengujiTiga{}
-% Kosongkan jika tidak ada penguji keempat, kelima, atau keenam (umumnya penguji > 3 hanya ada untuk S3)
-\def\pengujiEmpat{}
-\def\pengujiLima{}
-\def\pengujiEnam{}
+
 
 %-----------------------------------------------------------------------------%
 % Judul Setiap Bab
@@ -83,5 +121,22 @@
 \Var{\babDua}{Kerangka Berpikir}
 \Var{\babTiga}{Penggunaan Lanjutan}
 \Var{\babEmpat}{Struktur Template}
-\Var{\babLima}{Contoh Analisis dan Pembahasan}
+\Var{\babLima}{Kasus-Kasus Khusus}
 \Var{\kesimpulan}{Penutup}
+
+
+%-----------------------------------------------------------------------------%
+% Capitalized Variables
+% Anda tidak perlu mengubah apapun di bagian ini
+%-----------------------------------------------------------------------------%
+\Var{\Judul}{\judul}
+\Var{\Type}{\type}
+\Var{\PenulisSatu}{\penulisSatu}
+\Var{\PenulisDua}{\penulisDua}
+\Var{\PenulisTiga}{\penulisTiga}
+\Var{\Fakultas}{\fakultas}
+\Var{\ProgramSatu}{\programSatu}
+\Var{\ProgramDua}{\programDua}
+\Var{\ProgramTiga}{\programTiga}
+
+
