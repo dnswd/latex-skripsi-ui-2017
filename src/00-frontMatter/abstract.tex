@@ -11,14 +11,19 @@
 
 \vspace*{0.2cm}
 
-% Untuk conditional statement pembimbing dua
-\def\blank{}
-
 \noindent \begin{tabular}{l l p{11.0cm}}
-	Name&: & \penulis \\
-	Study Program&: & \studyProgram \\
+	\ifx\blank\npmDua
+		Name&: & \penulisSatu \\
+		Study Program&: & \studyProgramSatu \\
+	\else
+		Writer 1 / Study Program&: & \penulisSatu~/ \studyProgramSatu\\
+		Writer 2 / Study Program&: & \penulisDua~/ \studyProgramDua\\
+	\fi
+	\ifx\blank\npmTiga\else
+		Writer 3 / Study Program&: & \penulisTiga~/ \studyProgramTiga\\
+	\fi
 	Title&: & \judulInggris \\
-	Counsellor&: & \pembimbingSatu \\
+	Counselor&: & \pembimbingSatu \\
 	\ifx\blank\pembimbingDua
 	\else
 		\ &\ & \pembimbingDua \\

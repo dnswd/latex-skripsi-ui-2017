@@ -22,11 +22,31 @@
 	\vspace*{2.6cm}
 
 	\begin{tabular}{l c l}
-	\bo{Nama} & : & \bo{\penulis} \\
-	\bo{NPM} & : & \bo{\npm} \\
+	\ifx\blank\npmDua
+	\bo{Nama} & : & \bo{\penulisSatu} \\
+	\bo{NPM} & : & \bo{\npmSatu} \\
 	\bo{Tanda Tangan} & : & \\
 	& & \\
 	& & \\
+	\else
+	\bo{Nama Penulis 1} & : & \bo{\penulisSatu} \\
+	\bo{NPM Penulis 1} & : & \bo{\npmSatu} \\
+	\bo{Tanda Tangan Penulis 1} & : & \\
+	& & \\
+	& & \\
+	\bo{Nama Penulis 2} & : & \bo{\penulisDua} \\
+	\bo{NPM Penulis 2} & : & \bo{\npmDua} \\
+	\bo{Tanda Tangan Penulis 2} & : & \\
+	& & \\
+	& & \\
+	\fi
+	\ifx\blank\npmTiga\else
+	\bo{Nama Penulis 3} & : & \bo{\penulisTiga} \\
+	\bo{NPM Penulis 3} & : & \bo{\npmTiga} \\
+	\bo{Tanda Tangan Penulis 3} & : & \\
+	& & \\
+	& & \\
+	\fi
 	\bo{Tanggal} & : & \bo{\tanggalSiapSidang} \\
 	\end{tabular}
 \end{center}

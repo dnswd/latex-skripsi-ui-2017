@@ -159,6 +159,9 @@
 % LaTeX Line-breaking algorithm
 \sloppy
 
+% Blank for conditional logic
+\def\blank{}
+
 % Konfigurasi untuk input PDF
 \newif\ifpdf
 \ifx\pdfoutput\undefined
@@ -400,7 +403,7 @@
 
 % Perintah untuk membuat variabel baru. Teks yang ditulis dalam
 % perintah ini akan diformat ulang menggunakan huruf kapital.
-\newcommand{\Var}[2]{\newcommand{#1}{\uppercase{#2}}}
+\newcommand{\Var}[2]{\MakeUppercase{\gdef\noexpand#1{#2}}}
 
 % Tambahkan kata-kata yang dimasukan kedalam Table of Contents.
 \newcommand{\addChapter}[1]{\phantomsection \addcontentsline{toc}{chapter}{#1}}

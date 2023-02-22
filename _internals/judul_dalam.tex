@@ -28,17 +28,28 @@
         \bo{Diajukan sebagai salah satu syarat untuk memperoleh gelar \\
         \gelar}\\
 
+		% Sesuaikan spacing agar semua informasi muat dalam satu halaman 
         \vspace*{3 cm}
+        
         % penulis dan npm
-        \bo{\Penulis} \\
-        \bo{\npm} \\
-
+        \ifx\blank\npmDua
+	        \bo{\PenulisSatu} \\
+	        \bo{\npmSatu} \\
+	    \else
+	    	\bo{\PenulisSatu~/ \npmSatu~/ \ProgramSatu}\\
+	    	\bo{\PenulisDua~/ \npmDua~/ \ProgramDua}\\
+	    \fi
+	    \ifx\blank\npmTiga\else
+		    \bo{\PenulisTiga~/ \npmTiga~/ \ProgramTiga}\\
+	    \fi
+	    
+		% Sesuaikan spacing agar semua informasi muat dalam satu halaman 
         \vspace*{5.0cm}
 
         % informasi mengenai fakultas dan program studi
         \bo{
         	FAKULTAS \Fakultas\\
-        	PROGRAM STUDI \Program \\
+        	PROGRAM STUDI \ProgramSatu \\
         	DEPOK \\
         	\bulanTahun
         }

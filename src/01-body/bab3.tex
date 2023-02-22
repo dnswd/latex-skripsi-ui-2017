@@ -2,16 +2,22 @@
 \chapter{\babTiga}
 \label{bab:3}
 %-----------------------------------------------------------------------------%
-Bab ini menjelaskan tentang hal-hal \f{advanced} dalam \latex. Hal ini mencakup bagaimana cara menulis persamaan matematis di \latex, menambahkan daftar isi, catatan, PDF, menambahkan kode, bahkan menambahkan perintah baru.
+Bab ini menjelaskan tentang hal-hal \f{advanced} dalam \latex.
+Hal ini mencakup bagaimana cara menulis persamaan matematis di \latex, menambahkan daftar isi, catatan, PDF, menambahkan kode, bahkan menambahkan perintah baru.
 
-\todo{Sejatinya bab ini digunakan untuk membahas inti dari penelitian Anda. Sesuaikan saja dengan kebutuhkan Anda: misalkan bab tiga Anda adalah penjelasan terkait desain sistem.}
+\noindent\todo{
+	Sejatinya bab ini digunakan untuk membahas inti dari penelitian Anda.
+	Sesuaikan saja dengan kebutuhkan Anda: misalkan bab tiga Anda adalah penjelasan terkait desain sistem.
+}
 
 
 %-----------------------------------------------------------------------------%
 \section{Membuat Persamaan Matematis}
 \label{sec:mathEqu}
 %-----------------------------------------------------------------------------%
-Di \latex, kita dapat membuat persamaan matematis baik yang terdiri dari satu persamaan maupun lebih dari satu persamaan. Anda bisa mencoba mengikuti dan memahami contoh kode yang ada di \f{template} ini untuk kebutuhan tugas akhir Anda. Menggunakan \latex~juga perlu latihan dan lihai memahami dokumentasi.
+Di \latex, kita dapat membuat persamaan matematis baik yang terdiri dari satu persamaan maupun lebih dari satu persamaan.
+Anda bisa mencoba mengikuti dan memahami contoh kode yang ada di \f{template} ini untuk kebutuhan tugas akhir Anda.
+Menggunakan \latex~juga perlu latihan dan lihai memahami dokumentasi.
 
 %-----------------------------------------------------------------------------%
 \subsection{Satu Persamaan}
@@ -148,7 +154,9 @@ Ada dua perintah untuk memberikan catatan penulisan dalam dokumen yang Anda kerj
 \label{sec:landscape}
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
-Ketika Anda ingin memasukkan tabel atau gambar yang ukurannya cukup panjang ke samping, Anda diperkenankan untuk menyajikan konten tersebut dengan orientasi \f{landscape}. Caranya cukup mudah, yaitu dengan menambahkan \code{\bslash{}begin\{landscape\}} di sebelum konten dan \code{\bslash{}end\{landscape\}} di setelah konten. Format ini kompatibel juga dengan \code{longtable} untuk tabel yang panjang dan lebar. Contoh penggunaannya adalah pada \tab~\ref{tab:longTableLandscape}.
+Ketika Anda ingin memasukkan tabel atau gambar yang ukurannya cukup panjang ke samping, Anda diperkenankan untuk menyajikan konten tersebut dengan orientasi \f{landscape}.
+Caranya cukup mudah, yaitu dengan menambahkan \code{\bslash{}begin\{landscape\}} di sebelum konten dan \code{\bslash{}end\{landscape\}} di setelah konten.
+Format ini kompatibel juga dengan \code{longtable} untuk tabel yang panjang dan lebar. Contoh penggunaannya adalah pada \tab~\ref{tab:longTableLandscape}.
 
 \begin{landscape}
 \begin{footnotesize}
@@ -215,13 +223,11 @@ Ketika Anda ingin memasukkan tabel atau gambar yang ukurannya cukup panjang ke s
 \end{footnotesize}
 \end{landscape}
 
-
 %-----------------------------------------------------------------------------%
 \subsection{\f{Alignment} dan \f{Word Wrapping} pada Tabel}
 \label{sec:cellAlignmentAndWordWrap}
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
-
 Mulai versi 2.1.0, Anda bisa melakukan \f{word wrapping} dalam tabel, dengan \f{alignment} sesuai yang diinginkan.
 Karakter \f{alignment} dapat ditambahkan pada konfigurasi tabel, contohnya adalah: \code{\bslash{}begin\{tabular\}\{|P{0.5\bslash{}textwidth}|p\{0.4\bslash{}textwidth\}|\}}.
 
@@ -284,11 +290,17 @@ Contoh pemanfaatan \f{alignment} dan \f{word-wrapping} pada suatu \code{longtabl
 	\hline
 \end{longtable}
 
+
 %-----------------------------------------------------------------------------%
 \section{Melakukan \f{Cross-Reference} ke Suatu Bagian dalam Laporan}
 \label{sec:crossReference}
 %-----------------------------------------------------------------------------%
-Dengan menggunakan \latex, Anda tidak perlu lagi melakukan referensi ke suatu bagian atau objek dalam laporan secara manual. Anda cukup melakukan referensi ke bagian/gambar/kode/persamaan yang Anda inginkan dengan menggunakan perintah \code{\bslash{}ref}. Anda tidak perlu lagi mengubah referensi secara manual setiap kali ada perubahan letak pada bagian tersebut, karena \latex~akan melakukannya secara otomatis. Untuk melakukan \f{cross-reference}, pertama kali tandai bagian yang ingin Anda referensikan dengan menggunakan suatu label, melalui perintah \code{\bslash{}label\{...:.....\}}. Label tidak boleh mengandung spasi. Berikut ini adalah konvensi penamaan label dan cara melakukan referensi yang digunakan dalam \f{template} ini:
+Dengan menggunakan \latex, Anda tidak perlu lagi melakukan referensi ke suatu bagian atau objek dalam laporan secara manual.
+Anda cukup melakukan referensi ke bagian/gambar/kode/persamaan yang Anda inginkan dengan menggunakan perintah \code{\bslash{}ref}.
+Anda tidak perlu lagi mengubah referensi secara manual setiap kali ada perubahan letak pada bagian tersebut, karena \latex~akan melakukannya secara otomatis.
+Selain itu, pada PDF yang dihasilkan oleh \latex, referensi tersebut akan memiliki \f{link} yang langsung mengarahkan pembaca ke posisi objek atau bagian yang direferensikan.
+Untuk melakukan \f{cross-reference}, pertama kali tandai bagian yang ingin Anda referensikan dengan menggunakan suatu label, melalui perintah \code{\bslash{}label\{...:.....\}}.
+Label tidak boleh mengandung spasi. Berikut ini adalah konvensi penamaan label dan cara melakukan referensi yang digunakan dalam \f{template} ini:
 \begin{itemize}
 	\item \code{\bslash{}label\{bab:[nomorBab]\}} untuk sebuah bab. \\
 	Contoh: \code{\bslash{}label\{bab:3\}} \\
@@ -325,14 +337,18 @@ Dengan menggunakan \latex, Anda tidak perlu lagi melakukan referensi ke suatu ba
 \label{sec:bibtex}
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
-BibTeX adalah \f{library} dalam \latex~yang dapat membantu Anda untuk menuliskan sitasi. Dengan menggunakan BibTeX, Anda tidak perlu memikirkan format penulisan referensi atau sitasi. \f{Formatting} akan dilakukan secara otomatis sesuai dengan format sitasi yang digunakan. Secara \f{default}, \f{template} ini menggunakan format sitasi APA. Namun, format tersebut dapat diubah sesuai dengan peraturan yang dimiliki oleh fakultas, dosen pembimbing, atau dosen penguji Anda.
-
+BibTeX adalah \f{library} dalam \latex~yang dapat membantu Anda untuk menuliskan sitasi.
+Dengan menggunakan BibTeX, Anda tidak perlu memikirkan format penulisan referensi atau sitasi.
+\f{Formatting} akan dilakukan secara otomatis sesuai dengan format sitasi yang digunakan.
+Secara \f{default}, \f{template} ini menggunakan format sitasi APA.
+Namun, format tersebut dapat diubah sesuai dengan peraturan yang dimiliki oleh fakultas, dosen pembimbing, atau dosen penguji Anda.
 
 %-----------------------------------------------------------------------------%
 \subsection{Menambahkan Referensi}
 \label{sec:bibtexAddRef}
 %-----------------------------------------------------------------------------%
-Anda bisa menambahkan bahan bacaan yang ingin Anda jadikan referensi ke dalam berkas \code{references.bib}. Contoh isi kode \f{references.bib} saat ini dapat dilihat di \lst~\ref{code:references}.
+Anda bisa menambahkan bahan bacaan yang ingin Anda jadikan referensi ke dalam berkas \code{references.bib}.
+Contoh isi kode \f{references.bib} saat ini dapat dilihat di \lst~\ref{code:references}.
 \lstinputlisting[language=TeX, caption=Daftar referensi di \code{references.bib}, label=code:references]{config/references.bib}
 
 Format suatu objek referensi pada BibTex adalah sebagai berikut: \\
@@ -340,7 +356,8 @@ Format suatu objek referensi pada BibTex adalah sebagai berikut: \\
 \code{title    = \{Judul Buku\},}\\
 \code{....}\\
 \code{\}}\\
-Kode untuk sitasi dapat berisi karakter non-spasi yang bisa digunakan untuk melakukan sitasi di dalam konten laporan. Terdapat empat belas tipe referensi yang bisa digunakan pada BibTeX:
+Kode untuk sitasi dapat berisi karakter non-spasi yang bisa digunakan untuk melakukan sitasi di dalam konten laporan.
+Terdapat empat belas tipe referensi yang bisa digunakan pada BibTeX:
 \begin{itemize}
 	\item \code{article}: Digunakan untuk merujuk ke sebuah artikel dalam suatu majalah, buku, atau koleksi artikel lainnya.
 	\item \code{book}: Digunakan untuk merujuk ke sebuah buku.
@@ -363,16 +380,24 @@ Kode untuk sitasi dapat berisi karakter non-spasi yang bisa digunakan untuk mela
 Berikut ini adalah contoh kalimat yang menggunakan sitasi: \\
 "Kalimat menurut \cite{book:sample} terdiri dari subjek, predikat, dan objek \citep{book:sample}."
 
-Ada format sitasi yang memiliki cara penulisan yang berbeda berdasarkan posisi sitasi, ada juga yang tidak. Format sitasi APA membedakan penulisan sitasi pada isi kalimat dengan akhir kalimat, sedangkan format sitasi IEEE tidak. Untuk melakukan sitasi pada isi kalimat, di mana sitasi tersebut umumnya sebagai subjek, objek, atau keterangan pada kalimat, gunakan perintah \code{\bslash{}citep}. Sedangkan untuk melakukan sitasi pada akhir kalimat, di mana sitasi tersebut umumnya sebagai rujukan suatu gagasan, gunakan perintah \code{\bslash{}cite}.
+Ada format sitasi yang memiliki cara penulisan yang berbeda berdasarkan posisi sitasi, ada juga yang tidak.
+Format sitasi APA membedakan penulisan sitasi pada isi kalimat dengan akhir kalimat, sedangkan format sitasi IEEE tidak.
+Untuk melakukan sitasi pada isi kalimat, di mana sitasi tersebut umumnya sebagai subjek, objek, atau keterangan pada kalimat, gunakan perintah \code{\bslash{}citep}.
+Sedangkan untuk melakukan sitasi pada akhir kalimat, di mana sitasi tersebut umumnya sebagai rujukan suatu gagasan, gunakan perintah \code{\bslash{}cite}.
 
-Perlu diperhatikan bahwa \code{\bslash{}citep} hanya bisa digunakan untuk format sitasi yang butuh membedakan posisi sitasi. Penggunaan \code{\bslash{}citep} pada format sitasi seperti IEEE akan menimbulkan error. Jika Anda menggunakan format seperti itu, cukup gunakan \code{\bslash{}cite} dimanapun posisi sitasi Anda.
+Perlu diperhatikan bahwa \code{\bslash{}citep} hanya bisa digunakan untuk format sitasi yang butuh membedakan posisi sitasi.
+Penggunaan \code{\bslash{}citep} pada format sitasi seperti IEEE akan menimbulkan error.
+Jika Anda menggunakan format seperti itu, cukup gunakan \code{\bslash{}cite} dimanapun posisi sitasi Anda.
 
 %-----------------------------------------------------------------------------%
 \subsection{Mengubah Format Referensi/Sitasi}
 \label{sec:bibtexChangeFormat}
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
-Sejak versi \f{template} 2.0.2, format referensi \f{default} telah diganti menjadi APA dari sebelumnya IEEE karena banyaknya permintaan dosen penguji untuk menggunakan format APA. Pada dasarnya, peraturan Rektor UI terkait Tugas Akhir menyerahkan format referensi sesuai dengan aturan fakultas. Namun, mayoritas dari fakultas atau dosen pembimbing di Universitas Indonesia menggunakan APA sebagai format sitasinya. Oleh karena itu, jika fakultas atau dosen pembimbing/penguji Anda meminta format sitasi yang berbeda selain APA, Anda bisa menggantinya dengan mengikuti tahapan berikut:
+Sejak versi \f{template} 2.0.2, format referensi \f{default} telah diganti menjadi APA dari sebelumnya IEEE karena banyaknya permintaan dosen penguji untuk menggunakan format APA.
+Pada dasarnya, peraturan Rektor UI terkait Tugas Akhir menyerahkan format referensi sesuai dengan aturan fakultas.
+Namun, mayoritas dari fakultas atau dosen pembimbing di Universitas Indonesia menggunakan APA sebagai format sitasinya.
+Oleh karena itu, jika fakultas atau dosen pembimbing/penguji Anda meminta format sitasi yang berbeda selain APA, Anda bisa menggantinya dengan mengikuti tahapan berikut:
 \begin{enumerate}
 	\item Pada berkas \code{uithesis.sty}, terdapat bagian \bo{Package}. Cari konfigurasi "Format sitasi".
 	\item Hilangkan tanda komentar (\f{uncomment}) pada bagian konfigurasi format yang akan digunakan, misal: APA. Pastikan hanya satu jenis konfigurasi format yang di-\f{uncomment}.
@@ -381,15 +406,20 @@ Sejak versi \f{template} 2.0.2, format referensi \f{default} telah diganti menja
 		\item Jika Anda akan menggunakan format APA, hilangkan tanda komentar (\f{uncomment}) pada bagian konfigurasi tersebut.
 		\item Jika Anda akan menggunakan format selain APA, jadikan bagian konfigurasi tersebut sebagai komentar (\f{comment}).
 	\end{itemize}
-	\item Tidak semua format sitasi mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat. Contoh format yang mengenal perbedaan tersebut adalah APA dan MLA. IEEE dan ACM tidak mengenal format tersebut.
+	\item Tidak semua format sitasi mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat.
+	Contoh format yang mengenal perbedaan tersebut adalah APA dan MLA.
+	IEEE dan ACM tidak mengenal format tersebut.
 	\begin{itemize}
 		\item Jika format sitasi yang akan digunakan mengenal perbedaan tersebut, ganti sitasi pada akhir kalimat atau tempat lain yang membutuhkan model sitasi dengan \f{parentheses} (kurung) dengan menggunakan perintah \code{\bslash{}citep}.
 		\item Jika format sitasi yang akan digunakan tidak mengenal perbedaan tersebut, pastikan semua sitasi menggunakan perintah \code{\bslash{}cite}.
 	\end{itemize}
-	\item Jika muncul pesan error seperti \code{[nama-format].bst not found}, itu tandanya format tersebut tidak tersedia secara bawaan dari BibTeX. Unduh berkas terkait dahulu dari CTAN, lalu letakkan di direktori \code{\_internals}. Contoh format sitasi yang membutuhkan berkas eksternal adalah MLA (konfigurasi MLA sudah tersedia di \code{uithesis.sty}, namun berkas \code{mla.bst} belum tersedia).
+	\item Jika muncul pesan error seperti \code{[nama-format].bst not found}, itu tandanya format tersebut tidak tersedia secara bawaan dari BibTeX.
+	Unduh berkas terkait dahulu dari CTAN, lalu letakkan di direktori \code{\_internals}.
+	Contoh format sitasi yang membutuhkan berkas eksternal adalah MLA (konfigurasi MLA sudah tersedia di \code{uithesis.sty}, namun berkas \code{mla.bst} belum tersedia).
 	\item Jika konfigurasi format sitasi belum tersedia di \code{uithesis.sty}, ikuti langkah-langkah berikut:
 	\begin{enumerate}
-		\item Tambahkan konfigurasi baru di \code{uithesis.sty}, pada bagian \bo{Package} $>$ "Format sitasi". Contoh bisa mengikuti dengan format-format lain yang sudah tersedia, namun silakan sesuaikan dengan kebutuhan format sitasi yang akan digunakan.
+		\item Tambahkan konfigurasi baru di \code{uithesis.sty}, pada bagian \bo{Package} $>$ "Format sitasi".
+		Contoh bisa mengikuti dengan format-format lain yang sudah tersedia, namun silakan sesuaikan dengan kebutuhan format sitasi yang akan digunakan.
 		\item Jika format sitasi yang akan digunakan mengenal perbedaan pada sitasi di awal/tengah kalimat atau di akhir kalimat, gunakan \f{package} \code{natbib} sehingga mendukung \f{command} sitasi \code{\bslash{}citep}.
 	\end{enumerate}
 \end{enumerate}
@@ -400,25 +430,30 @@ Sejak versi \f{template} 2.0.2, format referensi \f{default} telah diganti menja
 \label{sec:tableOfContent}
 %-----------------------------------------------------------------------------%
 
-
 %-----------------------------------------------------------------------------%
 \subsection{Menambahkan Konten ke Daftar Isi/Lampiran Secara Manual}
 \label{sec:addTocEntry}
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
-Terkadang ada kebutuhan untuk memasukan kata-kata tertentu kedalam Daftar Isi. Perintah \code{\bslash{}addChapter} dapat digunakan untuk judul bab dalam Daftar Isi. Contohnya dapat dilihat pada berkas \code{thesis.tex}. Untuk judul lampiran, Anda bisa menambahkannya ke dalam Daftar Lampiran dengan menggunakan \code{\bslash{}addappendix}. Kedua perintah ini akan menambahkan entri baru setingkat sebuah bab (\f{chapter}).
-
+Terkadang ada kebutuhan untuk memasukan kata-kata tertentu kedalam Daftar Isi.
+Perintah \code{\bslash{}addChapter} dapat digunakan untuk judul bab dalam Daftar Isi.
+Contohnya dapat dilihat pada berkas \code{thesis.tex}.
+Untuk judul lampiran, Anda bisa menambahkannya ke dalam Daftar Lampiran dengan menggunakan \code{\bslash{}addappendix}.
+Kedua perintah ini akan menambahkan entri baru setingkat sebuah bab (\f{chapter}).
 
 %-----------------------------------------------------------------------------%
 \subsection{Menambahkan Daftar Konten \f{Custom}}
 \label{sec:addCustomContentList}
 % Hal baru di template 2017
 %-----------------------------------------------------------------------------%
-Selain itu, jika dibutuhkan, Anda juga bisa menambahkan daftar objek dengan jenis atau tujuan tertentu ke dalam laporan Anda. Misalkan, Anda ingin membuat "Daftar Aturan Transformasi" khusus untuk grafik-grafik yang menggambarkan aturan \f{transpiling} antar bahasa pemrograman. Untuk menambahkan hal tersebut, Anda perlu melakukan tahapan berikut:
+Selain itu, jika dibutuhkan, Anda juga bisa menambahkan daftar objek dengan jenis atau tujuan tertentu ke dalam laporan Anda.
+Misalkan, Anda ingin membuat "Daftar Aturan Transformasi" khusus untuk grafik-grafik yang menggambarkan aturan \f{transpiling} antar bahasa pemrograman.
+Untuk menambahkan hal tersebut, Anda perlu melakukan tahapan berikut:
 
 \begin{enumerate}
 	\item Buka berkas \code{uithesis.sty} pada bagian "Daftar Konten Custom". \\
-	Terdapat contoh kode untuk membuat daftar konten \f{custom}, dengan nama "Daftar Sesuatu" dan nama objek "Sesuatu". Untuk mencobanya, \f{uncomment} kode tersebut. Ada lima perintah yang akan dibuat kode tersebut.
+	Terdapat contoh kode untuk membuat daftar konten \f{custom}, dengan nama "Daftar Sesuatu" dan nama objek "Sesuatu".
+	Untuk mencobanya, \f{uncomment} kode tersebut. Ada lima perintah yang akan dibuat kode tersebut.
 	\begin{itemize}
 		\item \code{\bslash{}listof....name}: Nama daftar isi untuk jenis objek tersebut, contoh: \code{\bslash{}listofthingname} yang akan mengembalikan teks "Daftar Sesuatu".
 		\item \code{\bslash{}listof....}: Daftar isi untuk jenis objek tersebut, contoh: \code{\bslash{}listofthing} yang akan menghasilkan Daftar Sesuatu, yaitu daftar konten objek-objek Sesuatu.
@@ -426,7 +461,8 @@ Selain itu, jika dibutuhkan, Anda juga bisa menambahkan daftar objek dengan jeni
 		\item \code{\bslash{}caption....}: Caption untuk jenis objek tersebut, contoh: \code{\bslash{}captionthing} yang berfungsi sebagai \f{caption} dari gambar/kode/tabel/persamaan yang masuk kategori "Sesuatu".
 		\item \code{\bslash{}captionsource....}: Caption dengan sumber untuk jenis objek tersebut, contoh: \code{\bslash{}captionsourcething} yang berfungsi sebagai \f{caption} dari gambar/kode/tabel/persamaan yang masuk kategori "Sesuatu", beserta dengan sumbernya.
 	\end{itemize}
-	\item Untuk membuat daftar baru dengan nama berbeda, terdapat tiga frasa yang perlu diubah dari kode tersebut. Misalkan, Anda ingin membuat "Daftar Aturan Transformasi", maka Anda harus mengganti:
+	\item Untuk membuat daftar baru dengan nama berbeda, terdapat tiga frasa yang perlu diubah dari kode tersebut.
+	Misalkan, Anda ingin membuat "Daftar Aturan Transformasi", maka Anda harus mengganti:
 	\begin{itemize}
 		\item "Sesuatu" menjadi "Aturan Transformasi" untuk mengubah nama jenis objek,
 		\item \code{thing} menjadi \code{transformationrule} untuk mengubah tipe objek dalam \latex, dan
@@ -434,7 +470,8 @@ Selain itu, jika dibutuhkan, Anda juga bisa menambahkan daftar objek dengan jeni
 	\end{itemize}
 	\item Kemudian, Anda bisa menampilkan daftar konten \f{custom} yang baru Anda buat tersebut dengan mengikuti contoh kode yang ada di \f{thesis.tex}.
 	\item Gunakan \code{\bslash{}caption....} dan \code{\bslash{}captionsource....} untuk memberikan \f{caption} pada suatu objek (gambar/persamaan/tabel/kode) sekaligus menambahkannya ke dalam daftar objek tersebut.
-	\item Silakan definisikan sendiri konvensi label dan \f{cross-reference} yang menurut Anda cocok untuk jenis objek tersebut. Misal: \code{\bslash{}label\{rule:....\}} dan \code{\bslash{}transformationrule\~\bslash{}ref\{rule:....\}}
+	\item Silakan definisikan sendiri konvensi label dan \f{cross-reference} yang menurut Anda cocok untuk jenis objek tersebut.
+	Misal: \code{\bslash{}label\{rule:....\}} dan \code{\bslash{}transformationrule\~\bslash{}ref\{rule:....\}}
 \end{enumerate}
 
 
@@ -458,7 +495,11 @@ Berbeda dengan perintah sebelumnya, PDF yang dimasukan dengan cara ini tidak aka
 \section{Membuat Variabel atau Perintah Baru}
 \label{sec:newCommand}
 %-----------------------------------------------------------------------------%
-Dalam \latex, Anda bisa menambahkan variabel atau perintah baru yang dapat membantu penulisan laporan Anda. Sebenarnya variabel dalam \latex~merupakan perintah, namun tanpa argumen, contohnya adalah \code{\bslash{}kucing}. Variabel dapat menyimpan suatu nilai teks. Sedangkan, suatu perintah pada \latex~sifatnya dapat menerima argumen dan mengolah argumen tersebut sesuai dengan kode yang didefinisikan di dalamnya. Contoh dari penggunaan perintah adalah \code{\bslash{}section\{Membuat Variabel atau Perintah Baru\}}.
+Dalam \latex, Anda bisa menambahkan variabel atau perintah baru yang dapat membantu penulisan laporan Anda.
+Sebenarnya variabel dalam \latex~merupakan perintah, namun tanpa argumen, contohnya adalah \code{\bslash{}kucing}.
+Variabel dapat menyimpan suatu nilai teks.
+Sedangkan, suatu perintah pada \latex~sifatnya dapat menerima argumen dan mengolah argumen tersebut sesuai dengan kode yang didefinisikan di dalamnya.
+Contoh dari penggunaan perintah adalah \code{\bslash{}section\{Membuat Variabel atau Perintah Baru\}}.
 
 Ada dua perintah yang dapat digunakan untuk membuat variabel baru, yaitu:
 \begin{itemize}
@@ -470,18 +511,24 @@ Ada dua perintah yang dapat digunakan untuk membuat variabel baru, yaitu:
 	Contoh jika perintahnya adalah \code{\bslash{}var\{\bslash{}kucingKecil\}\{Areng\}}, ketika perintah \code{\bslash{}kucingKecil} dipanggil, yang akan muncul adalah Areng.
 \end{itemize}
 
-Membuat variabel baru sebaiknya dilakukan pada berkas \code{laporan\_setting.tex}. Beberapa variabel yang terkait dengan metadata skripsi seperti judul, tanggal pengesahan, nama penulis, dsb. juga telah tersedia dalam \code{laporan\_setting.tex} untuk dikonfigurasi.
+Membuat variabel baru sebaiknya dilakukan pada berkas \code{config/settings.tex}.
+Beberapa variabel yang terkait dengan metadata skripsi seperti judul, tanggal pengesahan, nama penulis, dsb. juga telah tersedia dalam \code{config/settings.tex} untuk dikonfigurasi.
 
-Selain membuat variabel baru, membuat perintah baru dalam kasus tertentu diperlukan dalam melakukan \f{formatting}. Terdapat dua perintah untuk membuat suatu perintah baru yang nantinya bisa menerima argumen, yaitu:
+Selain membuat variabel baru, membuat perintah baru dalam kasus tertentu diperlukan dalam melakukan \f{formatting}.
+Terdapat dua perintah untuk membuat suatu perintah baru yang nantinya bisa menerima argumen, yaitu:
 \begin{itemize}
 	\item \code{\bslash{}newcommand} \\
 	Digunakan untuk membuat perintah yang benar-benar baru. Beberapa contohnya adalah:
 	\begin{itemize}
-		\item \code{\bslash{}newcommand\{\bslash{}sumber\}[2]\{\bslash{}textbf\{\#1: \}\bslash{}texttt\{\#2\}\}} akan membuat perintah \code{\bslash{}sumber} yang menerima dua argumen dan akan mencetak tulisan dengan format tertentu. Sehingga, ketika perintah \code{\bslash{}sumber\{Disadur dari\}\{Cimung\}} dipanggil, yang akan muncul adalah \bo{Disadur dari: }\code{Cimung}.
-		\item \code{\bslash{}newcommand\{\bslash{}kucing\}[0]\{Uyik\}} akan membuat perintah \code{\bslash{}kucing}, tanpa argumen. Ketika perintah \code{\bslash{}kucing} dipanggil, yang akan muncul adalah Uyik.
+		\item \code{\bslash{}newcommand\{\bslash{}sumber\}[2]\{\bslash{}textbf\{\#1: \}\bslash{}texttt\{\#2\}\}} akan membuat perintah \code{\bslash{}sumber} yang menerima dua argumen dan akan mencetak tulisan dengan format tertentu.
+		Sehingga, ketika perintah \code{\bslash{}sumber\{Disadur dari\}\{Cimung\}} dipanggil, yang akan muncul adalah \bo{Disadur dari: }\code{Cimung}.
+		\item \code{\bslash{}newcommand\{\bslash{}kucing\}[0]\{Uyik\}} akan membuat perintah \code{\bslash{}kucing}, tanpa argumen.
+		Ketika perintah \code{\bslash{}kucing} dipanggil, yang akan muncul adalah Uyik.
 	\end{itemize}
 	\item \code{\bslash{}renewcommand} \\
-	Digunakan untuk mendefinisikan ulang perintah yang sudah ada. Contohnya adalah, jika sudah ada perintah \code{\bslash{}sumber} yang menerima dua argumen, maka Anda bisa mendefinisikan ulang seperti ini: \code{\bslash{}renewcommand\{\bslash{}sumber\}\{\bslash{}textbf\{\#1: \bslash{}texttt\{\#2\}\}\}}. Sehingga, ketika perintah \code{\bslash{}sumber\{Disadur dari\}\{Cimung\}} dipanggil, yang akan muncul adalah \bo{Disadur dari: \code{Cimung}}.
+	Digunakan untuk mendefinisikan ulang perintah yang sudah ada.
+	Contohnya adalah, jika sudah ada perintah \code{\bslash{}sumber} yang menerima dua argumen, maka Anda bisa mendefinisikan ulang seperti ini: \code{\bslash{}renewcommand\{\bslash{}sumber\}\{\bslash{}textbf\{\#1: \bslash{}texttt\{\#2\}\}\}}.
+	Sehingga, ketika perintah \code{\bslash{}sumber\{Disadur dari\}\{Cimung\}} dipanggil, yang akan muncul adalah \bo{Disadur dari: \code{Cimung}}.
 \end{itemize}
 
 Membuat perintah baru sebaiknya dilakukan pada berkas \code{uithesis.sty}.
@@ -495,17 +542,29 @@ Jika perubahan ini dirasa penting untuk disertakan dalam template, silakan lakuk
 \section{Pengaturan \f{Header} dan \f{Footer}}
 \label{sec:fancyhdr}
 %-----------------------------------------------------------------------------%
-\f{Template} ini menggunakan \f{library} \code{fancyhdr} untuk mengatur \f{header} dan \f{footer}. Konfigurasi \code{fancyhdr} pada \f{template} ini terdiri dari empat profil, yaitu \code{empty}, \code{plain}, \code{first-pages}, dan \code{standard}. Profil \code{standard} merupakan profil standar untuk konten laporan, yaitu tulisan "Universitas Indonesia" di sisi kanan \f{footer}. Profil \code{first-pages} merupakan profil untuk konten depan laporan seperti abstrak, kata pengantar, dsb., yang mengharuskan nomor halaman di tengah \f{footer}. Profil \code{plain} dalam \f{template} ini akan selalu digunakan untuk halaman pertama pada setiap bab atau bagian (termasuk daftar isi, abstrak, dsb.), apapun jenis profil yang seharusnya digunakan pada bagian tersebut. Sedangkan, profil \code{empty} artinya tidak ada \f{header} dan \f{footer} sama sekali.
+\f{Template} ini menggunakan \f{library} \code{fancyhdr} untuk mengatur \f{header} dan \f{footer}.
+Konfigurasi \code{fancyhdr} pada \f{template} ini terdiri dari empat profil, yaitu \code{empty}, \code{plain}, \code{first-pages}, dan \code{standard}.
+Profil \code{standard} merupakan profil standar untuk konten laporan, yaitu tulisan "Universitas Indonesia" di sisi kanan \f{footer}.
+Profil \code{first-pages} merupakan profil untuk konten depan laporan seperti abstrak, kata pengantar, dsb., yang mengharuskan nomor halaman di tengah \f{footer}.
+Profil \code{plain} dalam \f{template} ini akan selalu digunakan untuk halaman pertama pada setiap bab atau bagian (termasuk daftar isi, abstrak, dsb.), apapun jenis profil yang seharusnya digunakan pada bagian tersebut.
+Sedangkan, profil \code{empty} artinya tidak ada \f{header} dan \f{footer} sama sekali.
 
-Konfigurasi profil dapat dilakukan dengan menggunakan \code{\bslash{}pagestyle\{nama-profil\}}. Konfigurasi berlaku seterusnya dari halaman tersebut hingga ada konfigurasi profil berikutnya. Sedangkan untuk mendefinisikan sendiri isi \f{header} dan \f{footer} dapat dilakukan dengan perintah \code{\bslash{}fancyhead[....]\{....\}} atau \code{\bslash{}fancyfoot[....]\{....\}}. Contohnya, \code{\bslash{}fancyhead[LO,RE]\{Meong\}} akan memberikan teks "Meong" di sisi kiri \f{header} untuk halaman ganjil (\f{odd}), dan di sisi kanan \f{header} untuk halaman genap (\f{even}).
-
+Konfigurasi profil dapat dilakukan dengan menggunakan \code{\bslash{}pagestyle\{nama-profil\}}.
+Konfigurasi berlaku seterusnya dari halaman tersebut hingga ada konfigurasi profil berikutnya.
+Sedangkan untuk mendefinisikan sendiri isi \f{header} dan \f{footer} dapat dilakukan dengan perintah \code{\bslash{}fancyhead[....]\{....\}} atau \code{\bslash{}fancyfoot[....]\{....\}}.
+Contohnya, \code{\bslash{}fancyhead[LO,RE]\{Meong\}} akan memberikan teks "Meong" di sisi kiri \f{header} untuk halaman ganjil (\f{odd}), dan di sisi kanan \f{header} untuk halaman genap (\f{even}).
 
 %-----------------------------------------------------------------------------%
 \subsection{Konfigurasi Satu Halaman per Lembar}
 \label{sec:onePerSheet}
 %-----------------------------------------------------------------------------%
-Peraturan laporan tugas akhir di Universitas Indonesia tahun 2017 mensyaratkan pencetakan bolak-balik. Secara \f{default}, \f{template} ini juga sudah menggunakan konfigurasi bolak-balik. Namun, jika diperlukan, Anda dapat mengatur \f{header} dan \f{footer} ketika konfigurasi pencetakannya satu halaman per lembar. Penomoran halaman akan selalu dilakukan di bagian tengah pada \f{footer}. Oleh karena itu, dari bagian abstrak sampai akhir konten, cukup gunakan profil \code{first-page}. Kemudian, atur profil \code{plain} agar sama dengan profil \code{first-page}. Kemudian, hapus semua perintah \code{\bslash{}clearchapter}, \code{\bslash{}setoddevenheader}, \code{\bslash{}naiveoddclearchapter}, dan \code{\bslash{}naiveevenclearchapter} dalam berkas \code{thesis.tex}.
-
+Peraturan laporan tugas akhir di Universitas Indonesia tahun 2017 mensyaratkan pencetakan bolak-balik.
+Secara \f{default}, \f{template} ini juga sudah menggunakan konfigurasi bolak-balik.
+Namun, jika diperlukan, Anda dapat mengatur \f{header} dan \f{footer} ketika konfigurasi pencetakannya satu halaman per lembar.
+Penomoran halaman akan selalu dilakukan di bagian tengah pada \f{footer}.
+Oleh karena itu, dari bagian abstrak sampai akhir konten, cukup gunakan profil \code{first-page}.
+Kemudian, atur profil \code{plain} agar sama dengan profil \code{first-page}.
+Kemudian, hapus semua perintah \code{\bslash{}clearchapter}, \code{\bslash{}setoddevenheader}, \code{\bslash{}naiveoddclearchapter}, dan \code{\bslash{}naiveevenclearchapter} dalam berkas \code{thesis.tex}.
 
 %-----------------------------------------------------------------------------%
 \subsection{Konfigurasi untuk Submisi ke UI-ana}
@@ -514,7 +573,8 @@ Peraturan laporan tugas akhir di Universitas Indonesia tahun 2017 mensyaratkan p
 %-----------------------------------------------------------------------------%
 Berdasarkan peraturan terkini terkait pengumpulan naskah digital ke UI-ana, \f{header} dan \f{footer} perlu dihapus. Berikut ini adalah tahapan untuk mengatur hal tersebut:
 \begin{enumerate}
-	\item Buka berkas \code{uithesis.sty}, lalu cari semua baris perintah \code{\bslash{}fancypagestyle}. Hapus semua baris perintah tersebut.
+	\item Buka berkas \code{uithesis.sty}, lalu cari semua baris perintah \code{\bslash{}fancypagestyle}.
+	Hapus semua baris perintah tersebut.
 	\item Ubah isi dari perintah \code{\bslash{}setoddevenheader} menjadi \code{\bslash{}fancypagestyle\{empty\}}.
 	\item Di bagian akhir berkas \code{uithesis.sty}, tambahkan kode sebagai berikut:\\
 	\code{\bslash{}fancypagestyle\{plain\}\{\bslash{}fancyhead[L]\{\} \bslash{}fancyhead[C]\{\} \bslash{}fancyhead[R]\{\} \bslash{}fancyfoot[L]\{\} \bslash{}fancyfoot[C]\{\} \bslash{}fancyfoot[R]\{\}\}}
@@ -526,7 +586,7 @@ Berdasarkan peraturan terkini terkait pengumpulan naskah digital ke UI-ana, \f{h
 \label{sec:multilanguageSupport}
 % Hal baru di template 2017 (fitur versi beta)
 %-----------------------------------------------------------------------------%
-\todo{
+\noindent\todo{
 	\bo{Fitur ini sedang dalam uji coba.}
 	Bagi yang memiliki saran atau ingin menyempurnakan fitur ini, silakan kunjungi repositori GitLab template ini (\url{https://gitlab.com/ichlaffterlalu/latex-skripsi-ui-2017}), lalu buat Issue atau Merge Request baru.
 }
@@ -568,4 +628,8 @@ Berikut adalah contoh penggunaan bahasa Jepang (sumber kutipan: \url{https://en.
 	\item Contoh \f{in-line text}: \begin{japanese}ありがとうございます\end{japanese} artinya "terima kasih".
 \end{itemize}
 
-Untuk penggunaan Simplified Chinese dapat menggunakan \f{environment} \code{simpchinese}. Untuk penggunaan Traditional Chinese dapat menggunakan \f{environment} \code{tradchinese}. Untuk penggunaan bahasa Korea dapat menggunakan \f{environment} \code{korean}. Untuk penggunaan huruf Arab, baik itu untuk bahasa Arab, Persia, maupun Uyghur, dapat mengunjungi tutorial ArabTeX di \url{https://en.wikipedia.org/wiki/ArabTeX}. Sebelum menyalakan dukungan terhadap suatu bahasa, pastikan tersedia \f{font} untuk bahasa terkait di dalam sistem operasi Anda.
+Untuk penggunaan Simplified Chinese dapat menggunakan \f{environment} \code{simpchinese}.
+Untuk penggunaan Traditional Chinese dapat menggunakan \f{environment} \code{tradchinese}.
+Untuk penggunaan bahasa Korea dapat menggunakan \f{environment} \code{korean}.
+Untuk penggunaan huruf Arab, baik itu untuk bahasa Arab, Persia, maupun Uyghur, dapat mengunjungi tutorial ArabTeX di \url{https://en.wikipedia.org/wiki/ArabTeX}.
+Sebelum menyalakan dukungan terhadap suatu bahasa, pastikan tersedia \f{font} untuk bahasa terkait di dalam sistem operasi Anda.
