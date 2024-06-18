@@ -2,7 +2,7 @@
 % Template Laporan Skripsi/Thesis Universitas Indonesia
 %
 % @author  Ichlasul Affan, Azhar Kurnia
-% @version 2.1.2
+% @version 2.1.3
 %
 % Dokumen ini dibuat berdasarkan standar IEEE dalam membuat class untuk
 % LaTeX dan konfigurasi LaTeX yang digunakan Fahrurrozi Rahman ketika
@@ -46,9 +46,11 @@
 \disableboldchapterintoc
 %
 % load halaman judul dalam
-\addChapter{HALAMAN JUDUL}
-\include{_internals/judul_dalam}
-\forceclearchapter
+\strcompare{Kampus Merdeka}{\type}{} {
+	\addChapter{HALAMAN JUDUL}
+	\include{_internals/judul_dalam}
+	\forceclearchapter
+}
 
 %
 % load halaman orisinalitas
@@ -56,11 +58,11 @@
 % Menghilangkan penomoran
 \pagenumbering{gobble}
 
-\strcompare{Laporan Kerja Praktik}{\type}{}
-{
+\strcompare{Laporan Kerja Praktik}{\type}{} {
+\strcompare{Kampus Merdeka}{\type}{} {
 	\include{src/00-frontMatter/pernyataanOrisinalitas}
 	\forceclearchapter
-}
+}}
 
 % Memunculkan penomoran kembali
 \pagenumbering{roman}
@@ -77,6 +79,12 @@
 	\addChapter{LEMBAR PERSETUJUAN DOSEN KERJA PRAKTIK}
 	\include{src/00-frontMatter/pengesahanKP}
 	\forceclearchapter
+}{
+\strcompare{Kampus Merdeka}{\type}
+{
+	\addChapter{LEMBAR PENGESAHAN}
+	\include{src/00-frontMatter/pengesahanMBKM}
+	\forceclearchapter
 }
 {
 	\addChapter{LEMBAR PENGESAHAN}
@@ -88,11 +96,11 @@
 	\forceclearchapter
 	% Lembar Pengesahan dari PDF lain (misal: generated oleh SISIDANG [Fasilkom])
 	%\putpdf{assets/pdfs/pengesahanSidang.pdf}
-}
+}}
 
 
-\strcompare{Laporan Kerja Praktik}{\type}{}
-{
+\strcompare{Laporan Kerja Praktik}{\type}{} {
+\strcompare{Kampus Merdeka}{\type}{} {
 	%
 	% Kata Pengantar
 	\addChapter{\kataPengantar}
@@ -103,7 +111,7 @@
 	\addChapter{LEMBAR PERSETUJUAN PUBLIKASI ILMIAH}
 	\include{src/00-frontMatter/persetujuanPublikasi}
 	\forceclearchapter
-}
+}}
 
 %
 % Untuk halaman pertama setiap chapter mulai dari abstrak, tetap berikan mark universitas.
